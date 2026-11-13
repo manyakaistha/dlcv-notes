@@ -1,7 +1,7 @@
 ---
 title: "Week 2 past examination questions"
 week: 2
-status: draft
+status: complete
 tags:
   - dl4cv/week-02
   - exam-questions
@@ -10,8 +10,6 @@ tags:
 # Week 2 past examination questions
 
 [Week 2 exam notes](../month%201/week%202/week-2-exam-notes.md)
-
-**Draft:** Source blocks extracted; explanations and independent answer verification remain incomplete.
 
 **Counts:** Q1: 84; Q2: 1; ET: 33; total: 118 questions, 193 marks.
 
@@ -315,7 +313,8 @@ Which of the following are examples of a high-pass filter?
 
 **Correct answer:** **A, B, C** — Options A, B, and C.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** A and B are Sobel derivatives and C is a Laplacian; each has zero sum and suppresses constant intensity.
+D sums to 7, so it passes a constant component and is not a pure high-pass filter.
 
 ### da5006_2025T2_ET_FN · Q156 · 2 marks · ID 6406531422535
 
@@ -579,7 +578,10 @@ The middle element of the Laplacian of the Gaussian (LoG) filter will be
 
 **Correct answer:** `4`  
 
-**Worked explanation:** Pending independent verification.
+> [!WARNING] The two given stencils sum to a center coefficient of −4, whereas the source key is +4; a Gaussian-convolved kernel also depends on the Gaussian.
+
+**Worked explanation:** The stated $x$ and $y$ stencils each have center coefficient $-2$, giving $-4$ when added.
+The opposite-sign Laplacian gives $+4$; applying an actual Gaussian changes the numerical kernel coefficient.
 
 ### da5006_2024T2_Q1_NA · Q96 · 2 marks · ID 640653829653
 
@@ -805,7 +807,8 @@ Answers Type : Range
 
 **Correct answer:** -0.34 to -0.29  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** The source image supplies $M=\begin{bmatrix}1&2\\2&1\end{bmatrix}$, with eigenvalues $3$ and $-1$.
+Their ratio $-1/3$ lies in the source range; the straightness formula is not specified and the matrix is not positive semidefinite.
 
 ### da5006_2025T1_Q1_NA · Q157 · 2 marks · ID 6406531130622
 
@@ -1279,10 +1282,10 @@ The straightness equals _______ (round to 3 decimals).
 
 **Correct answer:** `-6 to -5`  
 
-> [!WARNING] The eigenvalues are $(7\pm\sqrt{13})/2$ and their normalized difference has magnitude about 0.515, inconsistent with the source range.
+> [!WARNING] The eigenvalues are $(7\pm\sqrt{13})/2$ and their stated normalized difference is positive about 0.515, inconsistent with the source range.
 
 **Worked explanation:** The eigenvalues of $M$ are $(7+\sqrt{13})/2$ and $(7-\sqrt{13})/2$.
-Their normalized signed difference is $-\sqrt{13}/7\approx-0.5151$, outside the stated source range.
+Their normalized difference in the stated order is $\sqrt{13}/7\approx0.5151$, outside the stated source range.
 
 ### da5006_2026T2_Q1_NA · Q2 · 1 marks · ID 6406532166253
 
@@ -1338,7 +1341,10 @@ The straightness equals _______ (round to 3 decimals).
 
 **Correct answer:** `-0.6 to -0.5`  
 
-**Worked explanation:** Pending independent verification.
+> [!WARNING] The specified expression is positive $\sqrt{13}/7\approx 0.515$, outside the negative source range.
+
+**Worked explanation:** The eigenvalues are $(7\pm\sqrt{13})/2$, so the specified positive normalized difference is $\sqrt{13}/7\approx0.515$.
+The negative source range contradicts the numerator order given in the question.
 
 ## Topic: Corners and blobs
 
@@ -1366,7 +1372,8 @@ NOTE: Enter your answer in two decimal places.
 
 **Correct answer:** **6.56**  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** The source gives a pixel matrix and the answer 6.56, but omits the cornerness definition, derivative stencil, window, and any Harris parameter.
+These choices determine the structure tensor and score, so 6.56 cannot be independently derived from the stated information.
 
 ### da5006_2026T1_ET_FN · Q16 · 3 marks · ID 6406532136831
 
@@ -1423,7 +1430,10 @@ Match the following with the corresponding eigenvalues (assume that $\lambda_1$ 
 
 **Correct answer:** **D** — 1→iv, 2→i, 3→iii,4→ii.  
 
-**Worked explanation:** Pending independent verification.
+> [!WARNING] The keyed mapping swaps the horizontal edge and corner eigenvalue conditions; none of the printed choices gives the full correct mapping.
+
+**Worked explanation:** A vertical edge has stronger horizontal variation; a horizontal edge has stronger vertical variation; a corner has two strong eigenvalues.
+The keyed D assigns the horizontal-edge condition to a corner and the corner condition to a horizontal edge; no listed option matches all conditions.
 
 ### da5006_2024T2_Q1_NA · Q89 · 2 marks · ID 640653829663
 
@@ -2058,7 +2068,10 @@ Which of the following statements is false regarding SIFT and SURF?
 
 **Correct answer:** **D** — descriptors with dimensions lower than 128 perform pretty well across a range of matching tasks.  
 
-**Worked explanation:** Pending independent verification.
+> [!WARNING] The key calls D false, but low-dimensional descriptors can perform well; the question also makes unqualified comparative claims.
+
+**Worked explanation:** The key identifies D as false, but low-dimensional descriptors can perform well; SURF commonly uses 64 dimensions.
+The other blanket claims about invariance and relative performance are also context dependent, so the question does not support the keyed choice reliably.
 
 ### da5006_2024T1_Q1_NA · Q164 · 2 marks · ID 640653739748
 
@@ -2080,7 +2093,10 @@ In RANSAC, what is the probability that the algorithm never selects a whole set 
 
 **Correct answer:** **C** — 0.87.  
 
-**Worked explanation:** Pending independent verification.
+> [!WARNING] The key is 0.87, while independent sampling gives 0.87890625 with replacement or approximately 0.8975 without replacement within a sample.
+
+**Worked explanation:** With independent draws with replacement, the per-trial inlier probability is $(5/20)^2$ and two failures have probability $(15/16)^2=0.87890625$.
+Without replacement within each sample it is $(1-(5/20)(4/19))^2\approx0.8975$; the keyed 0.87 does not follow by rounding either model.
 
 ### da5006_2024T1_Q1_NA · Q165 · 2 marks · ID 640653739749
 
@@ -2156,7 +2172,8 @@ For a 3 x 3 gray scale image represented by the matrix below, the LBP descriptor
 
 **Correct answer:** `143`  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** Threshold neighbors clockwise from top left against 125 to obtain bits $10001111$.
+Interpreting the first bit as most significant gives $128+8+4+2+1=143$; the opposite bit order yields 241.
 
 ### da5006_2024T1_Q1_NA · Q176 · 0.5 marks · ID 640653739744
 
@@ -2342,7 +2359,10 @@ In RANSAC, what is the probability that the algorithm never selects a whole set 
 
 **Correct answer:** **C** — 0.87.  
 
-**Worked explanation:** Pending independent verification.
+> [!WARNING] The key is 0.87, while independent sampling gives 0.87890625 with replacement or approximately 0.8975 without replacement within a sample.
+
+**Worked explanation:** With independent draws with replacement, the per-trial inlier probability is $(5/20)^2$ and two failures have probability $(15/16)^2=0.87890625$.
+Without replacement within each sample it is $(1-(5/20)(4/19))^2\approx0.8975$; the keyed 0.87 does not follow by rounding either model.
 
 ### da5006_2024T2_Q1_NA · Q91 · 2 marks · ID 640653829670
 

@@ -39,4 +39,9 @@ The source key gives 28%. Both boxes have area 144, their intersection is 64, an
 
 - `da5006_2024T1_ET_AN`, Q165, ID `640653821591`: source key A says VLAD captures spatial relationships. Standard VLAD aggregates descriptor residuals by visual word without spatial layout, so D is the better answer.
 - `da5006_2026T1_Q1_NA`, Q12, ID `6406531961525`: source key 12 conflicts with the requested sum: 3D translation has 3 degrees of freedom and a 3D affine map has 12, summing to 15.
-- `da5006_2026T1_Q1_NA`, Q15, ID `6406531961528`: source range −6 to −5 conflicts with the eigenvalue calculation, whose normalized difference has magnitude $\sqrt{13}/7 \approx 0.5151$.
+- `da5006_2026T1_Q1_NA`, Q15, ID `6406531961528`: source range −6 to −5 conflicts with the eigenvalue calculation, whose stated normalized difference is $\sqrt{13}/7 \approx 0.5151$.
+- `da5006_2024T1_Q1_NA`, Q173, ID `640653739740`: the center coefficients of the two stated stencils sum to −4, whereas the source key gives +4; an actual LoG also depends on the Gaussian.
+- `da5006_2026T2_Q1_NA`, Q14, ID `6406532166264`: the stated positive normalized eigenvalue difference is $\sqrt{13}/7 \approx 0.5151$, outside the source's negative range.
+- `da5006_2024T1_Q1_NA`, Q163, ID `640653739742`: the key exchanges the horizontal-edge and corner conditions; none of the printed options gives the full correct mapping.
+- `da5006_2024T1_Q1_NA`, Q161, ID `640653739736`: the key marks D false, although lower-dimensional descriptors can work well; other comparative statements are also unqualified.
+- `da5006_2024T1_Q1_NA`, Q164, ID `640653739748`, and `da5006_2024T2_Q1_NA`, Q90, ID `640653829669`: keyed 0.87 versus 0.87890625 with replacement or approximately 0.8975 when each sample is drawn without replacement, assuming independent trials.
