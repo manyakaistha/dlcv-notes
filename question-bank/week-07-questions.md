@@ -6,7 +6,7 @@ status: provisional
 
 # Week 7 question bank
 
-> [!WARNING] Incomplete working extraction: worked explanations and independent answer checks have not yet been completed. Do not treat this file as a verified answer guide.
+> [!NOTE] Source keys are preserved; flagged disagreements and derived calculations are recorded alongside the affected questions.
 
 Topics inferred from past papers; replace when the official syllabus is available.
 
