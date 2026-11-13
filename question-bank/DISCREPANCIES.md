@@ -64,3 +64,6 @@ The source key gives 28%. Both boxes have area 144, their intersection is 64, an
 - da5006_2024T2_Q2_NA · Q145 · 2 marks · ID 640653856606: The key includes C, but soft attention is not generally cheaper than sparse hard attention on large inputs; cost depends on the implementation. The otherwise identical papers also key A and D.
 - da5006_2025T2_Q2_NA · Q248 · 3 marks · ID 6406531333799: The key includes C, but soft attention is not generally cheaper than sparse hard attention on large inputs; cost depends on the implementation. The otherwise identical papers also key A and D.
 - da5006_2024T3_Q2_NA · Q144 · 2 marks · ID 6406531031079: The key D says none of A–C is false, but all three are false; the question has multiple valid answers.
+## da5006_2025T2_ET_AN Q105 (ID 6406531431365)
+
+The source key gives 43. Fixed reductions of 0.02 from 0.90 reach 0.06 in 42 steps and 0.04 in 43; 0.05 is not reached exactly. The key is correct if interpreted as the first step at or below 0.05.
