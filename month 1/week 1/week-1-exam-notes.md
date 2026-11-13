@@ -224,3 +224,10 @@ map: "[[../../Knowledge-Map|DL4CV Knowledge Map]]"
   - FFT cost: $2\text{ forward FFTs} + 1\text{ inverse FFT} + \text{pointwise mult} \approx 3 \times 2 N^2 \log_2(N) + N^2$
     $$6 \times 1024^2 \times 10 + 1024^2 \approx 6.4 \times 10^7\text{ operations}$$
   - **Answer:** FFT-based filtering is $\approx \frac{1.008 \times 10^9}{6.4 \times 10^7} \approx 15.7\times$ faster!
+
+## High-frequency exam traps (from PYQs)
+
+- **Integral images use inclusion–exclusion.** For an inclusive rectangle with 1-indexed corners $(r_1,c_1)$ and $(r_2,c_2)$, compute $S=II(r_2,c_2)-II(r_1-1,c_2)-II(r_2,c_1-1)+II(r_1-1,c_1-1)$; terms beyond the top or left boundary are zero. The bottom-right cumulative total alone is not a general rectangle sum.
+- **NumPy views and copies behave differently.** `arr = alias` creates another reference; `view()` and usually `ravel()` share the underlying storage, while `flatten()` and `copy()` allocate independent arrays. Check whether the operation returns a view before deciding if a write changes the original.
+- **Contrast stretching must use the stated endpoints.** For 8-bit output, $s=(r-I_{\min})255/(I_{\max}-I_{\min})$; the minimum maps to 0 and maximum to 255. If asked for a transformed-image mean, transform every pixel first and then average; it is not generally the transform of the original mean when clipping or rounding is involved.
+- **Raw image memory includes every channel and its dtype width.** Compute $H\,W\,C\,b$ bytes, where $b$ is bytes per channel (1 for 8-bit, 4 for 32-bit float). Do not confuse bits with bytes or omit RGB channels.
