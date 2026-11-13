@@ -19,3 +19,17 @@ The source key gives 28%. Both boxes have area 144, their intersection is 64, an
 
 - `da5006_2024T1_ET_AN` Q200–201: keyed 12288 and 64 are respectively input scalar count and patch count, not specified learned self-attention parameter counts. Projection widths are missing.
 - `da5006_2026T1_ET_FN` Q18: key includes B, but self-attention on token sequences is permutation-equivariant, not invariant; positional information breaks that equivariance.
+
+## Week 8
+
+- **da5006_2024T1_ET_AN Q185 (ID 640653821621)**: The printed KL direction does not imply the maximum-likelihood equivalence used by the key. Maximum likelihood follows from minimizing $D_{KL}(p_{data}\|p_\theta)$, not generally the reverse order printed in the question. Squared-error equivalence also needs a fixed-variance Gaussian likelihood.
+
+- **da5006_2024T1_Q2_NA Q154 (ID 640653766164)**: The key includes $p(x,y)$, which is not modeled by the vanilla unconditional GAN. A vanilla unconditional GAN learns a distribution over $x$ through samples; it does not, without a label-conditioned formulation or joint samples, model $p(x,y)$.
+
+- **da5006_2024T1_Q2_NA Q173 (ID 640653766169)**: The keyed coefficient and the companion keyed value do not yield the stated KL divergence; infinitely many coefficient/base pairs are possible. Both outcomes contribute: $0.9\log 9+0.1\log(1/9)=0.8\log 9$. The requested pair $(c,d)$ is not uniquely determined without a convention.
+
+- **da5006_2024T1_Q2_NA Q174 (ID 640653766170)**: With the companion key $c=0.9$, the required base is approximately 7.0504, not 8. The Bernoulli sum is $0.8\log 9$, not $0.9\log 8$. If the keyed $c=0.9$ is fixed, $d=9^{8/9}\approx7.0504$.
+
+- **da5006_2024T1_Q2_NA Q175 (ID 640653766173)**: The initial output is not determined by the premise; zero is only a possible limiting case. No initial discriminator output is fixed by the GAN objective: it depends on initialization and updates. A strong discriminator may assign fakes probabilities near zero.
+
+- **da5006_2024T2_Q2_NA Q134 (ID 640653856582)**: The conventional hinge triplet loss is 0, not the keyed -30. Squared distances are $d(a,p)^2=25$ and $d(a,n)^2=43$. The conventional hinge triplet loss is $\max(0,25-43+12)=0$; even the unhinged expression is $-6$.
