@@ -1,0 +1,1490 @@
+[
+  {
+    "week": 1,
+    "id": "w1-vision-formation",
+    "name": "Vision and image formation",
+    "keywords": [
+      "image formation",
+      "computer vision",
+      "illumination",
+      "reflectance",
+      "camera",
+      "perception"
+    ],
+    "syllabus_item": "Course introduction, optional history and image formation",
+    "status": "official",
+    "question_count": 12,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 8,
+      "ET": 4
+    }
+  },
+  {
+    "week": 1,
+    "id": "w1-representation",
+    "name": "Image representation and point operations",
+    "keywords": [
+      "image representation",
+      "pixel",
+      "rgb",
+      "color space",
+      "histogram",
+      "contrast stretching",
+      "equalization",
+      "intensity"
+    ],
+    "syllabus_item": "Image representation and digital image operations",
+    "status": "official",
+    "question_count": 42,
+    "exam_counts": {
+      "Q1": 24,
+      "Q2": 2,
+      "ET": 16
+    }
+  },
+  {
+    "week": 1,
+    "id": "w1-filtering",
+    "name": "Spatial filtering and convolution",
+    "keywords": [
+      "linear filtering",
+      "convolution",
+      "correlation",
+      "kernel",
+      "separable",
+      "median filter",
+      "bilateral",
+      "template matching"
+    ],
+    "syllabus_item": "Linear filtering and related spatial operations",
+    "status": "official",
+    "question_count": 122,
+    "exam_counts": {
+      "Q1": 54,
+      "Q2": 42,
+      "ET": 26
+    }
+  },
+  {
+    "week": 1,
+    "id": "w1-frequency",
+    "name": "Frequency-domain images",
+    "keywords": [
+      "fourier",
+      "frequency domain",
+      "frequency spectrum",
+      "phase",
+      "magnitude",
+      "discrete fourier",
+      "convolution theorem"
+    ],
+    "syllabus_item": "Image in frequency domain",
+    "status": "official",
+    "question_count": 13,
+    "exam_counts": {
+      "Q1": 8,
+      "Q2": 0,
+      "ET": 5
+    }
+  },
+  {
+    "week": 1,
+    "id": "w1-sampling",
+    "name": "Sampling and reconstruction",
+    "keywords": [
+      "sampling",
+      "nyquist",
+      "aliasing",
+      "downsampling",
+      "interpolation",
+      "reconstruction",
+      "antialiasing"
+    ],
+    "syllabus_item": "Image sampling",
+    "status": "official",
+    "question_count": 20,
+    "exam_counts": {
+      "Q1": 3,
+      "Q2": 2,
+      "ET": 15
+    }
+  },
+  {
+    "week": 2,
+    "id": "w2-edges",
+    "name": "Edges and differential operators",
+    "keywords": [
+      "edge detection",
+      "canny",
+      "sobel",
+      "gradient",
+      "laplacian",
+      "edgelet",
+      "non maximum suppression",
+      "hysteresis"
+    ],
+    "syllabus_item": "Edge detection",
+    "status": "official",
+    "question_count": 114,
+    "exam_counts": {
+      "Q1": 54,
+      "Q2": 20,
+      "ET": 40
+    }
+  },
+  {
+    "week": 2,
+    "id": "w2-corners-blobs",
+    "name": "Corners and blobs",
+    "keywords": [
+      "harris",
+      "corner",
+      "structure tensor",
+      "eigenvalue",
+      "blob",
+      "aperture problem",
+      "second moment"
+    ],
+    "syllabus_item": "Edges to blobs and corners",
+    "status": "official",
+    "question_count": 15,
+    "exam_counts": {
+      "Q1": 13,
+      "Q2": 0,
+      "ET": 2
+    }
+  },
+  {
+    "week": 2,
+    "id": "w2-scale-space",
+    "name": "Scale space, pyramids and filter banks",
+    "keywords": [
+      "scale space",
+      "gaussian pyramid",
+      "image pyramid",
+      "filter bank",
+      "difference of gaussian",
+      "laplacian of gaussian",
+      "texture"
+    ],
+    "syllabus_item": "Scale space, image pyramids and filter banks",
+    "status": "official",
+    "question_count": 33,
+    "exam_counts": {
+      "Q1": 19,
+      "Q2": 0,
+      "ET": 14
+    }
+  },
+  {
+    "week": 2,
+    "id": "w2-features",
+    "name": "Invariant features and geometric descriptors",
+    "keywords": [
+      "sift",
+      "surf",
+      "keypoint",
+      "descriptor",
+      "shape context",
+      "mser",
+      "ransac",
+      "vlad",
+      "image retrieval",
+      "affine transformation"
+    ],
+    "syllabus_item": "Feature detectors SIFT and variants; other feature spaces",
+    "status": "official",
+    "question_count": 47,
+    "exam_counts": {
+      "Q1": 29,
+      "Q2": 2,
+      "ET": 16
+    }
+  },
+  {
+    "week": 2,
+    "id": "w2-classical-segmentation",
+    "name": "Classical image segmentation",
+    "keywords": [
+      "segmentation",
+      "gestalt",
+      "clustering",
+      "normalized cut",
+      "graph cut",
+      "region growing",
+      "thresholding"
+    ],
+    "syllabus_item": "Image segmentation",
+    "status": "official",
+    "question_count": 29,
+    "exam_counts": {
+      "Q1": 8,
+      "Q2": 8,
+      "ET": 13
+    }
+  },
+  {
+    "week": 2,
+    "id": "w2-visual-system",
+    "name": "Human visual system",
+    "keywords": [
+      "human visual",
+      "retina",
+      "visual cortex",
+      "ventral stream",
+      "dorsal stream",
+      "receptive field",
+      "biological vision"
+    ],
+    "syllabus_item": "Human visual system",
+    "status": "official",
+    "question_count": 6,
+    "exam_counts": {
+      "Q1": 4,
+      "Q2": 0,
+      "ET": 2
+    }
+  },
+  {
+    "week": 3,
+    "id": "w3-neural-networks",
+    "name": "Perceptrons and feedforward networks",
+    "keywords": [
+      "perceptron",
+      "neural network",
+      "feedforward",
+      "multilayer",
+      "activation",
+      "linear separability",
+      "decision boundary"
+    ],
+    "syllabus_item": "Neural-network review and feedforward networks",
+    "status": "official",
+    "question_count": 76,
+    "exam_counts": {
+      "Q1": 15,
+      "Q2": 34,
+      "ET": 27
+    }
+  },
+  {
+    "week": 3,
+    "id": "w3-backprop",
+    "name": "Backpropagation and losses",
+    "keywords": [
+      "backpropagation",
+      "chain rule",
+      "gradient",
+      "cross entropy",
+      "softmax",
+      "loss function",
+      "derivative"
+    ],
+    "syllabus_item": "Feedforward neural networks and backpropagation",
+    "status": "official",
+    "question_count": 136,
+    "exam_counts": {
+      "Q1": 38,
+      "Q2": 45,
+      "ET": 53
+    }
+  },
+  {
+    "week": 3,
+    "id": "w3-optimization",
+    "name": "Gradient descent and variants",
+    "keywords": [
+      "gradient descent",
+      "stochastic gradient",
+      "momentum",
+      "adam",
+      "optimizer",
+      "learning rate",
+      "rmsprop"
+    ],
+    "syllabus_item": "Gradient descent and variants",
+    "status": "official",
+    "question_count": 19,
+    "exam_counts": {
+      "Q1": 9,
+      "Q2": 1,
+      "ET": 9
+    }
+  },
+  {
+    "week": 3,
+    "id": "w3-regularization",
+    "name": "Regularization and generalization",
+    "keywords": [
+      "regularization",
+      "dropout",
+      "weight decay",
+      "overfitting",
+      "l1",
+      "l2",
+      "data augmentation",
+      "mixup"
+    ],
+    "syllabus_item": "Regularization",
+    "status": "official",
+    "question_count": 17,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 3,
+      "ET": 14
+    }
+  },
+  {
+    "week": 3,
+    "id": "w3-training",
+    "name": "Initialization and normalization",
+    "keywords": [
+      "batch normalization",
+      "initialization",
+      "xavier",
+      "kaiming",
+      "vanishing gradient",
+      "exploding gradient",
+      "batch norm"
+    ],
+    "syllabus_item": "Improving training of neural networks",
+    "status": "official",
+    "question_count": 16,
+    "exam_counts": {
+      "Q1": 2,
+      "Q2": 10,
+      "ET": 4
+    }
+  },
+  {
+    "week": 4,
+    "id": "w4-cnn-fundamentals",
+    "name": "CNN operations and spatial dimensions",
+    "keywords": [
+      "cnn",
+      "convolutional neural",
+      "convolution",
+      "stride",
+      "padding",
+      "feature map",
+      "channel",
+      "parameter count"
+    ],
+    "syllabus_item": "Introduction to CNNs",
+    "status": "official",
+    "question_count": 139,
+    "exam_counts": {
+      "Q1": 29,
+      "Q2": 70,
+      "ET": 40
+    }
+  },
+  {
+    "week": 4,
+    "id": "w4-pooling-receptive-fields",
+    "name": "Pooling and receptive fields",
+    "keywords": [
+      "pooling",
+      "receptive field",
+      "max pool",
+      "average pool",
+      "dilation",
+      "translation equivariance",
+      "weight sharing"
+    ],
+    "syllabus_item": "Introduction to CNNs",
+    "status": "official",
+    "question_count": 31,
+    "exam_counts": {
+      "Q1": 8,
+      "Q2": 14,
+      "ET": 9
+    }
+  },
+  {
+    "week": 4,
+    "id": "w4-cnn-backprop",
+    "name": "CNN backpropagation",
+    "keywords": [
+      "convolutional backpropagation",
+      "cnn backpropagation",
+      "filter gradient",
+      "pooling gradient",
+      "input gradient",
+      "convolution gradient"
+    ],
+    "syllabus_item": "Backpropagation in CNNs",
+    "status": "official",
+    "question_count": 3,
+    "exam_counts": {
+      "Q1": 2,
+      "Q2": 0,
+      "ET": 1
+    }
+  },
+  {
+    "week": 4,
+    "id": "w4-alexnet",
+    "name": "AlexNet and early CNN classifiers",
+    "keywords": [
+      "alexnet",
+      "imagenet",
+      "relu",
+      "local response normalization",
+      "classification",
+      "convolutional architecture"
+    ],
+    "syllabus_item": "CNN classification architectures: AlexNet",
+    "status": "official",
+    "question_count": 55,
+    "exam_counts": {
+      "Q1": 10,
+      "Q2": 22,
+      "ET": 23
+    }
+  },
+  {
+    "week": 4,
+    "id": "w4-vgg",
+    "name": "VGG and stacked convolutions",
+    "keywords": [
+      "vgg",
+      "vggnet",
+      "stacked convolution",
+      "three convolution",
+      "receptive field",
+      "classification architecture"
+    ],
+    "syllabus_item": "CNN classification architectures: VGG",
+    "status": "official",
+    "question_count": 9,
+    "exam_counts": {
+      "Q1": 4,
+      "Q2": 3,
+      "ET": 2
+    }
+  },
+  {
+    "week": 5,
+    "id": "w5-inception",
+    "name": "Inception and bottleneck convolutions",
+    "keywords": [
+      "inception",
+      "googlenet",
+      "bottleneck",
+      "auxiliary classifier",
+      "one by one",
+      "1x1",
+      "parallel filters"
+    ],
+    "syllabus_item": "Week 5 notes: Inception and GoogLeNet",
+    "status": "official",
+    "question_count": 19,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 18,
+      "ET": 1
+    }
+  },
+  {
+    "week": 5,
+    "id": "w5-residual-networks",
+    "name": "Residual and connected CNN architectures",
+    "keywords": [
+      "resnet",
+      "residual",
+      "skip connection",
+      "densenet",
+      "resnext",
+      "identity mapping",
+      "degradation"
+    ],
+    "syllabus_item": "Week 5 notes: ResNet and later architectures",
+    "status": "official",
+    "question_count": 15,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 13,
+      "ET": 2
+    }
+  },
+  {
+    "week": 5,
+    "id": "w5-efficient-cnns",
+    "name": "Efficient convolutional networks",
+    "keywords": [
+      "mobilenet",
+      "depthwise",
+      "separable convolution",
+      "squeeze excitation",
+      "senet",
+      "convnext",
+      "efficiency"
+    ],
+    "syllabus_item": "Week 5 notes: MobileNet and modern CNNs",
+    "status": "official",
+    "question_count": 36,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 28,
+      "ET": 8
+    }
+  },
+  {
+    "week": 5,
+    "id": "w5-transfer",
+    "name": "Transfer learning and fine-tuning",
+    "keywords": [
+      "transfer learning",
+      "fine tuning",
+      "pretrained",
+      "pre-trained",
+      "domain shift",
+      "feature extraction",
+      "freezing"
+    ],
+    "syllabus_item": "Week 5 notes: transfer learning",
+    "status": "official",
+    "question_count": 11,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 8,
+      "ET": 3
+    }
+  },
+  {
+    "week": 5,
+    "id": "w5-interpretability",
+    "name": "CNN visualization and interpretability",
+    "keywords": [
+      "grad-cam",
+      "class activation",
+      "saliency",
+      "occlusion",
+      "feature visualization",
+      "activation map",
+      "interpretability"
+    ],
+    "syllabus_item": "Week 5 notes: feature visualization and occlusion",
+    "status": "official",
+    "question_count": 16,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 12,
+      "ET": 4
+    }
+  },
+  {
+    "week": 5,
+    "id": "w5-two-stage-detection",
+    "name": "Two-stage detection and R-CNN",
+    "keywords": [
+      "r-cnn",
+      "fast r-cnn",
+      "faster r-cnn",
+      "region proposal",
+      "roi pooling",
+      "bounding box",
+      "selective search"
+    ],
+    "syllabus_item": "Week 5 notes: R-CNN family",
+    "status": "official",
+    "question_count": 33,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 25,
+      "ET": 8
+    }
+  },
+  {
+    "week": 5,
+    "id": "w5-yolo",
+    "name": "Single-stage detection and YOLO",
+    "keywords": [
+      "yolo",
+      "single stage detector",
+      "grid cell",
+      "intersection over union",
+      "non maximum suppression",
+      "bounding box",
+      "object detection"
+    ],
+    "syllabus_item": "Week 5 notes: object detection and YOLO",
+    "status": "official",
+    "question_count": 70,
+    "exam_counts": {
+      "Q1": 6,
+      "Q2": 45,
+      "ET": 19
+    }
+  },
+  {
+    "week": 6,
+    "id": "w6-dense-detection",
+    "name": "Dense detectors and focal loss",
+    "keywords": [
+      "retinanet",
+      "focal loss",
+      "class imbalance",
+      "hard example",
+      "single-stage",
+      "dense object detection",
+      "foreground-background"
+    ],
+    "syllabus_item": "Past-paper cluster: RetinaNet, focal loss and class imbalance",
+    "status": "provisional",
+    "question_count": 12,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 8,
+      "ET": 4
+    }
+  },
+  {
+    "week": 6,
+    "id": "w6-detector-boxes",
+    "name": "Detection losses, boxes and matching",
+    "keywords": [
+      "bounding box regression",
+      "smooth l1",
+      "intersection over union",
+      "iou loss",
+      "region proposal network",
+      "localization loss",
+      "anchor box"
+    ],
+    "syllabus_item": "Past-paper cluster: localization losses and region proposals",
+    "status": "provisional",
+    "question_count": 26,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 20,
+      "ET": 6
+    }
+  },
+  {
+    "week": 6,
+    "id": "w6-feature-pyramids",
+    "name": "Multiscale feature pyramids",
+    "keywords": [
+      "feature pyramid",
+      "fpn",
+      "lateral connection",
+      "top-down",
+      "multiscale feature",
+      "multi-scale feature",
+      "small object"
+    ],
+    "syllabus_item": "Past-paper cluster: FPN and multiscale detection",
+    "status": "provisional",
+    "question_count": 6,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 3,
+      "ET": 3
+    }
+  },
+  {
+    "week": 6,
+    "id": "w6-segmentation",
+    "name": "Semantic and instance segmentation",
+    "keywords": [
+      "semantic segmentation",
+      "instance segmentation",
+      "pixel-wise",
+      "per-pixel",
+      "dense prediction",
+      "class score grid",
+      "segmentation mask"
+    ],
+    "syllabus_item": "Past-paper cluster: dense pixel classification and instance masks",
+    "status": "provisional",
+    "question_count": 14,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 9,
+      "ET": 5
+    }
+  },
+  {
+    "week": 6,
+    "id": "w6-segnet",
+    "name": "SegNet encoder-decoder segmentation",
+    "keywords": [
+      "segnet",
+      "max unpooling",
+      "pooling indices",
+      "segmentation encoder-decoder",
+      "upsampling",
+      "semantic segmentation",
+      "decoder"
+    ],
+    "syllabus_item": "Past-paper cluster: pooling indices and upsampling",
+    "status": "provisional",
+    "question_count": 59,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 40,
+      "ET": 19
+    }
+  },
+  {
+    "week": 6,
+    "id": "w6-motion",
+    "name": "Optical flow and image registration",
+    "keywords": [
+      "optical flow",
+      "dense registration",
+      "image registration",
+      "motion estimation",
+      "weighted squared difference",
+      "motion field",
+      "flow estimation"
+    ],
+    "syllabus_item": "Past-paper cluster: optical flow and dense registration",
+    "status": "provisional",
+    "question_count": 3,
+    "exam_counts": {
+      "Q1": 2,
+      "Q2": 0,
+      "ET": 1
+    }
+  },
+  {
+    "week": 7,
+    "id": "w7-rnn-basics",
+    "name": "Recurrent networks and sequence architectures",
+    "keywords": [
+      "recurrent neural",
+      "recurrent_neural",
+      "rnn",
+      "hidden state",
+      "sequence modeling",
+      "recurrent weight",
+      "many-to-one",
+      "many-to-many"
+    ],
+    "syllabus_item": "Past-paper cluster: RNN states, sequence topologies and parameter counts",
+    "status": "provisional",
+    "question_count": 101,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 86,
+      "ET": 15
+    }
+  },
+  {
+    "week": 7,
+    "id": "w7-rnn-training",
+    "name": "Recurrent training and gradient dynamics",
+    "keywords": [
+      "backpropagation through time",
+      "bptt",
+      "gradient clipping",
+      "recurrent jacobian",
+      "vanishing gradient",
+      "exploding gradient",
+      "orthogonal initialization"
+    ],
+    "syllabus_item": "Past-paper cluster: BPTT, vanishing/exploding gradients and clipping",
+    "status": "provisional",
+    "question_count": 16,
+    "exam_counts": {
+      "Q1": 2,
+      "Q2": 9,
+      "ET": 5
+    }
+  },
+  {
+    "week": 7,
+    "id": "w7-gated-rnn",
+    "name": "LSTM and GRU gating",
+    "keywords": [
+      "lstm",
+      "gru",
+      "gated recurrent",
+      "long short-term",
+      "update gate",
+      "reset gate",
+      "candidate hidden",
+      "gating mechanism"
+    ],
+    "syllabus_item": "Past-paper cluster: LSTM and GRU cells",
+    "status": "provisional",
+    "question_count": 28,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 24,
+      "ET": 4
+    }
+  },
+  {
+    "week": 7,
+    "id": "w7-sequence-attention",
+    "name": "Encoder-decoder attention",
+    "keywords": [
+      "additive attention",
+      "dot-product attention",
+      "bahdanau",
+      "alignment score",
+      "context vector",
+      "attention weight",
+      "encoder-decoder rnn"
+    ],
+    "syllabus_item": "Past-paper cluster: alignment, softmax and context vectors",
+    "status": "provisional",
+    "question_count": 46,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 42,
+      "ET": 4
+    }
+  },
+  {
+    "week": 7,
+    "id": "w7-hard-soft-attention",
+    "name": "Soft and hard attention",
+    "keywords": [
+      "soft attention",
+      "hard attention",
+      "reinforce",
+      "differentiable attention",
+      "variance reduction",
+      "spatial attention",
+      "attention inference"
+    ],
+    "syllabus_item": "Past-paper cluster: differentiability and policy gradients",
+    "status": "provisional",
+    "question_count": 14,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 10,
+      "ET": 4
+    }
+  },
+  {
+    "week": 7,
+    "id": "w7-captioning",
+    "name": "Recurrent image captioning and evaluation",
+    "keywords": [
+      "image captioning",
+      "caption",
+      "bleu",
+      "bidirectional rnn",
+      "vision language",
+      "cnn feature maps",
+      "sequence generation"
+    ],
+    "syllabus_item": "Past-paper cluster: visual features, captions and BLEU",
+    "status": "provisional",
+    "question_count": 37,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 13,
+      "ET": 24
+    }
+  },
+  {
+    "week": 8,
+    "id": "w8-probabilistic-generative",
+    "name": "Generative models and KL divergence",
+    "keywords": [
+      "generative model",
+      "discriminative model",
+      "kl divergence",
+      "kullback-leibler",
+      "relative entropy",
+      "maximum likelihood",
+      "generative classifier",
+      "bayes"
+    ],
+    "syllabus_item": "Past-paper cluster: likelihood, Bayes and KL divergence",
+    "status": "provisional",
+    "question_count": 17,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 13,
+      "ET": 4
+    }
+  },
+  {
+    "week": 8,
+    "id": "w8-autoencoders",
+    "name": "Autoencoder representations",
+    "keywords": [
+      "autoencoder",
+      "denoising autoencoder",
+      "linear autoencoder",
+      "principal component analysis",
+      "pca",
+      "reconstruction",
+      "compression"
+    ],
+    "syllabus_item": "Past-paper cluster: autoencoders, PCA and denoising",
+    "status": "provisional",
+    "question_count": 27,
+    "exam_counts": {
+      "Q1": 8,
+      "Q2": 5,
+      "ET": 14
+    }
+  },
+  {
+    "week": 8,
+    "id": "w8-vae",
+    "name": "Variational autoencoders",
+    "keywords": [
+      "variational autoencoder",
+      "vae",
+      "reparameterization",
+      "elbo",
+      "gaussian prior",
+      "latent variable",
+      "latent vector",
+      "variational inference"
+    ],
+    "syllabus_item": "Past-paper cluster: ELBO, latent sampling and reparameterization",
+    "status": "provisional",
+    "question_count": 30,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 8,
+      "ET": 22
+    }
+  },
+  {
+    "week": 8,
+    "id": "w8-gan-basics",
+    "name": "GAN objectives and equilibrium",
+    "keywords": [
+      "generative adversarial",
+      "gan",
+      "generator",
+      "discriminator",
+      "minimax",
+      "nash equilibrium",
+      "adversarial training",
+      "vanilla gan"
+    ],
+    "syllabus_item": "Past-paper cluster: generator, discriminator and minimax games",
+    "status": "provisional",
+    "question_count": 15,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 5,
+      "ET": 10
+    }
+  },
+  {
+    "week": 8,
+    "id": "w8-metric-learning",
+    "name": "Metric learning and face verification",
+    "keywords": [
+      "metric learning",
+      "siamese",
+      "triplet loss",
+      "contrastive loss",
+      "face verification",
+      "face identification",
+      "ranking loss",
+      "anchor sample"
+    ],
+    "syllabus_item": "Past-paper cluster: Siamese networks, contrastive and triplet losses",
+    "status": "provisional",
+    "question_count": 10,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 5,
+      "ET": 5
+    }
+  },
+  {
+    "week": 8,
+    "id": "w8-generative-evaluation",
+    "name": "Generative model evaluation",
+    "keywords": [
+      "frechet inception distance",
+      "fid",
+      "sample diversity",
+      "sample fidelity",
+      "mode collapse",
+      "disentangled representation",
+      "mutual information gap"
+    ],
+    "syllabus_item": "Past-paper cluster: FID, diversity and representation quality",
+    "status": "provisional",
+    "question_count": 6,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 1,
+      "ET": 5
+    }
+  },
+  {
+    "week": 9,
+    "id": "w9-self-attention",
+    "name": "Self-attention and QKV projections",
+    "keywords": [
+      "self-attention",
+      "self attention",
+      "query-key",
+      "query vectors",
+      "key vectors",
+      "value vector",
+      "scaled dot-product",
+      "token interactions"
+    ],
+    "syllabus_item": "Past-paper cluster: query, key, value and scaled dot products",
+    "status": "provisional",
+    "question_count": 29,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 5,
+      "ET": 24
+    }
+  },
+  {
+    "week": 9,
+    "id": "w9-transformer-blocks",
+    "name": "Transformer encoders and decoders",
+    "keywords": [
+      "transformer architecture",
+      "transformer encoder",
+      "transformer decoder",
+      "multi-head attention",
+      "cross-attention",
+      "causal self-attention",
+      "feed-forward"
+    ],
+    "syllabus_item": "Past-paper cluster: multi-head, causal and cross-attention",
+    "status": "provisional",
+    "question_count": 23,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 2,
+      "ET": 21
+    }
+  },
+  {
+    "week": 9,
+    "id": "w9-positional-encoding",
+    "name": "Token and positional representations",
+    "keywords": [
+      "positional encoding",
+      "positional embedding",
+      "token embedding",
+      "position embedding",
+      "permutation invariance",
+      "sequence of vectors",
+      "input embedding"
+    ],
+    "syllabus_item": "Past-paper cluster: embeddings, position and permutation",
+    "status": "provisional",
+    "question_count": 8,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 1,
+      "ET": 7
+    }
+  },
+  {
+    "week": 9,
+    "id": "w9-vit",
+    "name": "Vision transformers",
+    "keywords": [
+      "vision transformer",
+      "visual transformer",
+      "vit",
+      "patch token",
+      "image patch",
+      "patch embedding",
+      "patch flattening",
+      "isotropic architecture"
+    ],
+    "syllabus_item": "Past-paper cluster: patches, projections and vision backbones",
+    "status": "provisional",
+    "question_count": 8,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 0,
+      "ET": 8
+    }
+  },
+  {
+    "week": 9,
+    "id": "w9-detr",
+    "name": "Transformer object detection",
+    "keywords": [
+      "detr",
+      "detection transformer",
+      "transformer-based object detection",
+      "global self-attention",
+      "small object detection",
+      "multiscale feature maps",
+      "object queries"
+    ],
+    "syllabus_item": "Past-paper cluster: DETR and small-object limitations",
+    "status": "provisional",
+    "question_count": 2,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 0,
+      "ET": 2
+    }
+  },
+  {
+    "week": 10,
+    "id": "w10-progressive-gan",
+    "name": "Progressive and style-based GANs",
+    "keywords": [
+      "progressive gan",
+      "progan",
+      "progressive growing",
+      "style-gan",
+      "stylegan",
+      "minibatch standard deviation",
+      "coarse-to-fine"
+    ],
+    "syllabus_item": "Past-paper cluster: ProGAN and StyleGAN",
+    "status": "provisional",
+    "question_count": 4,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 0,
+      "ET": 4
+    }
+  },
+  {
+    "week": 10,
+    "id": "w10-gan-pathologies",
+    "name": "GAN diversity and failure modes",
+    "keywords": [
+      "mode collapse",
+      "sample diversity",
+      "generator",
+      "discriminator",
+      "minimax",
+      "gan training",
+      "implicit density"
+    ],
+    "syllabus_item": "Past-paper cluster: mode collapse and sample diversity",
+    "status": "provisional",
+    "question_count": 7,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 2,
+      "ET": 5
+    }
+  },
+  {
+    "week": 10,
+    "id": "w10-vq-vae",
+    "name": "Vector-quantized autoencoders",
+    "keywords": [
+      "vq-vae",
+      "vector quantized",
+      "vector quantization",
+      "discrete latent",
+      "codebook",
+      "generative autoencoder",
+      "latent representation"
+    ],
+    "syllabus_item": "Past-paper cluster: discrete latent codebooks",
+    "status": "provisional",
+    "question_count": 11,
+    "exam_counts": {
+      "Q1": 5,
+      "Q2": 0,
+      "ET": 6
+    }
+  },
+  {
+    "week": 10,
+    "id": "w10-diffusion-forward",
+    "name": "Forward diffusion and noise schedules",
+    "keywords": [
+      "diffusion model",
+      "forward diffusion",
+      "noise schedule",
+      "variance schedule",
+      "ddpm",
+      "forward process",
+      "noise variance"
+    ],
+    "syllabus_item": "Past-paper cluster: DDPM forward process and accumulated noise",
+    "status": "provisional",
+    "question_count": 9,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 0,
+      "ET": 9
+    }
+  },
+  {
+    "week": 10,
+    "id": "w10-diffusion-reverse",
+    "name": "Reverse diffusion and guidance",
+    "keywords": [
+      "reverse diffusion",
+      "reverse denoising",
+      "classifier-free guidance",
+      "classifier free guidance",
+      "guidance scale",
+      "denoising timestep",
+      "conditional denoising"
+    ],
+    "syllabus_item": "Past-paper cluster: denoising and classifier-free guidance",
+    "status": "provisional",
+    "question_count": 7,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 0,
+      "ET": 7
+    }
+  },
+  {
+    "week": 10,
+    "id": "w10-style-transfer",
+    "name": "Neural style transfer",
+    "keywords": [
+      "neural style transfer",
+      "style transfer",
+      "style loss",
+      "gram matrix",
+      "feature map cross-correlation",
+      "stylenet",
+      "content loss"
+    ],
+    "syllabus_item": "Past-paper cluster: Gram matrices and style loss",
+    "status": "provisional",
+    "question_count": 3,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 2,
+      "ET": 1
+    }
+  },
+  {
+    "week": 11,
+    "id": "w11-self-supervised",
+    "name": "Self-supervised objectives and pretext tasks",
+    "keywords": [
+      "self-supervised",
+      "self supervised",
+      "pretext task",
+      "frame sequence prediction",
+      "representation learning",
+      "unlabeled",
+      "pretraining"
+    ],
+    "syllabus_item": "Past-paper cluster: self-supervision and pretext tasks",
+    "status": "provisional",
+    "question_count": 17,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 0,
+      "ET": 17
+    }
+  },
+  {
+    "week": 11,
+    "id": "w11-contrastive",
+    "name": "Contrastive representation learning",
+    "keywords": [
+      "infonce",
+      "simclr",
+      "moco",
+      "momentum contrast",
+      "contrastive learning",
+      "temperature",
+      "positive pair",
+      "negative pair"
+    ],
+    "syllabus_item": "Past-paper cluster: InfoNCE, SimCLR and MoCo",
+    "status": "provisional",
+    "question_count": 5,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 0,
+      "ET": 5
+    }
+  },
+  {
+    "week": 11,
+    "id": "w11-few-shot",
+    "name": "Few-shot and low-data adaptation",
+    "keywords": [
+      "few-shot",
+      "few shot",
+      "meta-learning",
+      "low-data",
+      "novel class",
+      "adaptation",
+      "few examples"
+    ],
+    "syllabus_item": "Past-paper cluster: few-shot and meta-learning",
+    "status": "provisional",
+    "question_count": 2,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 0,
+      "ET": 2
+    }
+  },
+  {
+    "week": 11,
+    "id": "w11-clip",
+    "name": "CLIP and image-text contrastive alignment",
+    "keywords": [
+      "clip",
+      "clipscore",
+      "image-text contrastive",
+      "contrastive language-image",
+      "zero-shot classification",
+      "cosine similarity",
+      "vision-language alignment"
+    ],
+    "syllabus_item": "Past-paper cluster: CLIP, zero-shot classification and CLIPScore",
+    "status": "provisional",
+    "question_count": 9,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 0,
+      "ET": 9
+    }
+  },
+  {
+    "week": 11,
+    "id": "w11-vision-language-tasks",
+    "name": "Vision-language tasks and retrieval",
+    "keywords": [
+      "vision-language",
+      "vision language",
+      "multimodal learning",
+      "cross-modal image retrieval",
+      "visual question answering",
+      "vqa",
+      "multimodal object detection"
+    ],
+    "syllabus_item": "Past-paper cluster: image-text retrieval and VQA",
+    "status": "provisional",
+    "question_count": 18,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 2,
+      "ET": 16
+    }
+  },
+  {
+    "week": 12,
+    "id": "w12-blip",
+    "name": "BLIP architecture and objectives",
+    "keywords": [
+      "blip",
+      "image-grounded text",
+      "image grounded text",
+      "image-text matching",
+      "image-text contrastive",
+      "multimodal pretraining",
+      "autoregressive text"
+    ],
+    "syllabus_item": "Past-paper cluster: image-grounded encoders and decoders, ITC/ITM/language modeling",
+    "status": "provisional",
+    "question_count": 24,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 0,
+      "ET": 24
+    }
+  },
+  {
+    "week": 12,
+    "id": "w12-promptable-segmentation",
+    "name": "Promptable segmentation and SAM",
+    "keywords": [
+      "segment anything",
+      "sam",
+      "promptable segmentation",
+      "prompt-based segmentation",
+      "sa-1b",
+      "zero-shot generalization",
+      "image annotation"
+    ],
+    "syllabus_item": "Past-paper cluster: Segment Anything and annotation",
+    "status": "provisional",
+    "question_count": 3,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 0,
+      "ET": 3
+    }
+  },
+  {
+    "week": 12,
+    "id": "w12-adversarial-robustness",
+    "name": "Adversarial examples and attacks",
+    "keywords": [
+      "adversarial robustness",
+      "adversarial perturbation",
+      "fgsm",
+      "fast gradient sign",
+      "projected gradient descent",
+      "carlini",
+      "white-box",
+      "black-box"
+    ],
+    "syllabus_item": "Past-paper cluster: FGSM, PGD and white/black-box attacks",
+    "status": "provisional",
+    "question_count": 4,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 0,
+      "ET": 4
+    }
+  },
+  {
+    "week": 12,
+    "id": "w12-foundation-models",
+    "name": "Multimodal foundation models and conditioning",
+    "keywords": [
+      "foundation model",
+      "multimodal transformer",
+      "multimodal foundation",
+      "prompt encoding",
+      "task conditioning",
+      "vision-to-language",
+      "multimodal fusion"
+    ],
+    "syllabus_item": "Past-paper cluster: visual-language foundation models and prompts",
+    "status": "provisional",
+    "question_count": 6,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 0,
+      "ET": 6
+    }
+  },
+  {
+    "week": 12,
+    "id": "w12-multimodal-decoding",
+    "name": "Multimodal generation and decoding",
+    "keywords": [
+      "image-grounded text decoder",
+      "multimodal decoder",
+      "autoregressive generation",
+      "causal decoder",
+      "language modeling loss",
+      "cross-attention",
+      "decode prompt"
+    ],
+    "syllabus_item": "Past-paper cluster: grounded decoding and language modeling",
+    "status": "provisional",
+    "question_count": 10,
+    "exam_counts": {
+      "Q1": 0,
+      "Q2": 2,
+      "ET": 8
+    }
+  }
+]
