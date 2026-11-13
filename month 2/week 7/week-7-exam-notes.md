@@ -100,7 +100,7 @@ Clipping limits the credit for a repeated candidate n-gram to its maximum count 
 
 ## Executable verification
 
-Run this complete program with `uv run python <script.py` from the repository root. It verifies the numerical examples above, including the scalar additive attention and clipping calculation.
+Run this complete program with `uv run python <script.py>` from the repository root. It verifies the numerical examples above, including the scalar additive attention and clipping calculation.
 
 ```python
 import math
