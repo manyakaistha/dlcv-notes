@@ -5,3 +5,7 @@
 ## Week 5 — separable-convolution totals
 
 The source keys for Q261 (2025T2 Q2, ID `6406531333816`) and Q156 (2025T3 Q2, ID `6406531815751`) give 12,544 parameters, which is the depthwise stage only ($7^2\cdot256$); the stem asks for depthwise-separable convolution, whose depthwise-plus-pointwise total is 143,616. The source keys for Q262 (ID `6406531333817`) and Q157 (ID `6406531815752`) give 1,254,400 MACs, also the depthwise stage only; total depthwise-plus-pointwise cost is 14,361,600 MACs. The question bank retains every source key and marks each mismatch. Values independently evaluated with `uv run python` using $P_{dw}=k^2M$, $P_{pw}=MN$, $C_{dw}=D_f^2k^2M$, and $C_{pw}=D_f^2MN$.
+
+## da5006_2025T2_Q2_NA · Q240 · ID 6406531333791
+
+The source key gives 28%. Both boxes have area 144, their intersection is 64, and the union is 224; IoU is 64/224 × 100 = 28.571428...%, which rounds to 29% to the nearest whole percent. The source states 28 without a tolerance.
