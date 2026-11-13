@@ -205,3 +205,12 @@ where $\mathcal{L}_{\text{cls}}$ is log cross-entropy loss over predicted class 
 **Question**: How does YOLO differ fundamentally from the R-CNN family in its approach to Object Detection?  
 **Model Answer**:  
 The R-CNN family (R-CNN, Fast R-CNN, Faster R-CNN) uses a **two-stage pipeline**: first proposing candidate regions of interest (via Selective Search or an RPN), and then classifying and refining those proposals. In contrast, **YOLO (You Only Look Once)** is a **single-stage detector** that completely eliminates region proposals. It reframes detection as a **single unified regression problem**: the image is divided into an $S \times S$ grid, and in a single forward pass, each grid cell directly predicts bounding box coordinates, confidence scores, and class probabilities simultaneously. This yields ultra-fast real-time inference (45–155 FPS) with a slight trade-off in small object localization precision.
+
+
+## High-frequency exam traps (from PYQs)
+
+> [!WARNING]
+> **Depthwise stage versus complete separable convolution:** For input channels $M$, output channels $N$, kernel width $k$, and feature-map width $D$, depthwise quantities are $k^2M$ parameters and $D^2k^2M$ MACs. Pointwise quantities are $MN$ parameters and $D^2MN$ MACs. A question asking for the *separable convolution total* requires summing both stages; several source keys in the PYQs report only the depthwise component despite asking for the total.
+
+> [!CAUTION]
+> **CAM versus Grad-CAM assumptions:** Original CAM requires a compatible classifier architecture with global average pooling before the linear class layer. Grad-CAM uses gradients of a target score with respect to convolutional feature maps and can be applied to a wider range of CNN architectures. Do not transfer CAM's architectural restriction to Grad-CAM or claim that Grad-CAM needs retraining.
