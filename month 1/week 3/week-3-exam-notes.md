@@ -199,3 +199,8 @@ Find the fused inference weight $w_{\text{fused}}$ and bias $b_{\text{fused}}$ s
   3. Fused bias:
      $$b_{\text{fused}} = \beta + \frac{\gamma (b - \mu_{\text{run}})}{\sqrt{\sigma_{\text{run}}^2}} = 0.2 + \frac{1.5 (1.0 - 3.0)}{2.0} = 0.2 + \frac{1.5(-2.0)}{2.0} = 0.2 - 1.5 = -1.3$$
   - **Answer:** $w_{\text{fused}} = 1.5, \quad b_{\text{fused}} = -1.3$.
+
+## High-frequency exam traps (from PYQs)
+
+- **Validation and test sets have different jobs.** Use the validation set for model or hyperparameter selection; keep the test set untouched until the final evaluation. Repeatedly selecting against test performance leaks information and makes the reported generalization estimate optimistic.
+- **Tensor reductions change shape as well as value.** For a mean over a specified axis, determine whether that axis is removed or retained (`keepdim=True`) before comparing output shapes; a correct numeric mean with the wrong rank is still an incorrect tensor answer.
