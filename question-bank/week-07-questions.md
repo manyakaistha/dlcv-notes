@@ -774,7 +774,8 @@ Which of the following techniques help control the exploding or vanishing gradie
 **Correct answer:** **A**, **C**, **D** — Gradient clipping; Use Long Short-Term Memory (LSTM); Use data augmentation methods (for example, reversing the input sequence).  
 **Source evidence:** Option 6406534756448 is rendered in green text (#008000) with a checkmark icon. Option 6406534756450 is rendered in green text (#008000) with a checkmark icon. Option 6406534756451 is rendered in green text (#008000) with a checkmark icon. (PDF page 12).
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Clipping limits large gradients, and LSTM gates create paths that can preserve information; these support the keyed choices.  
+Reversing a source sequence can shorten relevant dependencies in some encoder–decoder tasks, but random reversal is not a general gradient remedy. The proposed ReLU/sigmoid roles in B or statement 2 are incorrect.
 
 ### da5006_2025T3_ET_FN · Q19 · 1 marks · ID 6406531862833
 
@@ -800,7 +801,8 @@ Which techniques help mitigate exploding/vanishing gradients in RNNs? (Select al
 **Correct answer:** **A**, **B**, **C** — Gradient clipping ; Orthogonal or identity initialization of recurrent weights ; Using LSTM/GRU cells.  
 **Source evidence:** Option A (6406536034973) rendered in green font (color 0x008000) with green checkmark icon (xref 1374 at y=618.07..630.07) in source PDF; Option B (6406536034974) rendered in green font (color 0x008000) with green checkmark icon (xref 1374 at y=638.89..650.89) in source PDF; Option C (6406536034975) rendered in green font (color 0x008000) with green checkmark icon (xref 1374 at y=659.71..671.71) in source PDF.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Clipping limits explosions, orthogonal initialization can preserve norms initially, and gates provide a longer-lived state path.  
+Random sequence reversal is not a general solution and may change the task; hence D is excluded.
 
 ### da5006_2026T1_ET_FN · Q15 · 2 marks · ID 6406532136830
 
@@ -826,7 +828,8 @@ Vanishing gradients in vanilla RNNs occur mainly due to:
 **Correct answer:** **B** — Repeated multiplication by Jacobians across timesteps.  
 **Source evidence:** Option ID 6406536959530 rendered in green text (#008000) with checkmark icon (xref 1692) on PDF page 5.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Backpropagation multiplies the Jacobians of successive recurrent transitions; repeated contraction can shrink the gradient exponentially.  
+B identifies this mechanism; the distracting alternatives do not explain the recurrent product.
 
 ### da5006_2026T2_ET_FN · Q26 · 3 marks · ID 6406532270065
 
@@ -854,7 +857,8 @@ Select all correct statements .
 **Correct answer:** **A**, **B**, **C** — Recurrent models can process ordered sequences of visual features.; Backpropagation through a recurrent model propagates gradient information across unrolled timesteps.; LSTMs and GRUs use gating mechanisms..  
 **Source evidence:** Option ID 6406537379099 rendered in green text (#008000) with checkmark icon (xref 2581) on PDF page 9.; Option ID 6406537379100 rendered in green text (#008000) with checkmark icon (xref 2581) on PDF page 9.; Option ID 6406537379101 rendered in green text (#008000) with checkmark icon (xref 2581) on PDF page 9.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Visual features may be processed in temporal order, BPTT traverses the unrolled graph, and LSTM/GRU gates regulate state.  
+A, B and C hold; D fails because a temporal model can depend on frame order.
 
 ### da5006_2025T1_Q2_NA · Q253 · 2 marks · ID 6406531168227
 
@@ -885,7 +889,8 @@ Which of the following techniques help control the exploding or vanishing gradie
 **Correct answer:** **B** — 1, 3, and 4; but not 2.  
 **Source evidence:** Option 6406533939989 marked with green checkmark icon and green text (color 0x8000), PDF page 6.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Clipping limits large gradients, and LSTM gates create paths that can preserve information; these support the keyed choices.  
+Reversing a source sequence can shorten relevant dependencies in some encoder–decoder tasks, but random reversal is not a general gradient remedy. The proposed ReLU/sigmoid roles in B or statement 2 are incorrect.
 
 ### da5006_2025T2_Q2_NA · Q245 · 2 marks · ID 6406531333796
 
@@ -915,7 +920,8 @@ Which of the following techniques help mitigate the vanishing gradient problem i
 **Correct answer:** **B** — 2 and 3 only  
 **Source evidence:** Green option ID text 6406534459627 and text '2 and 3 only' with green check icon at [119.02, 363.63, 131.02, 375.63].
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** ReLU can avoid sigmoid saturation on its active branch, while LSTM gates can maintain information across longer paths.  
+Thus B is the intended choice: clipping limits large gradients but does not restore vanished ones; neither technique guarantees success.
 
 ### da5006_2025T2_Q2_NA · Q246 · 2 marks · ID 6406531333797
 
@@ -945,7 +951,8 @@ Which of the following techniques help mitigate the exploding gradient problem i
 **Correct answer:** **B** — 1 and 3 only  
 **Source evidence:** Green option ID text 6406534459631 and text '1 and 3 only' with green check icon at [119.02, 648.93, 131.02, 660.93].
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Clipping directly bounds the backpropagated gradient, while gating can help regulate recurrent dynamics.  
+B is the intended choice; sigmoid saturation may reduce local derivatives but does not ensure global stability and can worsen vanishing gradients.
 
 ### da5006_2025T3_Q2_NA · Q141 · 2 marks · ID 6406531815733
 
@@ -976,7 +983,8 @@ Which of the following techniques help mitigate the vanishing gradient problem i
 **Correct answer:** **B** — 2 and 3 only.  
 **Source evidence:** Option B (6406535903128) in green text (0x8000) with check icon, PDF page 6.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** ReLU can avoid sigmoid saturation on its active branch, while LSTM gates can maintain information across longer paths.  
+Thus B is the intended choice: clipping limits large gradients but does not restore vanished ones; neither technique guarantees success.
 
 ### da5006_2025T3_Q2_NA · Q142 · 2 marks · ID 6406531815734
 
@@ -1007,7 +1015,8 @@ Which of the following techniques help mitigate the exploding gradient problem i
 **Correct answer:** **B** — 1 and 3 only.  
 **Source evidence:** Option B (6406535903132) in green text (0x8000) with check icon, PDF page 6.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Clipping directly bounds the backpropagated gradient, while gating can help regulate recurrent dynamics.  
+B is the intended choice; sigmoid saturation may reduce local derivatives but does not ensure global stability and can worsen vanishing gradients.
 
 ### da5006_2025T3_Q2_NA · Q147 · 3 marks · ID 6406531815738
 
@@ -1033,7 +1042,8 @@ Which techniques help mitigate exploding/vanishing gradients in RNNs? (Select al
 **Correct answer:** **A**, **B**, **C** — Gradient clipping; Orthogonal or identity initialization of recurrent weights; Using LSTM/GRU cells.  
 **Source evidence:** Option A (6406535903147) in green text (0x8000) with check icon, PDF page 8.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Clipping limits explosions, orthogonal initialization can preserve norms initially, and gates provide a longer-lived state path.  
+Random sequence reversal is not a general solution and may change the task; hence D is excluded.
 
 ### da5006_2026T1_Q2_NA · Q14 · 1 marks · ID 6406532040101
 
@@ -1059,7 +1069,8 @@ Vanishing gradients in vanilla RNNs are largely caused by:
 **Correct answer:** **B** — Repeated multiplication by Jacobians whose spectral norm is often < 1.  
 **Source evidence:** Green option text (0x8000) and check icon (xref 1768) for Option ID 6406536642534, PDF page 6.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Backpropagation multiplies the Jacobians of successive recurrent transitions; repeated contraction can shrink the gradient exponentially.  
+B identifies this mechanism; the distracting alternatives do not explain the recurrent product.
 
 ### da5006_2026T2_Q2_NA · Q14 · 2 marks · ID 6406532194393
 
@@ -1085,7 +1096,8 @@ Vanishing gradients in vanilla RNNs are largely caused by:
 **Correct answer:** **B** — Repeated multiplication by Jacobians whose spectral norm is often < 1.  
 **Source evidence:** Option B (6406537126067) is rendered in green font (#008000) with a checkmark icon (xref 1714).
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Backpropagation multiplies the Jacobians of successive recurrent transitions; repeated contraction can shrink the gradient exponentially.  
+B identifies this mechanism; the distracting alternatives do not explain the recurrent product.
 
 ## Topic: LSTM and GRU gating
 
@@ -1135,7 +1147,8 @@ Compared with a basic recurrent update, the gating mechanisms in LSTMs and GRUs 
 **Correct answer:** **B** — Regulate information retention and update across timesteps.  
 **Source evidence:** Option ID 6406537379064 rendered in green text (#008000) with checkmark icon (xref 2581) on PDF page 6.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Gates control how much information is retained and how much is replaced by new content across timesteps.  
+B captures this function; C is false because gated recurrence generally depends on sequence order.
 
 ### da5006_2025T1_Q2_NA · Q262 · 1 marks · ID 6406531168237
 
@@ -1162,7 +1175,8 @@ Hidden state $h_{t-1}$ —
 **Correct answer:** `4`  
 **Source evidence:** Official answer '4' in Possible Answers field with green text (color 0x8000), PDF page 10.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Label 4 enters the cell along the horizontal state path and is the previous hidden state $h_{t-1}$.  
+It feeds the gates and the retained-state branch.
 
 ### da5006_2025T1_Q2_NA · Q263 · 1 marks · ID 6406531168238
 
@@ -1178,7 +1192,8 @@ Hidden state $h_t$ —
 **Correct answer:** `6`  
 **Source evidence:** Official answer '6' in Possible Answers field with green text (color 0x8000), PDF page 10.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Label 6 leaves the final addition and is the current state $h_t$.  
+It combines retained previous state with candidate content.
 
 ### da5006_2025T1_Q2_NA · Q264 · 1 marks · ID 6406531168239
 
@@ -1194,7 +1209,8 @@ Current Input $x_t$ —
 **Correct answer:** `3`  
 **Source evidence:** Official answer '3' in Possible Answers field with green text (color 0x8000), PDF page 11.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Label 3 enters from below as the current input $x_t$.  
+The input feeds gate and candidate computations.
 
 ### da5006_2025T1_Q2_NA · Q265 · 1 marks · ID 6406531168240
 
@@ -1210,7 +1226,8 @@ Update gate $z_t$ —
 **Correct answer:** `1`  
 **Source evidence:** Official answer '1' in Possible Answers field with green text (color 0x8000), PDF page 11.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Label 1 is the sigmoid gate feeding the mixture and its complementary branch.  
+In this diagram it is the update gate $z_t$.
 
 ### da5006_2025T1_Q2_NA · Q266 · 1 marks · ID 6406531168241
 
@@ -1226,7 +1243,8 @@ Reset gate $r_t$ —
 **Correct answer:** `2`  
 **Source evidence:** Official answer '2' in Possible Answers field with green text (color 0x8000), PDF page 11.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Label 2 is the sigmoid gate multiplying the incoming hidden-state path before the candidate computation.  
+That gate is the reset gate $r_t$.
 
 ### da5006_2025T1_Q2_NA · Q267 · 1 marks · ID 6406531168242
 
@@ -1242,7 +1260,8 @@ New hidden state content $\tilde{h}_t$ —
 **Correct answer:** `5`  
 **Source evidence:** Official answer '5' in Possible Answers field with green text (color 0x8000), PDF page 12.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Label 5 is the tanh output supplying candidate content to the final mixture.  
+It is $\tilde h_t$, not the already mixed state $h_t$.
 
 ### da5006_2025T2_Q2_NA · Q253 · 0.66 marks · ID 6406531333806
 
@@ -1264,7 +1283,8 @@ Hidden state ht−1______________
 **Correct answer:** `4`  
 **Source evidence:** Official answer '4' in Possible Answers field on PDF page 10 with green text.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Label 4 enters the cell along the horizontal state path and is the previous hidden state $h_{t-1}$.  
+It feeds the gates and the retained-state branch.
 
 ### da5006_2025T2_Q2_NA · Q254 · 0.66 marks · ID 6406531333807
 
@@ -1282,7 +1302,8 @@ Hidden state ht_____________
 **Correct answer:** `6`  
 **Source evidence:** Official answer '6' in Possible Answers field on PDF page 10 with green text.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Label 6 leaves the final addition and is the current state $h_t$.  
+It combines retained previous state with candidate content.
 
 ### da5006_2025T2_Q2_NA · Q255 · 0.67 marks · ID 6406531333808
 
@@ -1300,7 +1321,8 @@ Current Input xt________________
 **Correct answer:** `3`  
 **Source evidence:** Official answer '3' in Possible Answers field on PDF page 10 with green text.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Label 3 enters from below as the current input $x_t$.  
+The input feeds gate and candidate computations.
 
 ### da5006_2025T2_Q2_NA · Q256 · 0.67 marks · ID 6406531333809
 
@@ -1318,7 +1340,8 @@ Update gate zt_______________
 **Correct answer:** `1`  
 **Source evidence:** Official answer '1' in Possible Answers field on PDF page 11 with green text.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Label 1 is the sigmoid gate feeding the mixture and its complementary branch.  
+In this diagram it is the update gate $z_t$.
 
 ### da5006_2025T2_Q2_NA · Q257 · 0.67 marks · ID 6406531333810
 
@@ -1336,7 +1359,8 @@ Reset gate rt ______________
 **Correct answer:** `2`  
 **Source evidence:** Official answer '2' in Possible Answers field on PDF page 11 with green text.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Label 2 is the sigmoid gate multiplying the incoming hidden-state path before the candidate computation.  
+That gate is the reset gate $r_t$.
 
 ### da5006_2025T2_Q2_NA · Q258 · 0.67 marks · ID 6406531333811
 
@@ -1354,7 +1378,8 @@ New hidden state content eh____________
 **Correct answer:** `5`  
 **Source evidence:** Official answer '5' in Possible Answers field on PDF page 11 with green text.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Label 5 is the tanh output supplying candidate content to the final mixture.  
+It is $\tilde h_t$, not the already mixed state $h_t$.
 
 ### da5006_2025T3_Q2_NA · Q148 · 0.5 marks · ID 6406531815741
 
@@ -1378,7 +1403,8 @@ Hidden state $h_{t-1} = \text{___}$
 **Correct answer:** `4`  
 **Source evidence:** Green text (0x8000) under Possible Answers : 4, PDF page 9.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Label 4 enters the cell along the horizontal state path and is the previous hidden state $h_{t-1}$.  
+It feeds the gates and the retained-state branch.
 
 ### da5006_2025T3_Q2_NA · Q149 · 0.5 marks · ID 6406531815742
 
@@ -1398,7 +1424,8 @@ Hidden state $h_t = \text{___}$
 **Correct answer:** `6`  
 **Source evidence:** Green text (0x8000) under Possible Answers : 6, PDF page 10.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Label 6 leaves the final addition and is the current state $h_t$.  
+It combines retained previous state with candidate content.
 
 ### da5006_2025T3_Q2_NA · Q150 · 0.5 marks · ID 6406531815743
 
@@ -1418,7 +1445,8 @@ Current Input $x_t = \text{___}$
 **Correct answer:** `3`  
 **Source evidence:** Green text (0x8000) under Possible Answers : 3, PDF page 10.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Label 3 enters from below as the current input $x_t$.  
+The input feeds gate and candidate computations.
 
 ### da5006_2025T3_Q2_NA · Q151 · 0.5 marks · ID 6406531815744
 
@@ -1438,7 +1466,8 @@ Update gate $z_t = \text{___}$
 **Correct answer:** `1`  
 **Source evidence:** Green text (0x8000) under Possible Answers : 1, PDF page 10.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Label 1 is the sigmoid gate feeding the mixture and its complementary branch.  
+In this diagram it is the update gate $z_t$.
 
 ### da5006_2025T3_Q2_NA · Q152 · 1 marks · ID 6406531815745
 
@@ -1458,7 +1487,8 @@ Reset gate $r_t = \text{___}$
 **Correct answer:** `2`  
 **Source evidence:** Green text (0x8000) under Possible Answers : 2, PDF page 10.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Label 2 is the sigmoid gate multiplying the incoming hidden-state path before the candidate computation.  
+That gate is the reset gate $r_t$.
 
 ### da5006_2025T3_Q2_NA · Q153 · 1 marks · ID 6406531815746
 
@@ -1478,7 +1508,8 @@ New hidden state content $\tilde{h}_t = \text{___}$
 **Correct answer:** `5`  
 **Source evidence:** Green text (0x8000) under Possible Answers : 5, PDF page 11.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Label 5 is the tanh output supplying candidate content to the final mixture.  
+It is $\tilde h_t$, not the already mixed state $h_t$.
 
 ## Topic: Encoder-decoder attention
 
