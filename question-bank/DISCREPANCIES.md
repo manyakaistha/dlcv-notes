@@ -33,3 +33,10 @@ The source key gives 28%. Both boxes have area 144, their intersection is 64, an
 - **da5006_2024T1_Q2_NA Q175 (ID 640653766173)**: The initial output is not determined by the premise; zero is only a possible limiting case. No initial discriminator output is fixed by the GAN objective: it depends on initialization and updates. A strong discriminator may assign fakes probabilities near zero.
 
 - **da5006_2024T2_Q2_NA Q134 (ID 640653856582)**: The conventional hinge triplet loss is 0, not the keyed -30. Squared distances are $d(a,p)^2=25$ and $d(a,n)^2=43$. The conventional hinge triplet loss is $\max(0,25-43+12)=0$; even the unhinged expression is $-6$.
+
+
+## Week 2
+
+- `da5006_2024T1_ET_AN`, Q165, ID `640653821591`: source key A says VLAD captures spatial relationships. Standard VLAD aggregates descriptor residuals by visual word without spatial layout, so D is the better answer.
+- `da5006_2026T1_Q1_NA`, Q12, ID `6406531961525`: source key 12 conflicts with the requested sum: 3D translation has 3 degrees of freedom and a 3D affine map has 12, summing to 15.
+- `da5006_2026T1_Q1_NA`, Q15, ID `6406531961528`: source range −6 to −5 conflicts with the eigenvalue calculation, whose normalized difference has magnitude $\sqrt{13}/7 \approx 0.5151$.
