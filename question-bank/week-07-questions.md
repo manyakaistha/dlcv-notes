@@ -2906,7 +2906,8 @@ Which statement is true?
 **Correct answer:** **C** — Self-attention enables direct interactions between any pair of tokens within a layer..  
 **Source evidence:** Green option text (0x8000) and check icon (xref 1768) for Option ID 6406536642539, PDF page 6.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** A self-attention layer can connect a query directly to every permitted key, so C is correct for unmasked global attention.  
+A is false: the original Transformer uses attention rather than recurrent state updates; causal masks can restrict individual interactions.
 
 ### da5006_2026T1_Q2_NA · Q24 · 1 marks · ID 6406532040111
 
@@ -2924,7 +2925,8 @@ What is $\alpha_3$ (the attention weight for $k_3$)? Provide a value in a reason
 **Source evidence:** Green text in 'Possible Answers : 0.64 to 0.69', PDF page 9.
 
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The three dot products are $1,2,3$, giving $\alpha_3=20.09/(2.72+7.39+20.09)\approx0.66523$.  
+The softmax denominator includes all three exponentials.
 
 ### da5006_2026T2_Q2_NA · Q10 · 1 marks · ID 6406532194394
 
@@ -2952,7 +2954,8 @@ Which statement is true?
 **Correct answer:** **C** — Self-attention enables direct interactions between any pair of tokens within a layer..  
 **Source evidence:** Option C (6406537126072) is rendered in green font (#008000) with a checkmark icon (xref 1714).
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** A self-attention layer can connect a query directly to every permitted key, so C is correct for unmasked global attention.  
+A is false: the original Transformer uses attention rather than recurrent state updates; causal masks can restrict individual interactions.
 
 ### da5006_2026T2_Q2_NA · Q23 · 4 marks · ID 6406532194403
 
@@ -2970,7 +2973,8 @@ What is α3 (the attention weight for k3)? Provide a value in a reasonable range
 **Source evidence:** Source key specifies Possible Answers : 0.6 to 0.69 (Answers Type : Range, green font #008000).
 
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The three dot products are $1,2,3$, giving $\alpha_3=20.09/(2.72+7.39+20.09)\approx0.66523$.  
+The softmax denominator includes all three exponentials.
 
 ## Topic: Soft and hard attention
 
@@ -3026,7 +3030,8 @@ Which of the following statements are true? (Select all possible correct options
 **Correct answer:** **A**, **C** — A, C  
 **Source evidence:** Option 6406533045047 has green label (#008000) and checkmark icon. (PDF page 14).
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Flattening spatial positions of an $m	imes n	imes c$ feature map gives $mn$ vectors in $\mathbb R^c$, supporting A; attention weights can offer a limited interpretive signal, supporting C.  
+D is false because denoising autoencoders target the clean input; attention weights alone do not prove causal explanations.
 
 ### da5006_2024T1_Q2_NA · Q152 · 2 marks · ID 640653766159
 
@@ -3052,7 +3057,8 @@ Which of the following is true regarding Hard Attention and Soft Attention?
 **Correct answer:** **A**, **B**, **D** — Soft Attention is smooth and differentiable; Variance reduction techniques are used to train Hard Attention models; The inference (test time) overhead is low in Hard Attention when compared to Soft Attention models  
 **Source evidence:** Green option text (0x8000) and check icon (xref 18) for Option ID 6406532564211, PDF page 4; Green option text (0x8000) and check icon (xref 18) for Option ID 6406532564212, PDF page 4; Green option text (0x8000) and check icon (xref 18) for Option ID 6406532564214, PDF page 4.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Soft attention forms a differentiable weighted sum; stochastic hard attention can use score-function estimators and variance reduction.  
+A, B and D reflect the usual sparse-inference comparison; C is not generally true because dense soft attention aggregates all locations.
 
 ### da5006_2024T1_Q2_NA · Q163 · 2 marks · ID 640653766160
 
@@ -3094,7 +3100,8 @@ Consider an attention model for the image captioning task. At a particular time 
 **Correct answer:** **A** — $\frac{v_1 + 3v_3}{4}, v_3$  
 **Source evidence:** Green check icon (xref 18) next to Option ID 6406532564215, PDF page 10.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The soft context is $0.25v_1+0.75v_3$; choosing the highest-weight location gives $v_3$.  
+A matches that argmax convention; D reverses the weights. Stochastic hard attention can also sample $v_1$, so the hard result is not uniquely determined without an inference rule.
 
 ### da5006_2024T2_Q2_NA · Q131 · 2 marks · ID 640653856607
 
@@ -3140,7 +3147,8 @@ $$\frac{3v_1 + v_4}{4}, v_1$$
 **Correct answer:** **D** — \frac{3v_1 + v_4}{4}, v_1.  
 **Source evidence:** Green check icon beside option ID 6406532878540 on page 8.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The weighted sum is $0.75v_1+0.25v_4$, and the maximum-weight location is $v_1$.  
+D matches an argmax hard-attention rule; A reverses the coefficients. Sampling instead of argmax can select $v_4$.
 
 ### da5006_2024T2_Q2_NA · Q145 · 2 marks · ID 640653856606
 
@@ -3167,7 +3175,10 @@ Which of the following is true regarding Hard Attention and Soft Attention?
 **Source evidence:** Green check icon beside option ID 6406532878533 on page 13; Green check icon beside option ID 6406532878535 on page 14.
 
 
-**Worked explanation:** Pending independent analysis.
+> [!WARNING] The key includes C, but soft attention is not generally cheaper than sparse hard attention on large inputs; cost depends on the implementation. The otherwise identical papers also key A and D.
+
+**Worked explanation:** Soft attention is differentiable, supporting A; a sparse hard selection can reduce inference aggregation, supporting D under that implementation.  
+C is not a general property: dense soft attention commonly examines all locations, so its cost cannot be assumed lower; the keyed selection conflicts with this comparison.
 
 ### da5006_2024T3_Q2_NA · Q151 · 2 marks · ID 6406531031084
 
@@ -3193,7 +3204,8 @@ Which of the following is true regarding Hard Attention and Soft Attention?
 **Correct answer:** **A**, **D**  
 **Source evidence:** Green check icons and green text on Option IDs `6406533487257` and `6406533487260`, PDF page 10.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Soft attention is differentiable, and selecting a sparse location can reduce downstream inference computation.  
+Thus A and D fit the usual comparison; C is not generally true because dense attention aggregates all locations, and actual cost depends on scoring and implementation.
 
 ### da5006_2025T1_Q2_NA · Q259 · 2 marks · ID 6406531168233
 
@@ -3219,7 +3231,8 @@ Which of the following is true regarding Hard Attention and Soft Attention?
 **Correct answer:** **A**, **D**  
 **Source evidence:** Options 6406533940010 and 6406533940013 marked with green checkmark icons and green text (color 0x8000), PDF page 8.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Soft attention is differentiable, and selecting a sparse location can reduce downstream inference computation.  
+Thus A and D fit the usual comparison; C is not generally true because dense attention aggregates all locations, and actual cost depends on scoring and implementation.
 
 ### da5006_2025T2_Q2_NA · Q248 · 3 marks · ID 6406531333799
 
@@ -3245,7 +3258,10 @@ Which of the following is true regarding Hard Attention and Soft Attention?
 **Correct answer:** **A, C, D** — Soft Attention is smooth and differentiable; Soft Attention is computationally cheaper than Hard Attention when the source input is large; The inference (test time) overhead is low in Hard Attention when compared to Soft Attention models.  
 **Source evidence:** Green option ID text 6406534459638 and text 'Soft Attention is smooth and differentiable' with green check icon at [119.02, 331.94, 131.02, 343.94].; Green option ID text 6406534459640 and text 'Soft Attention is computationally cheaper than Hard Attention when the source input is large' with green check icon at [119.02, 373.58, 131.02, 385.58].; Green option ID text 6406534459641 and text 'The inference (test time) overhead is low in Hard Attention when compared to Soft Attention models' with green check icon at [119.02, 410.72, 131.02, 422.72].
 
-**Worked explanation:** Pending independent analysis.
+> [!WARNING] The key includes C, but soft attention is not generally cheaper than sparse hard attention on large inputs; cost depends on the implementation. The otherwise identical papers also key A and D.
+
+**Worked explanation:** Soft attention is differentiable, supporting A; a sparse hard selection can reduce inference aggregation, supporting D under that implementation.  
+C is not a general property: dense soft attention commonly examines all locations, so its cost cannot be assumed lower; the keyed selection conflicts with this comparison.
 
 ### da5006_2025T3_Q2_NA · Q145 · 3 marks · ID 6406531815736
 
@@ -3271,7 +3287,8 @@ Which of the following is true regarding Hard Attention and Soft Attention?
 **Correct answer:** **A**, **D** — Soft Attention is smooth and differentiable; The inference (test time) overhead is low in Hard Attention when compared to Soft Attention models.  
 **Source evidence:** Option A (6406535903139) in green text (0x8000) with check icon, PDF page 8.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Soft attention is differentiable, and selecting a sparse location can reduce downstream inference computation.  
+Thus A and D fit the usual comparison; C is not generally true because dense attention aggregates all locations, and actual cost depends on scoring and implementation.
 
 ### da5006_2026T1_Q2_NA · Q18 · 1 marks · ID 6406532040105
 
@@ -3297,7 +3314,8 @@ Which statements are true ?
 **Correct answer:** **A**, **B**, **D** — Soft attention is differentiable and can be trained with backpropagation; Hard attention often needs sampling + REINFORCE (or similar) due to non-differentiability; Cross-attention can align decoder queries to encoder keys/values (e.g., words attending to image regions)..  
 **Source evidence:** Green option text (0x8000) and check icon (xref 1768) for Option ID 6406536642549, PDF page 7; Green option text (0x8000) and check icon (xref 1768) for Option ID 6406536642550, PDF page 7; Green option text (0x8000) and check icon (xref 1768) for Option ID 6406536642552, PDF page 7.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Soft attention supports backpropagation; discrete hard selection may use a score-function estimator; cross-attention connects queries to another sequence.  
+A, B and D hold; the absolute computation claim in C is not generally valid.
 
 ### da5006_2026T2_Q2_NA · Q17 · 3 marks · ID 6406532194397
 
@@ -3323,7 +3341,8 @@ Which statements are true?
 **Correct answer:** **A, B, D** — Soft attention is differentiable and can be trained with backpropagation. / Hard attention often needs sampling + REINFORCE (or similar) due to non-differentiability. / Cross-attention can align decoder queries to encoder keys/values (e.g., words attending to image regions)..  
 **Source evidence:** Option A (6406537126082) is rendered in green font (#008000) with a checkmark icon (xref 1714).; Option B (6406537126083) is rendered in green font (#008000) with a checkmark icon (xref 1714).; Option D (6406537126085) is rendered in green font (#008000) with a checkmark icon (xref 1714).
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Soft attention supports backpropagation; discrete hard selection may use a score-function estimator; cross-attention connects queries to another sequence.  
+A, B and D hold; the absolute computation claim in C is not generally valid.
 
 ## Topic: Recurrent image captioning and evaluation
 
@@ -3398,7 +3417,8 @@ vi) VAE
 **Correct answer:** **B** — 1 → v, 2 → i, 3 → vi, 4 → iii.  
 **Source evidence:** Option ID 6406532757371 rendered in green text (#008000) and accompanied by checkmark icon (xref 19) at PDF page 14.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** BLEU measures generated text against references, convolution uses shared filters, and VAEs use a KL term; these match v, i and vi.  
+B is the given matching, with image captioning paired to “StyleNet” by elimination; the latter name is ambiguous without a model definition, and BLEU is not restricted to RNNs.
 
 ### da5006_2024T2_ET_AN · Q275 · 2 marks · ID 640653904308
 
@@ -3426,7 +3446,8 @@ Which one of the following statements is true?
 **Correct answer:** **D** — None of these  
 **Source evidence:** Option 6406533045046 is rendered in green text (#008000) with a checkmark icon. (PDF page 14).
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Attention can use bidirectional states, captioning can be trained end-to-end, and a standard Transformer does not require recurrent connections.  
+Therefore A, B and C are false and D is the true option.
 
 ### da5006_2024T3_ET_AN · Q204 · 2 marks · ID 6406531046061
 
@@ -3454,7 +3475,8 @@ Which one of the following statements is false? (Pick the most appropriate one.)
 **Correct answer:** **D** — All of these.  
 **Source evidence:** Option ID 6406533531366 is rendered in green (color #008000) with a checkmark icon.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Attention can use bidirectional states, captioning can be trained end-to-end, and a standard Transformer does not require recurrent connections.  
+All of A, B and C are false, so D is correct for this wording.
 
 ### da5006_2025T2_ET_FN · Q163 · 2 marks · ID 6406531422542
 
@@ -3482,7 +3504,8 @@ Which one of the following statements is true?
 **Correct answer:** **D** — None of these.  
 **Source evidence:** Option 6406534756387 is rendered in green text (#008000) with a checkmark icon. (PDF page 5).
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Attention can use bidirectional states, captioning can be trained end-to-end, and a standard Transformer does not require recurrent connections.  
+Therefore A, B and C are false and D is the true option.
 
 ### da5006_2024T1_Q2_NA · Q167 · 2 marks · ID 640653766171
 
@@ -3523,7 +3546,8 @@ Match the following:
 **Correct answer:** **B** — 1→ v, 2→i, 3 → vi, 4→ iii  
 **Source evidence:** Green option text (0x8000) and check icon (xref 18) for Option ID 6406532564244, PDF page 13.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** BLEU measures generated text against references, convolution uses shared filters, and VAEs use a KL term; these match v, i and vi.  
+B is the given matching, with image captioning paired to “StyleNet” by elimination; the latter name is ambiguous without a model definition, and BLEU is not restricted to RNNs.
 
 ### da5006_2024T2_Q2_NA · Q127 · 2 marks · ID 640653856601
 
@@ -3551,7 +3575,8 @@ Which one of the following statements is false?
 **Correct answer:** **D** — All of these.  
 **Source evidence:** Green check icon beside option ID 6406532878516 on page 6.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Attention can use bidirectional states, captioning can be trained end-to-end, and a standard Transformer does not require recurrent connections.  
+All of A, B and C are false, so D is correct for this wording.
 
 ### da5006_2024T2_Q2_NA · Q132 · 2 marks · ID 640653856608
 
@@ -3592,7 +3617,8 @@ Match the following:
 **Correct answer:** **B** — 1→ v, 2→i, 3 → vi, 4→ iii.  
 **Source evidence:** Green check icon beside option ID 6406532878542 on page 8.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** BLEU measures generated text against references, convolution uses shared filters, and VAEs use a KL term; these match v, i and vi.  
+B is the given matching, with image captioning paired to “StyleNet” by elimination; the latter name is ambiguous without a model definition, and BLEU is not restricted to RNNs.
 
 ### da5006_2024T3_Q2_NA · Q144 · 2 marks · ID 6406531031079
 
@@ -3620,7 +3646,10 @@ Which one of the following statements is false?
 **Correct answer:** **D** — None of these  
 **Source evidence:** Green check icon and green text on Option ID `6406533487240`, PDF page 7.
 
-**Worked explanation:** Pending independent analysis.
+> [!WARNING] The key D says none of A–C is false, but all three are false; the question has multiple valid answers.
+
+**Worked explanation:** Attention can use bidirectional states, captioning can be trained end-to-end, and standard Transformers do not require recurrent connections.  
+Consequently A, B and C are false; the keyed D (“none of these”) contradicts the question and there is no unique correct individual option.
 
 ### da5006_2024T3_Q2_NA · Q146 · 2 marks · ID 6406531031082
 
@@ -3648,7 +3677,8 @@ Which one of the following statements is true?
 **Correct answer:** **D** — None of these  
 **Source evidence:** Green check icon and green text on Option ID `6406533487252`, PDF page 8.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Attention can use bidirectional states, captioning can be trained end-to-end, and a standard Transformer does not require recurrent connections.  
+Therefore A, B and C are false and D is the true option.
 
 ### da5006_2025T1_Q2_NA · Q257 · 2 marks · ID 6406531168232
 
@@ -3676,5 +3706,6 @@ Which one of the following statements is false? (Pick the most appropriate one.)
 **Correct answer:** **D** — All of these.  
 **Source evidence:** Option 6406533940009 marked with green checkmark icon and green text (color 0x8000), PDF page 7.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Attention can use bidirectional states, captioning can be trained end-to-end, and a standard Transformer does not require recurrent connections.  
+All of A, B and C are false, so D is correct for this wording.
 
