@@ -16,7 +16,7 @@ QUESTION_RE = re.compile(
 REQUIRED = {
     "source_paper": str, "question_id": str, "source_number": int,
     "marks": (int, float), "exam_type": str, "primary_week": int,
-    "related_weeks": list, "topic_id": str, "confidence": (int, float),
+    "related_weeks": list, "topic_id": str, "confidence": str,
     "rationale": str, "flag_for_review": bool,
 }
 
@@ -37,10 +37,10 @@ def extract_universe(root):
         text = path.read_text(encoding="utf-8")
         for m in QUESTION_RE.finditer(text):
             number, qid, qtype, marks = m.groups()
-            key = (path.name, qid)
+            key = (path.stem, qid)
             if key in papers:
                 raise ValueError(f"duplicate source question key: {key}")
-            papers[key] = {"source_paper": path.name, "question_id": qid,
+            papers[key] = {"source_paper": path.stem, "question_id": qid,
                            "source_number": int(number), "marks": float(marks),
                            "exam_type": exam.group(1), "source_type": qtype.strip()}
     return papers, declared_total
