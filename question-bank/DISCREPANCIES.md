@@ -67,3 +67,5 @@ The source key gives 28%. Both boxes have area 144, their intersection is 64, an
 ## da5006_2025T2_ET_AN Q105 (ID 6406531431365)
 
 The source key gives 43. Fixed reductions of 0.02 from 0.90 reach 0.06 in 42 steps and 0.04 in 43; 0.05 is not reached exactly. The key is correct if interpreted as the first step at or below 0.05.
+
+- **Week 4 — `da5006_2025T2_ET_FN`, Q184, ID `6406531422573`:** The source key gives `100`; applying the stated output-size formula twice yields `64→31→14` for two 6×6 convolutions with stride 2 and padding 1. The question bank retains the source key and flags the mismatch.

@@ -182,3 +182,9 @@ $$\frac{\partial \mathcal{L}}{\partial x_i} = \frac{\partial \mathcal{L}}{\parti
 ### Q8: Translation Invariance via Weight Sharing
 **Problem**: Define translation invariance and how weight sharing guarantees it.
 - **Answer**: Translation invariance means $f(T(x)) = f(x)$. Weight sharing guarantees **translation equivariance** in convolutional layers ($T(f(x)) = f(T(x))$) because the same filter slides everywhere. Subsequent pooling layers aggregate local spatial responses, pooling out minor translations and producing translation-invariant representations.
+
+## High-frequency exam traps (from PYQs)
+
+1. **Apply the output-size floor at every layer.** For two successive convolutions, do not substitute the original input size into a combined expression and round only once. With $n=64$, $k=6$, $p=1$, and $s=2$, the first output is $\lfloor(64-6+2)/2\rfloor+1=31$; the second is $\lfloor(31-6+2)/2\rfloor+1=14$.
+2. **Separate stored parameters from spatial work.** A standard convolution stores $k^2C_{in}C_{out}$ weights regardless of feature-map height and width, while its MAC count is $H_oW_ok^2C_{in}C_{out}$. For $14\times14\times128 \to 14\times14\times256$ with $3\times3$ kernels, that is 294,912 weights but 57,802,752 MACs; do not call MACs FLOPs unless the question defines one MAC as two FLOPs.
+3. **Follow the bias instruction literally.** If bias is excluded, report only $k^2C_{in}C_{out}$. If there is one bias per output channel, add $C_{out}$; for 32 filters with $3\times3$ kernels and 16 input channels, the count is $3^2\cdot16\cdot32+32=4,640$.
