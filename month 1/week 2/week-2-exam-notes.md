@@ -282,3 +282,11 @@ Using Lowe's standard threshold $r = 10$, determine whether this candidate keypo
   4. Compare with threshold $\frac{(r+1)^2}{r} = \frac{(10+1)^2}{10} = 12.1$:
      $$42.25 > 12.1$$
   - **Answer:** **REJECT.** The eigenvalue ratio $\lambda_1 / \lambda_2$ exceeds $10$; the keypoint lies along an unstable 1D edge boundary rather than a stable corner/blob.
+
+## High-frequency exam traps (from PYQs)
+
+- **Bag of visual words:** A $K$-word codebook produces a $K$-bin image histogram, regardless of the number or dimensionality of the local descriptors. Concatenating $n$ descriptors of dimension $d$ instead produces $nd$ coordinates. Standard VLAD aggregates residuals to visual-word centers; it does not by itself encode where descriptors occurred.
+- **RANSAC sampling:** With inlier fraction $w$, minimal sample size $s$, and independent trials, $(1-w^s)^k$ is the probability of no all-inlier sample after $k$ trials under sampling with replacement. For distinct draws within a sample, use $\binom{I}{s}/\binom{N}{s}$ instead of $w^s$; state the sampling model and rounding.
+- **Geometric parameters:** A 2D translation has 2 degrees of freedom and a general 2D affine map has 6; in 3D the corresponding counts are 3 and 12. An $x$-shear $x'=x+hy$, $y'=y$ has linear matrix $\begin{bmatrix}1&h\\0&1\end{bmatrix}$.
+- **Gaussian composition and octave counts:** Successive Gaussian variances add, $\sigma_{\rm eq}^2=\sigma_1^2+\sigma_2^2$. An octave with $m$ Gaussian levels gives $m-1$ adjacent DoG images; if the number of levels is unspecified, a numerical count is not determined.
+- **Discrete derivatives and source keys:** Read the sign convention in the supplied stencil: adding two center coefficients of $-2$ yields $-4$, whereas the opposite-sign Laplacian gives $+4$. A genuine second-moment matrix is positive semidefinite; a negative eigenvalue means the stated matrix cannot be one. Consult the [question bank](../../question-bank/week-02-questions.md) for source-key discrepancies and under-specified questions.
