@@ -15,3 +15,7 @@ The source key gives 28%. Both boxes have area 144, their intersection is 64, an
 - `da5006_2024T3_ET_AN` Q202 (ID `6406531046055`): The source key cannot be verified: the supplied embeddings have different dimensions and are not normalized. Source key retained.
 - `da5006_2025T2_ET_AN` Q88 (ID `6406531431348`): The keyed 69% is the raw dot product, whereas cosine similarity for the displayed vectors is approximately 96.34%; the vectors are not normalized. Source key retained.
 - `da5006_2025T2_ET_AN` Q100 (ID `6406531431360`): The source key omits A: CLIP uses symmetric cross-entropy on contrastive similarity logits, so A and C are true. Source key retained.
+## Week 9 — source wording and keys
+
+- `da5006_2024T1_ET_AN` Q200–201: keyed 12288 and 64 are respectively input scalar count and patch count, not specified learned self-attention parameter counts. Projection widths are missing.
+- `da5006_2026T1_ET_FN` Q18: key includes B, but self-attention on token sequences is permutation-equivariant, not invariant; positional information breaks that equivariance.
