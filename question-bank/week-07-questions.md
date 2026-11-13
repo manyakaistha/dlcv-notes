@@ -1598,7 +1598,8 @@ Which of the following statements are true? (Select all possible correct options
 **Correct answer:** **B**, **C** — B — When using global attention on temporal data, alignment weights are learnt for encoder hidden representations for all time steps; C — Positional encoding is an important component of the trans-former architecture as it conveys information about order in a given sequence..  
 **Source evidence:** Option ID 6406533531368 is rendered in green (color #008000) with a checkmark icon.; Option ID 6406533531369 is rendered in green (color #008000) with a checkmark icon.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Global attention scores every encoder state, while positional information tells a Transformer about order.  
+B and C are correct; A is false because the usual PCA equivalence requires appropriate linear and loss assumptions, not nonlinear activations.
 
 ### da5006_2025T2_ET_FN · Q162 · 2 marks · ID 6406531422541
 
@@ -1628,7 +1629,8 @@ Let us suppose that you want to build an encoder-decoder recurrent model with at
 **Correct answer:** **C** — Softmax of alignment scores.  
 **Source evidence:** Option 6406534756382 is rendered in green text (#008000) with a checkmark icon. (PDF page 5).
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Softmax gives $\alpha_{ij}=e^{e_{ij}}/\sum_k e^{e_{ik}}$, positive weights that sum to one over source positions.  
+Independent sigmoid scores lack that normalization; the context is their weighted sum of encoder states.
 
 ### da5006_2026T2_ET_FN · Q36 · 4 marks · ID 6406532270075
 
@@ -1647,7 +1649,8 @@ Use $e^1 = 2.718$ and $e^2 = 7.389$. Give three decimals.
 **Correct answer:** `0.730 to 0.732`  
 **Source evidence:** Official text specification: 'Possible Answers : 0.730 to 0.732' on PDF page 13.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The second softmax weight is $7.389/(2.718+7.389)\approx0.731$.  
+The denominator includes both exponentiated scores, not just the larger one.
 
 ### da5006_2024T1_Q2_NA · Q164 · 2 marks · ID 640653766161
 
@@ -1677,7 +1680,8 @@ Let us suppose that you want to build an encoder-decoder recurrent model with at
 **Correct answer:** **B** — Softmax of alignment scores  
 **Source evidence:** Green option text (0x8000) and check icon (xref 18) for Option ID 6406532564220, PDF page 11.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Softmax gives $\alpha_{ij}=e^{e_{ij}}/\sum_k e^{e_{ik}}$, positive weights that sum to one over source positions.  
+Independent sigmoid scores lack that normalization; the context is their weighted sum of encoder states.
 
 ### da5006_2024T1_Q2_NA · Q165 · 2 marks · ID 640653766162
 
@@ -1705,7 +1709,8 @@ Which of the following is not a component of a Transformer network?
 **Correct answer:** **D** — Recurrent Connections  
 **Source evidence:** Green option text (0x8000) and check icon (xref 18) for Option ID 6406532564226, PDF page 12.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The original Transformer uses attention, feed-forward layers, positional encoding, and encoder/decoder stacks without recurrent connections.  
+D is absent; positional encoding instead supplies order information.
 
 ### da5006_2024T2_Q2_NA · Q125 · 2 marks · ID 640653856599
 
@@ -1735,7 +1740,8 @@ Let us suppose that you want to build an encoder-decoder recurrent model with at
 **Correct answer:** **B** — Softmax of alignment scores.  
 **Source evidence:** Green check icon beside option ID 6406532878506 on page 5.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Softmax gives $\alpha_{ij}=e^{e_{ij}}/\sum_k e^{e_{ik}}$, positive weights that sum to one over source positions.  
+Independent sigmoid scores lack that normalization; the context is their weighted sum of encoder states.
 
 ### da5006_2024T3_Q2_NA · Q143 · 2 marks · ID 6406531031078
 
@@ -1765,7 +1771,8 @@ Let us suppose that you want to build an encoder-decoder recurrent model with at
 **Correct answer:** **B** — Softmax of alignment scores  
 **Source evidence:** Green check icon and green text on Option ID `6406533487234`, PDF page 7.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Softmax gives $\alpha_{ij}=e^{e_{ij}}/\sum_k e^{e_{ik}}$, positive weights that sum to one over source positions.  
+Independent sigmoid scores lack that normalization; the context is their weighted sum of encoder states.
 
 ### da5006_2024T3_Q2_NA · Q149 · 2 marks · ID 6406531031086
 
@@ -1803,7 +1810,8 @@ Match the following attention mechanisms to their corresponding alignment score 
 **Correct answer:** **D** — 1→v, 2→iv, 3→iii, 4→i, 5→ii  
 **Source evidence:** Green check icon and green text on Option ID `6406533487268`, PDF page 9.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The given general, cosine, dot, additive and location formulas correspond to v, iv, iii, i and ii respectively.  
+D matches them; A incorrectly identifies the general bilinear score as the plain dot product. These are examples of content/location scoring, not exhaustive definitions.
 
 ### da5006_2025T1_Q2_NA · Q246 · 2 marks · ID 6406531168220
 
@@ -1833,7 +1841,8 @@ Let us suppose that you want to build an encoder-decoder recurrent model with at
 **Correct answer:** **B** — Softmax of alignment scores.  
 **Source evidence:** Option 6406533939961 marked with green checkmark icon and green text (color 0x8000), PDF page 3.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Softmax gives $\alpha_{ij}=e^{e_{ij}}/\sum_k e^{e_{ik}}$, positive weights that sum to one over source positions.  
+Independent sigmoid scores lack that normalization; the context is their weighted sum of encoder states.
 
 ### da5006_2025T1_Q2_NA · Q252 · 2 marks · ID 6406531168226
 
@@ -1871,7 +1880,8 @@ Match the following attention mechanisms to their corresponding alignment score 
 **Correct answer:** **D** — 1→v, 2→iv, 3→iii, 4→i, 5→ii.  
 **Source evidence:** Option 6406533939987 marked with green checkmark icon and green text (color 0x8000), PDF page 5.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The given general, cosine, dot, additive and location formulas correspond to v, iv, iii, i and ii respectively.  
+D matches them; A incorrectly identifies the general bilinear score as the plain dot product. These are examples of content/location scoring, not exhaustive definitions.
 
 ### da5006_2025T2_Q2_NA · Q241 · 2 marks · ID 6406531333792
 
@@ -1897,7 +1907,8 @@ Which one of the following statements is True?
 **Correct answer:** **A** — Attention mechanisms can be applied to the bidirectional RNN model  
 **Source evidence:** Green option ID text 6406534459610 and text 'Attention mechanisms can be applied to the bidirectional RNN model' with green check icon at [119.02, 405.26, 131.02, 417.26].
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** A bidirectional encoder produces hidden states that attention can score and combine, so A is true.  
+B is false: a differentiable captioning model can be trained end-to-end across modalities.
 
 ### da5006_2025T2_Q2_NA · Q244 · 2 marks · ID 6406531333795
 
@@ -1951,7 +1962,8 @@ Match the following attention mechanisms to their corresponding alignment score 
 **Correct answer:** **D** — 1-v, 2-iv, 3-iii, 4-i, 5-ii  
 **Source evidence:** Green option ID text 6406534459625 on PDF page 6 with green check icon at [119.02, 103.65, 131.02, 115.65].
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The given general, cosine, dot, additive and location formulas correspond to v, iv, iii, i and ii respectively.  
+D matches them; A incorrectly identifies the general bilinear score as the plain dot product. These are examples of content/location scoring, not exhaustive definitions.
 
 ### da5006_2025T2_Q2_NA · Q247 · 2 marks · ID 6406531333798
 
@@ -1977,7 +1989,8 @@ Which one of the following statements is false? (Pick the most appropriate one.)
 **Correct answer:** **D** — All of these  
 **Source evidence:** Green option ID text 6406534459637 and text 'All of these' with green check icon at [119.02, 132.74, 131.02, 144.74].
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Attention can use bidirectional RNN states, captioning can be trained end-to-end, and standard Transformers have no recurrent connections.  
+Thus A, B and C are all false, making D the keyed choice.
 
 ### da5006_2025T2_Q2_NA · Q251 · 1 marks · ID 6406531333803
 
@@ -2003,7 +2016,8 @@ Decoder state at time t : _______________
 **Correct answer:** `-1`  
 **Source evidence:** Official answer '-1' in Possible Answers field on PDF page 9 with green text.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** In the common additive-attention convention the alignment for output $t$ uses decoder state $s_{t-1}$.  
+The printed key “−1” denotes the offset: the full time index is $t-1$, not an absolute time of −1.
 
 ### da5006_2025T2_Q2_NA · Q252 · 1 marks · ID 6406531333804
 
@@ -2025,7 +2039,8 @@ Encoder state at time: _______________
 **Correct answer:** `j`  
 **Source evidence:** Official answer 'j' in Possible Answers field on PDF page 9 with green text.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The sum indexes encoder states as $h_j$, so the encoder time index is $j$.  
+The decoder time $t$ is held fixed while $j$ ranges across the source.
 
 ### da5006_2025T2_Q2_NA · Q270 · 0.5 marks · ID 6406531333827
 
@@ -2061,7 +2076,8 @@ e21: _________________
 **Correct answer:** `1`  
 **Source evidence:** Official accepted answer/range '1' in Possible Answers field on PDF page 17 with green text.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The decoder vector $[1,0]$ selects the first coordinate of the corresponding encoder state.  
+The dot product is $1$; the three scores are $[1,0,2]$.
 
 ### da5006_2025T2_Q2_NA · Q271 · 0.5 marks · ID 6406531333828
 
@@ -2081,7 +2097,8 @@ e22: _________________
 **Correct answer:** `0`  
 **Source evidence:** Official accepted answer/range '0' in Possible Answers field on PDF page 17 with green text.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The decoder vector $[1,0]$ selects the first coordinate of the corresponding encoder state.  
+The dot product is $0$; the three scores are $[1,0,2]$.
 
 ### da5006_2025T2_Q2_NA · Q272 · 0.5 marks · ID 6406531333829
 
@@ -2101,7 +2118,8 @@ e23: _________________
 **Correct answer:** `2`  
 **Source evidence:** Official accepted answer/range '2' in Possible Answers field on PDF page 17 with green text.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The decoder vector $[1,0]$ selects the first coordinate of the corresponding encoder state.  
+The dot product is $2$; the three scores are $[1,0,2]$.
 
 ### da5006_2025T2_Q2_NA · Q273 · 0.5 marks · ID 6406531333830
 
@@ -2121,7 +2139,8 @@ Answer the given subquestions:
 **Correct answer:** `0.24 to 0.25`  
 **Source evidence:** Official accepted answer/range '0.24 to 0.25' in Possible Answers field on PDF page 18 with green text.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The score vector is $[1,0,2]$; exponentiating and normalizing gives $[0.24473,0.09003,0.66524]$.  
+The requested component is approximately $0.24473$.
 
 ### da5006_2025T2_Q2_NA · Q274 · 0.5 marks · ID 6406531333831
 
@@ -2141,7 +2160,8 @@ Answer the given subquestions:
 **Correct answer:** `0.09 to 0.1`  
 **Source evidence:** Official accepted answer/range '0.09 to 0.1' in Possible Answers field on PDF page 18 with green text.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The score vector is $[1,0,2]$; exponentiating and normalizing gives $[0.24473,0.09003,0.66524]$.  
+The requested component is approximately $0.09003$.
 
 ### da5006_2025T2_Q2_NA · Q275 · 0.5 marks · ID 6406531333832
 
@@ -2161,7 +2181,8 @@ Answer the given subquestions:
 **Correct answer:** `0.66 to 0.68`  
 **Source evidence:** Official accepted answer/range '0.66 to 0.68' in Possible Answers field on PDF page 18 with green text.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The score vector is $[1,0,2]$; exponentiating and normalizing gives $[0.24473,0.09003,0.66524]$.  
+The requested component is approximately $0.66524$.
 
 ### da5006_2025T2_Q2_NA · Q276 · 0.5 marks · ID 6406531333833
 
@@ -2181,7 +2202,8 @@ c21: _________________
 **Correct answer:** `1.5 to 1.6`  
 **Source evidence:** Official accepted answer/range '1.5 to 1.6' in Possible Answers field on PDF page 19 with green text.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** $c_{2,1}=0.24473(1)+0.09003(0)+0.66524(2)\approx1.57521$.  
+Use the corresponding coordinate of each encoder vector in the weighted sum.
 
 ### da5006_2025T2_Q2_NA · Q277 · 0.5 marks · ID 6406531333834
 
@@ -2201,7 +2223,8 @@ c22: _________________
 **Correct answer:** `2.5 to 2.6`  
 **Source evidence:** Official accepted answer/range '2.5 to 2.6' in Possible Answers field on PDF page 19 with green text.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** $c_{2,2}=0.24473(2)+0.09003(1)+0.66524(3)\approx2.57521$.  
+Use the corresponding coordinate of each encoder vector in the weighted sum.
 
 ### da5006_2025T2_Q2_NA · Q278 · 0.5 marks · ID 6406531333836
 
@@ -2239,7 +2262,8 @@ e21:_________________
 **Correct answer:** `-0.01 to 0.01`  
 **Source evidence:** Official accepted answer/range '-0.01 to 0.01' in Possible Answers field on PDF page 20 with green text.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** For each encoder state, form $W_s s_2+W_h h_j$, apply tanh componentwise, and subtract the second component from the first.  
+The resulting scores are approximately $0.00427, 0.20243, 0.00008$; the requested score is $0.00427$.
 
 ### da5006_2025T2_Q2_NA · Q279 · 0.5 marks · ID 6406531333837
 
@@ -2259,7 +2283,10 @@ e22:_________________
 **Correct answer:** `-0.462`  
 **Source evidence:** Official accepted answer/range '-0.462' in Possible Answers field on PDF page 21 with green text.
 
-**Worked explanation:** Pending independent analysis.
+> [!WARNING] The stated formula and vectors give approximately 0.20243, outside the source-key value or range.
+
+**Worked explanation:** For each encoder state, form $W_s s_2+W_h h_j$, apply tanh componentwise, and subtract the second component from the first.  
+The resulting scores are approximately $0.00427, 0.20243, 0.00008$; the requested score is $0.20243$.
 
 ### da5006_2025T2_Q2_NA · Q280 · 0.5 marks · ID 6406531333838
 
@@ -2279,7 +2306,10 @@ e23:_________________
 **Correct answer:** `0.462`  
 **Source evidence:** Official accepted answer/range '0.462' in Possible Answers field on PDF page 21 with green text.
 
-**Worked explanation:** Pending independent analysis.
+> [!WARNING] The stated formula and vectors give approximately 0.00008, outside the source-key value or range.
+
+**Worked explanation:** For each encoder state, form $W_s s_2+W_h h_j$, apply tanh componentwise, and subtract the second component from the first.  
+The resulting scores are approximately $0.00427, 0.20243, 0.00008$; the requested score is $0.00008$.
 
 ### da5006_2025T2_Q2_NA · Q281 · 0.5 marks · ID 6406531333839
 
@@ -2299,7 +2329,10 @@ Answer the given subquestions:
 **Correct answer:** `0.32 to 0.34`  
 **Source evidence:** Official accepted answer/range '0.32 to 0.34' in Possible Answers field on PDF page 21 with green text.
 
-**Worked explanation:** Pending independent analysis.
+> [!WARNING] The stated formula and vectors give approximately 0.31105, outside the source-key value or range.
+
+**Worked explanation:** Softmax of the three scores $[0.00427, 0.20243, 0.00008]$ yields approximately $[0.31105, 0.37921, 0.30974]$.  
+The requested weight is $0.31105$.
 
 ### da5006_2025T2_Q2_NA · Q282 · 0.5 marks · ID 6406531333840
 
@@ -2319,7 +2352,10 @@ Answer the given subquestions:
 **Correct answer:** `0.22 to 0.24`  
 **Source evidence:** Official accepted answer/range '0.22 to 0.24' in Possible Answers field on PDF page 22 with green text.
 
-**Worked explanation:** Pending independent analysis.
+> [!WARNING] The stated formula and vectors give approximately 0.37921, outside the source-key value or range.
+
+**Worked explanation:** Softmax of the three scores $[0.00427, 0.20243, 0.00008]$ yields approximately $[0.31105, 0.37921, 0.30974]$.  
+The requested weight is $0.37921$.
 
 ### da5006_2025T2_Q2_NA · Q283 · 0.5 marks · ID 6406531333841
 
@@ -2339,7 +2375,10 @@ Answer the given subquestions:
 **Correct answer:** `0.43 to 0.45`  
 **Source evidence:** Official accepted answer/range '0.43 to 0.45' in Possible Answers field on PDF page 22 with green text.
 
-**Worked explanation:** Pending independent analysis.
+> [!WARNING] The stated formula and vectors give approximately 0.30974, outside the source-key value or range.
+
+**Worked explanation:** Softmax of the three scores $[0.00427, 0.20243, 0.00008]$ yields approximately $[0.31105, 0.37921, 0.30974]$.  
+The requested weight is $0.30974$.
 
 ### da5006_2025T2_Q2_NA · Q284 · 0.5 marks · ID 6406531333842
 
@@ -2359,7 +2398,10 @@ c21:_________________
 **Correct answer:** `1.4 to 1.6`  
 **Source evidence:** Official accepted answer/range '1.4 to 1.6' in Possible Answers field on PDF page 22 with green text.
 
-**Worked explanation:** Pending independent analysis.
+> [!WARNING] The stated formula and vectors give approximately 0.93053, outside the source-key value or range.
+
+**Worked explanation:** Combine encoder vectors with weights $[0.31105, 0.37921, 0.30974]$.  
+The resulting context is approximately $[0.93053, 1.93053]$; the requested coordinate is $0.93053$.
 
 ### da5006_2025T2_Q2_NA · Q285 · 0.5 marks · ID 6406531333843
 
@@ -2380,7 +2422,10 @@ c22:_________________
 **Source evidence:** Official accepted answer/range '2.4 to 2.6' in Possible Answers field on PDF page 22 with green text.
 
 
-**Worked explanation:** Pending independent analysis.
+> [!WARNING] The stated formula and vectors give approximately 1.93053, outside the source-key value or range.
+
+**Worked explanation:** Combine encoder vectors with weights $[0.31105, 0.37921, 0.30974]$.  
+The resulting context is approximately $[0.93053, 1.93053]$; the requested coordinate is $1.93053$.
 
 ### da5006_2025T3_Q2_NA · Q137 · 2 marks · ID 6406531815729
 
@@ -2409,7 +2454,8 @@ Which one of the following statements is True?
 **Correct answer:** **A** — Attention mechanisms can be applied to the bidirectional RNN model.  
 **Source evidence:** Option A (6406535903110) in green text (0x8000) with check icon, PDF page 4.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** A bidirectional encoder produces hidden states that attention can score and combine, so A is true.  
+B is false: a differentiable captioning model can be trained end-to-end across modalities.
 
 ### da5006_2025T3_Q2_NA · Q140 · 2 marks · ID 6406531815732
 
@@ -2447,7 +2493,8 @@ Match the following attention mechanisms to their corresponding alignment score 
 **Correct answer:** **D** — 1→v, 2→iv, 3→iii, 4→i,5→ii.  
 **Source evidence:** Option D (6406535903126) in green text (0x8000) with check icon, PDF page 6.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The given general, cosine, dot, additive and location formulas correspond to v, iv, iii, i and ii respectively.  
+D matches them; A incorrectly identifies the general bilinear score as the plain dot product. These are examples of content/location scoring, not exhaustive definitions.
 
 ### da5006_2025T3_Q2_NA · Q143 · 2 marks · ID 6406531815735
 
@@ -2473,7 +2520,8 @@ Which one of the following statements is false? (Pick the most appropriate one.)
 **Correct answer:** **D** — All of these.  
 **Source evidence:** Option D (6406535903138) in green text (0x8000) with check icon, PDF page 7.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Attention can use bidirectional RNN states, captioning can be trained end-to-end, and standard Transformers have no recurrent connections.  
+Thus A, B and C are all false, making D the keyed choice.
 
 ### da5006_2025T3_Q2_NA · Q165 · 0.5 marks · ID 6406531815762
 
@@ -2508,7 +2556,8 @@ $e_{21}:$
 **Correct answer:** `1`  
 **Source evidence:** Green text (0x8000) under Possible Answers : 1, PDF page 17.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The decoder vector $[1,0]$ selects the first coordinate of the corresponding encoder state.  
+The dot product is $1$; the three scores are $[1,0,2]$.
 
 ### da5006_2025T3_Q2_NA · Q166 · 0.5 marks · ID 6406531815763
 
@@ -2528,7 +2577,8 @@ $e_{22}:$
 **Correct answer:** `0`  
 **Source evidence:** Green text (0x8000) under Possible Answers : 0, PDF page 17.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The decoder vector $[1,0]$ selects the first coordinate of the corresponding encoder state.  
+The dot product is $0$; the three scores are $[1,0,2]$.
 
 ### da5006_2025T3_Q2_NA · Q167 · 0.5 marks · ID 6406531815764
 
@@ -2548,7 +2598,8 @@ $e_{23}:$
 **Correct answer:** `2`  
 **Source evidence:** Green text (0x8000) under Possible Answers : 2, PDF page 17.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The decoder vector $[1,0]$ selects the first coordinate of the corresponding encoder state.  
+The dot product is $2$; the three scores are $[1,0,2]$.
 
 ### da5006_2025T3_Q2_NA · Q168 · 0.5 marks · ID 6406531815765
 
@@ -2568,7 +2619,8 @@ $\alpha_{21}:$
 **Correct answer:** `0.24 to 0.25`  
 **Source evidence:** Green text (0x8000) under Possible Answers : 0.24 to 0.25, PDF page 18.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The score vector is $[1,0,2]$; exponentiating and normalizing gives $[0.24473,0.09003,0.66524]$.  
+The requested component is approximately $0.24473$.
 
 ### da5006_2025T3_Q2_NA · Q169 · 0.5 marks · ID 6406531815766
 
@@ -2588,7 +2640,8 @@ $\alpha_{22}:$
 **Correct answer:** `0.09 to 0.1`  
 **Source evidence:** Green text (0x8000) under Possible Answers : 0.09 to 0.1, PDF page 18.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The score vector is $[1,0,2]$; exponentiating and normalizing gives $[0.24473,0.09003,0.66524]$.  
+The requested component is approximately $0.09003$.
 
 ### da5006_2025T3_Q2_NA · Q170 · 0.5 marks · ID 6406531815767
 
@@ -2608,7 +2661,8 @@ $\alpha_{23}:$
 **Correct answer:** `0.66 to 0.68`  
 **Source evidence:** Green text (0x8000) under Possible Answers : 0.66 to 0.68, PDF page 18.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** The score vector is $[1,0,2]$; exponentiating and normalizing gives $[0.24473,0.09003,0.66524]$.  
+The requested component is approximately $0.66524$.
 
 ### da5006_2025T3_Q2_NA · Q171 · 0.5 marks · ID 6406531815768
 
@@ -2628,7 +2682,8 @@ $c_{21}:$
 **Correct answer:** `1.5 to 1.6`  
 **Source evidence:** Green text (0x8000) under Possible Answers : 1.5 to 1.6, PDF page 18.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** $c_{2,1}=0.24473(1)+0.09003(0)+0.66524(2)\approx1.57521$.  
+Use the corresponding coordinate of each encoder vector in the weighted sum.
 
 ### da5006_2025T3_Q2_NA · Q172 · 0.5 marks · ID 6406531815769
 
@@ -2648,7 +2703,10 @@ $c_{22}:$
 **Correct answer:** `2.5 to 2.6`  
 **Source evidence:** Green text (0x8000) under Possible Answers : 2.5 to 2.6, PDF page 19.
 
-**Worked explanation:** Pending independent analysis.
+> [!WARNING] The source range 2.5–2.6 conflicts with the stated vectors; the derived value is approximately 0.84530.
+
+**Worked explanation:** $c_{2,2}=0.24473(0)+0.09003(2)+0.66524(1)\approx0.84530$.  
+Use the corresponding coordinate of each encoder vector in the weighted sum.
 
 ### da5006_2025T3_Q2_NA · Q173 · 0.5 marks · ID 6406531815771
 
@@ -2682,7 +2740,10 @@ $e_{21}:$
 **Correct answer:** `-0.01 to 0.01`  
 **Source evidence:** Green text (0x8000) under Possible Answers : -0.01 to 0.01, PDF page 20.
 
-**Worked explanation:** Pending independent analysis.
+> [!WARNING] The stated formula and vectors give approximately 0.03103, outside the source-key value or range.
+
+**Worked explanation:** For each encoder state, form $W_s s_2+W_h h_j$, apply tanh componentwise, and subtract the second component from the first.  
+The resulting scores are approximately $0.03103, 0.00427, 0.03103$; the requested score is $0.03103$.
 
 ### da5006_2025T3_Q2_NA · Q174 · 0.5 marks · ID 6406531815772
 
@@ -2702,7 +2763,10 @@ $e_{22}:$
 **Correct answer:** `-0.463 to -0.461`  
 **Source evidence:** Green text (0x8000) under Possible Answers : -0.463 to -0.461, PDF page 20.
 
-**Worked explanation:** Pending independent analysis.
+> [!WARNING] The stated formula and vectors give approximately 0.00427, outside the source-key value or range.
+
+**Worked explanation:** For each encoder state, form $W_s s_2+W_h h_j$, apply tanh componentwise, and subtract the second component from the first.  
+The resulting scores are approximately $0.03103, 0.00427, 0.03103$; the requested score is $0.00427$.
 
 ### da5006_2025T3_Q2_NA · Q175 · 0.5 marks · ID 6406531815773
 
@@ -2722,7 +2786,10 @@ $e_{23}:$
 **Correct answer:** `0.461 to 0.463`  
 **Source evidence:** Green text (0x8000) under Possible Answers : 0.461 to 0.463, PDF page 20.
 
-**Worked explanation:** Pending independent analysis.
+> [!WARNING] The stated formula and vectors give approximately 0.03103, outside the source-key value or range.
+
+**Worked explanation:** For each encoder state, form $W_s s_2+W_h h_j$, apply tanh componentwise, and subtract the second component from the first.  
+The resulting scores are approximately $0.03103, 0.00427, 0.03103$; the requested score is $0.03103$.
 
 ### da5006_2025T3_Q2_NA · Q176 · 0.5 marks · ID 6406531815774
 
@@ -2742,7 +2809,8 @@ $\alpha_{21}:$
 **Correct answer:** `0.32 to 0.34`  
 **Source evidence:** Green text (0x8000) under Possible Answers : 0.32 to 0.34, PDF page 21.
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Softmax of the three scores $[0.03103, 0.00427, 0.03103]$ yields approximately $[0.33629, 0.32742, 0.33629]$.  
+The requested weight is $0.33629$.
 
 ### da5006_2025T3_Q2_NA · Q177 · 0.5 marks · ID 6406531815775
 
@@ -2762,7 +2830,10 @@ $\alpha_{22}:$
 **Correct answer:** `0.22 to 0.24`  
 **Source evidence:** Green text (0x8000) under Possible Answers : 0.22 to 0.24, PDF page 21.
 
-**Worked explanation:** Pending independent analysis.
+> [!WARNING] The stated formula and vectors give approximately 0.32742, outside the source-key value or range.
+
+**Worked explanation:** Softmax of the three scores $[0.03103, 0.00427, 0.03103]$ yields approximately $[0.33629, 0.32742, 0.33629]$.  
+The requested weight is $0.32742$.
 
 ### da5006_2025T3_Q2_NA · Q178 · 0.5 marks · ID 6406531815776
 
@@ -2782,7 +2853,10 @@ $\alpha_{23}:$
 **Correct answer:** `0.43 to 0.45`  
 **Source evidence:** Green text (0x8000) under Possible Answers : 0.43 to 0.45, PDF page 21.
 
-**Worked explanation:** Pending independent analysis.
+> [!WARNING] The stated formula and vectors give approximately 0.33629, outside the source-key value or range.
+
+**Worked explanation:** Softmax of the three scores $[0.03103, 0.00427, 0.03103]$ yields approximately $[0.33629, 0.32742, 0.33629]$.  
+The requested weight is $0.33629$.
 
 ### da5006_2025T3_Q2_NA · Q179 · 0.5 marks · ID 6406531815777
 
@@ -2803,7 +2877,8 @@ $c_{21}:$
 **Source evidence:** Header 'Possible Answers :' present at page bottom margin (y=792.65-808.97), but numerical answer range is truncated off page., PDF page 21.
 
 
-**Worked explanation:** Pending independent analysis.
+**Worked explanation:** Combine encoder vectors with weights $[0.33629, 0.32742, 0.33629]$.  
+The resulting context is approximately $[0.66371, 0.66371]$; the requested coordinate is $0.66371$. The source answer is unavailable; **derived answer:** $0.66371$.
 
 ### da5006_2026T1_Q2_NA · Q15 · 1 marks · ID 6406532040102
 

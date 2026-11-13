@@ -45,3 +45,19 @@ The source key gives 28%. Both boxes have area 144, their intersection is 64, an
 - `da5006_2024T1_Q1_NA`, Q163, ID `640653739742`: the key exchanges the horizontal-edge and corner conditions; none of the printed options gives the full correct mapping.
 - `da5006_2024T1_Q1_NA`, Q161, ID `640653739736`: the key marks D false, although lower-dimensional descriptors can work well; other comparative statements are also unqualified.
 - `da5006_2024T1_Q1_NA`, Q164, ID `640653739748`, and `da5006_2024T2_Q1_NA`, Q90, ID `640653829669`: keyed 0.87 versus 0.87890625 with replacement or approximately 0.8975 when each sample is drawn without replacement, assuming independent trials.
+
+## Week 7
+
+- da5006_2025T2_Q2_NA · Q279 · 0.5 marks · ID 6406531333837: The stated formula and vectors give approximately 0.20243, outside the source-key value or range.
+- da5006_2025T2_Q2_NA · Q280 · 0.5 marks · ID 6406531333838: The stated formula and vectors give approximately 0.00008, outside the source-key value or range.
+- da5006_2025T2_Q2_NA · Q281 · 0.5 marks · ID 6406531333839: The stated formula and vectors give approximately 0.31105, outside the source-key value or range.
+- da5006_2025T2_Q2_NA · Q282 · 0.5 marks · ID 6406531333840: The stated formula and vectors give approximately 0.37921, outside the source-key value or range.
+- da5006_2025T2_Q2_NA · Q283 · 0.5 marks · ID 6406531333841: The stated formula and vectors give approximately 0.30974, outside the source-key value or range.
+- da5006_2025T2_Q2_NA · Q284 · 0.5 marks · ID 6406531333842: The stated formula and vectors give approximately 0.93053, outside the source-key value or range.
+- da5006_2025T2_Q2_NA · Q285 · 0.5 marks · ID 6406531333843: The stated formula and vectors give approximately 1.93053, outside the source-key value or range.
+- da5006_2025T3_Q2_NA · Q172 · 0.5 marks · ID 6406531815769: The source range 2.5–2.6 conflicts with the stated vectors; the derived value is approximately 0.84530.
+- da5006_2025T3_Q2_NA · Q173 · 0.5 marks · ID 6406531815771: The stated formula and vectors give approximately 0.03103, outside the source-key value or range.
+- da5006_2025T3_Q2_NA · Q174 · 0.5 marks · ID 6406531815772: The stated formula and vectors give approximately 0.00427, outside the source-key value or range.
+- da5006_2025T3_Q2_NA · Q175 · 0.5 marks · ID 6406531815773: The stated formula and vectors give approximately 0.03103, outside the source-key value or range.
+- da5006_2025T3_Q2_NA · Q177 · 0.5 marks · ID 6406531815775: The stated formula and vectors give approximately 0.32742, outside the source-key value or range.
+- da5006_2025T3_Q2_NA · Q178 · 0.5 marks · ID 6406531815776: The stated formula and vectors give approximately 0.33629, outside the source-key value or range.
