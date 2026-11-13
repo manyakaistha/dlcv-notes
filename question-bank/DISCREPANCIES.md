@@ -9,3 +9,9 @@ The source keys for Q261 (2025T2 Q2, ID `6406531333816`) and Q156 (2025T3 Q2, ID
 ## da5006_2025T2_Q2_NA · Q240 · ID 6406531333791
 
 The source key gives 28%. Both boxes have area 144, their intersection is 64, and the union is 224; IoU is 64/224 × 100 = 28.571428...%, which rounds to 29% to the nearest whole percent. The source states 28 without a tolerance.
+
+## Week 11 — CLIP source questions
+
+- `da5006_2024T3_ET_AN` Q202 (ID `6406531046055`): The source key cannot be verified: the supplied embeddings have different dimensions and are not normalized. Source key retained.
+- `da5006_2025T2_ET_AN` Q88 (ID `6406531431348`): The keyed 69% is the raw dot product, whereas cosine similarity for the displayed vectors is approximately 96.34%; the vectors are not normalized. Source key retained.
+- `da5006_2025T2_ET_AN` Q100 (ID `6406531431360`): The source key omits A: CLIP uses symmetric cross-entropy on contrastive similarity logits, so A and C are true. Source key retained.
