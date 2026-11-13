@@ -1388,7 +1388,8 @@ Select all correct statements:
 
 **Correct answer:** **A**, **B** — Harris corner detector responds strongly where gradient changes in two orthogonal directions.; Difference-of-Gaussians approximates Laplacian-of-Gaussian for blob detection..  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** Harris responds to two strong local gradient directions, and a DoG approximates a scale-normalized LoG.
+SIFT uses gradient histograms rather than raw pixels, while Canny is a designed algorithm rather than data-driven.
 
 ### da5006_2024T1_Q1_NA · Q163 · 2 marks · ID 640653739742
 
@@ -1454,7 +1455,8 @@ Match the Following:
 
 **Correct answer:** **A** — 1→ iii, 2→ i, 3 → ii.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** A flat region changes little in either direction; an edge changes across its normal but little along its tangent; a corner changes in both directions.
+The alternative swapping edge and corner confuses one strong eigenvalue with two.
 
 ### da5006_2024T3_Q1_NA · Q149 · 2 marks · ID 640653994498
 
@@ -1484,7 +1486,8 @@ Match the Following:
 
 **Correct answer:** **A** — 1→ iii, 2→ i, 3 → ii.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** A flat region changes little in either direction; an edge changes across its normal but little along its tangent; a corner changes in both directions.
+The alternative swapping edge and corner confuses one strong eigenvalue with two.
 
 ### da5006_2025T1_Q1_NA · Q166 · 2 marks · ID 6406531130630
 
@@ -1516,7 +1519,8 @@ Match the Following:
 
 **Correct answer:** **A** — 1→ iii, 2→ i, 3 → ii.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** A flat region changes little in either direction; an edge changes across its normal but little along its tangent; a corner changes in both directions.
+The alternative swapping edge and corner confuses one strong eigenvalue with two.
 
 ### da5006_2025T2_Q1_NA · Q170 · 2 marks · ID 6406531279512
 
@@ -1568,7 +1572,8 @@ iii) No Change in all directions
 
 **Correct answer:** **A** — 1 -> iii, 2 -> i, 3 -> ii.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** A flat region changes little in either direction; an edge changes across its normal but little along its tangent; a corner changes in both directions.
+The alternative swapping edge and corner confuses one strong eigenvalue with two.
 
 ## Topic: Scale space, pyramids and filter banks
 
@@ -1593,7 +1598,8 @@ Assume that you have been given an octave of scale-space representation of an im
 
 **Correct answer:** **4**  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** The octave contains $s+3$ Gaussian levels, so adjacent differences produce $s+2$ DoG images.
+The source answer 4 requires $s=2$, which is not specified in this version of the question.
 
 ### da5006_2024T2_ET_AN · Q260 · 2 marks · ID 640653904301
 
@@ -1605,7 +1611,8 @@ Assume that you have been given an octave of scale-space representation of an im
 
 **Correct answer:** `4`  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** The five levels $k^0\sigma_0,\ldots,k^4\sigma_0$ produce one DoG per adjacent pair.
+Therefore $5-1=4$ DoG images are available.
 
 ### da5006_2025T2_ET_AN · Q93 · 2 marks · ID 6406531431353
 
@@ -1639,7 +1646,8 @@ Match the following:
 
 **Correct answer:** **D** — 1→ iii, 2→ i, 3 → ii, 4 →v.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** DoG approximates scale-normalized LoG, scale selection uses a pyramid, filter banks characterize texture, and a Gabor filter combines a Gaussian envelope with a sinusoid.
+The competing mapping of Gabor to a pyramid confuses the filter with a multiscale representation.
 
 ### da5006_2025T2_ET_FN · Q167 · 2 marks · ID 6406531422546
 
@@ -1665,7 +1673,8 @@ Match the following:
 
 **Correct answer:** **D** — 1→ iii, 2→ i, 3 → ii, 4 →v.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** DoG approximates scale-normalized LoG, scale selection uses a pyramid, filter banks characterize texture, and a Gabor filter combines a Gaussian envelope with a sinusoid.
+The competing mapping of Gabor to a pyramid confuses the filter with a multiscale representation.
 
 ### da5006_2026T1_ET_FN · Q7 · 2 marks · ID 6406532136822
 
@@ -1687,7 +1696,8 @@ In classical scale-space theory, increasing $\sigma$ in Gaussian smoothing gener
 
 **Correct answer:** **B** — Suppresses high-frequency details and removes fine structures.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** The Gaussian frequency response $e^{-\sigma^2\|\omega\|^2/2}$ decreases faster at nonzero frequency as $\sigma$ grows.
+Thus fine structure is suppressed; the alternative claiming high-frequency enhancement reverses the effect.
 
 ### da5006_2026T2_ET_FN · Q5 · 2 marks · ID 6406532270044
 
@@ -1717,7 +1727,8 @@ An image is smoothed successively with Gaussian kernels of standard deviations 2
 
 **Correct answer:** **C** — $\sqrt{13}$.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** Convolving Gaussians adds variances: $\sigma^2=2^2+3^2=13$, so $\sigma=\sqrt{13}$.
+Adding standard deviations to obtain 5 is incorrect.
 
 ### da5006_2026T2_ET_FN · Q22 · 3 marks · ID 6406532270061
 
@@ -1741,7 +1752,8 @@ Select all correct statements
 
 **Correct answer:** **A**, **B**, **C** — A normalized averaging filter preserves a constant-valued region away from boundary effects.; Increasing Gaussian scale suppresses progressively finer image structure.; Image pyramids represent image information at multiple spatial scales..  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** A normalized averaging kernel sums to one, a larger Gaussian scale removes fine detail, and pyramids provide multiscale representations.
+Cross-correlation does not flip the kernel; convolution does.
 
 ### da5006_2026T2_ET_FN · Q31 · 4 marks · ID 6406532270070
 
@@ -1749,7 +1761,8 @@ An image is smoothed successively by Gaussian kernels with $\sigma_1=1.2$ and $\
 
 **Correct answer:** `2.0`  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** Gaussian variances add under convolution: $1.2^2+1.6^2=1.44+2.56=4$.
+Taking the square root gives the equivalent standard deviation $2.0$.
 
 ## Topic: Invariant features and geometric descriptors
 
@@ -1825,7 +1838,8 @@ Which property of the SIFT descriptor is primarily responsible for its resilienc
 
 **Correct answer:** **A** — Scale space representation.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** Scale-space detection supports scale invariance, but orientation assignment and normalized gradient histograms contribute rotation and illumination robustness.
+The question attributes several different invariances to one property; scale-space alone does not establish general viewpoint invariance.
 
 ### da5006_2024T1_ET_AN · Q163 · 2 marks · ID 640653821589
 
@@ -1847,7 +1861,8 @@ In the Maximally Stable External Regions (MSER) algorithm, how does the tree str
 
 **Correct answer:** **C** — By organizing regions hierarchically based on stability, facilitating efficient stability analysis..  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** Thresholded connected regions nest as the intensity threshold changes, so a component tree organizes inclusion and allows stability to be compared across thresholds.
+The tree does not give constant-time access to every region, as the competing option claims.
 
 ### da5006_2024T1_ET_AN · Q164 · 2 marks · ID 640653821590
 
@@ -1869,7 +1884,8 @@ In which scenarios is the Random Sample Consensus (RANSAC) algorithm more suitab
 
 **Correct answer:** **A** — When the dataset contains a high percentage of outliers or erroneous data points..  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** RANSAC samples minimal sets and scores consensus, so outliers need not dominate a fit when an all-inlier sample is found.
+Ordinary least squares instead squares residuals and can be pulled strongly by outliers.
 
 ### da5006_2024T1_ET_AN · Q165 · 2 marks · ID 640653821591
 
@@ -1916,7 +1932,8 @@ How does pyramid matching differ from Speeded-Up Robust Features (SURF) in image
 
 **Correct answer:** **A** — Pyramid matching matches images at multiple resolutions using multi-resolution representations, while SURF focuses on detecting and describing local features invariant to scale and rotation..  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** Pyramid matching compares representations at several resolutions; SURF detects and describes local features using scale-space and orientation information.
+A claim of universally greater computational efficiency cannot follow from the methods alone.
 
 ### da5006_2024T2_ET_AN · Q254 · 2 marks · ID 640653904306
 
@@ -1943,7 +1960,8 @@ Which of the following is the correct sequence of steps of the SIFT algorithm?
 
 **Correct answer:** **B** — 5, 1, 3, 2, 4  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** Detect scale-space extrema, refine their position, reject edge-like candidates, assign orientation, and build the descriptor.
+Orientation assignment before localization, as in the competing sequence, lacks the refined keypoint.
 
 ### da5006_2025T2_ET_FN · Q161 · 2 marks · ID 6406531422540
 
@@ -1971,7 +1989,8 @@ Which of the following is the correct sequence of steps of the SIFT algorithm?
 
 **Correct answer:** **B** — 5, 1, 3, 2, 4.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** Detect scale-space extrema, refine their position, reject edge-like candidates, assign orientation, and build the descriptor.
+Orientation assignment before localization, as in the competing sequence, lacks the refined keypoint.
 
 ### da5006_2026T1_ET_FN · Q6 · 2 marks · ID 6406532136821
 
@@ -1993,7 +2012,8 @@ SIFT is designed to be robust mainly to:
 
 **Correct answer:** **A** — Scale and rotation changes.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** SIFT selects a characteristic scale and expresses descriptor orientations relative to a keypoint orientation.
+It is therefore robust to scale and in-plane rotation, but not perfectly invariant to arbitrary affine viewpoint changes.
 
 ### da5006_2026T2_ET_FN · Q6 · 2 marks · ID 6406532270045
 
@@ -2015,7 +2035,8 @@ Which design choice is most directly responsible for the rotation robustness of 
 
 **Correct answer:** **B** — Expressing local gradient orientations relative to an assigned keypoint orientation.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** Subtracting the assigned dominant keypoint orientation puts gradient directions in a local reference frame.
+A scale pyramid alone handles scale selection and does not compensate for image rotation.
 
 ### da5006_2024T1_Q1_NA · Q161 · 2 marks · ID 640653739736
 
@@ -2081,7 +2102,8 @@ Suppose we have a codebook of 2048 SIFT visual words. We extract 1000 SIFT descr
 
 **Correct answer:** **D** — 2048.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** A bag-of-visual-words histogram has one bin for each of the 2048 codebook entries.
+The 128 descriptor coordinates and 1000 extracted features do not determine the histogram length.
 
 ### da5006_2024T1_Q1_NA · Q166 · 2 marks · ID 640653739750
 
@@ -2115,7 +2137,8 @@ Match the following:
 
 **Correct answer:** **D** — 1→ ii, 2→ v, 3 → iv, 4→ iii.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** RANSAC depends on inlier sampling, VLAD aggregates visual-word residuals, inverted indices support retrieval, and optical flow often assumes local motion coherence.
+The competing assignment of optical flow to segmentation does not capture its role of estimating motion.
 
 ### da5006_2024T1_Q1_NA · Q171 · 2 marks · ID 640653739738
 
@@ -2153,7 +2176,8 @@ $a_{11}$ = ____________
 
 **Correct answer:** `1`  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** An $x$-shear of 0.5 has linear matrix $\begin{bmatrix}1&0.5\\0&1\end{bmatrix}$.
+Its upper-left entry is $a_{11}=1$; any translation column does not change this linear coefficient.
 
 ### da5006_2024T1_Q1_NA · Q177 · 0.5 marks · ID 640653739745
 
@@ -2169,7 +2193,8 @@ $a_{12}$ = ____________
 
 **Correct answer:** `0.5`  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** An $x$-shear obeys $x′=x+0.5y$ and $y′=y$.
+The coefficient multiplying $y$ in the first row is $a_{12}=0.5$.
 
 ### da5006_2024T1_Q1_NA · Q178 · 0.5 marks · ID 640653739746
 
@@ -2185,7 +2210,8 @@ $a_{21}$ = ____________
 
 **Correct answer:** `0`  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** An $x$-shear leaves $y$ unchanged: $y′=y$ apart from any specified translation.
+Therefore the coefficient of $x$ in the second row is $a_{21}=0$.
 
 ### da5006_2024T1_Q1_NA · Q179 · 0.5 marks · ID 640653739747
 
@@ -2201,7 +2227,8 @@ $a_{22}$ = ____________
 
 **Correct answer:** `1`  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** For an $x$-shear, $y′=y$ apart from any specified translation.
+Thus the coefficient of $y$ in the second row is $a_{22}=1$.
 
 ### da5006_2024T1_Q1_NA · Q180 · 1 marks · ID 640653739752
 
@@ -2215,7 +2242,8 @@ Enter the correct answer for blank (a) __________.
 
 **Correct answer:** `2`  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** A 2D translation is $(x′,y′)=(x+t_x,y+t_y)$.
+Its two independent displacement components give 2 degrees of freedom.
 
 ### da5006_2024T1_Q1_NA · Q181 · 1 marks · ID 640653739753
 
@@ -2229,7 +2257,8 @@ Enter the correct answer for blank (b) __________.
 
 **Correct answer:** `6`  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** A 2D affine map has four independent entries in its $2\times2$ linear part and two translation components.
+The total number of degrees of freedom is $4+2=6$.
 
 ### da5006_2024T2_Q1_NA · Q87 · 2 marks · ID 640653829654
 
@@ -2256,7 +2285,8 @@ Identify the correct sequence of steps in Scale Invariant Feature Transform (SIF
 
 **Correct answer:** **B** — 3→ 2→ 4→ 1.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** SIFT detects extrema, localizes and filters candidates, assigns orientations, then forms descriptors.
+A descriptor before localization and orientation lacks the stable reference frame it requires.
 
 ### da5006_2024T2_Q1_NA · Q88 · 2 marks · ID 640653829655
 
@@ -2289,7 +2319,8 @@ Match the Following:
 
 **Correct answer:** **C** — 1→ii, 2 → iii , 3→ iv , 4→ i.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** A descriptor summarizes local gradients, localization refines position and scale, extrema are detected using DoG, and orientation comes from local gradients.
+Swapping detection and description confuses candidate selection with representation.
 
 ### da5006_2024T2_Q1_NA · Q90 · 2 marks · ID 640653829669
 
@@ -2333,7 +2364,8 @@ Suppose we have a codebook of 2048 SIFT visual words. We extract 1000 SIFT descr
 
 **Correct answer:** **D** — 2048.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** A bag-of-visual-words histogram has one bin for each of the 2048 codebook entries.
+The 128 descriptor coordinates and 1000 extracted features do not determine the histogram length.
 
 ### da5006_2024T2_Q1_NA · Q92 · 2 marks · ID 640653829671
 
@@ -2367,7 +2399,8 @@ Match the Following:
 
 **Correct answer:** **D** — 1→ ii, 2→ v, 3 → iv, 4→ iii.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** RANSAC depends on inlier sampling, VLAD aggregates visual-word residuals, inverted indices support retrieval, and optical flow often assumes local motion coherence.
+The competing assignment of optical flow to segmentation does not capture its role of estimating motion.
 
 ### da5006_2024T2_Q1_NA · Q106 · 1 marks · ID 640653829665
 
@@ -2389,7 +2422,8 @@ Based on the above data, answer the given subquestions.
 
 **Correct answer:** `1`  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** An $x$-shear of 0.5 has linear matrix $\begin{bmatrix}1&0.5\\0&1\end{bmatrix}$.
+Its upper-left entry is $a_{11}=1$; any translation column does not change this linear coefficient.
 
 ### da5006_2024T2_Q1_NA · Q107 · 1 marks · ID 640653829666
 
@@ -2407,7 +2441,8 @@ Based on the above data, answer the given subquestions.
 
 **Correct answer:** `0.5`  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** An $x$-shear obeys $x′=x+0.5y$ and $y′=y$.
+The coefficient multiplying $y$ in the first row is $a_{12}=0.5$.
 
 ### da5006_2024T2_Q1_NA · Q108 · 1 marks · ID 640653829667
 
@@ -2425,7 +2460,8 @@ Based on the above data, answer the given subquestions.
 
 **Correct answer:** `0`  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** An $x$-shear leaves $y$ unchanged: $y′=y$ apart from any specified translation.
+Therefore the coefficient of $x$ in the second row is $a_{21}=0$.
 
 ### da5006_2024T2_Q1_NA · Q109 · 1 marks · ID 640653829668
 
@@ -2443,7 +2479,8 @@ Based on the above data, answer the given subquestions.
 
 **Correct answer:** `1`  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** For an $x$-shear, $y′=y$ apart from any specified translation.
+Thus the coefficient of $y$ in the second row is $a_{22}=1$.
 
 ### da5006_2024T3_Q1_NA · Q148 · 2 marks · ID 640653994490
 
@@ -2470,7 +2507,8 @@ Identify the correct sequence of steps in Scale Invariant Feature Transform (SIF
 
 **Correct answer:** **B** — 3→ 2→ 4→ 1.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** SIFT detects extrema, localizes and filters candidates, assigns orientations, then forms descriptors.
+A descriptor before localization and orientation lacks the stable reference frame it requires.
 
 ### da5006_2024T3_Q1_NA · Q150 · 2 marks · ID 640653994504
 
@@ -2492,7 +2530,8 @@ Suppose we have a codebook of 2048 SIFT visual words. We extract 1000 SIFT descr
 
 **Correct answer:** **D** — 2048.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** A bag-of-visual-words histogram has one bin for each of the 2048 codebook entries.
+The 128 descriptor coordinates and 1000 extracted features do not determine the histogram length.
 
 ### da5006_2024T3_Q1_NA · Q163 · 0.5 marks · ID 640653994500
 
@@ -2517,7 +2556,8 @@ Answers Type : Equal
 
 **Correct answer:** 1  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** An $x$-shear of 0.5 has linear matrix $\begin{bmatrix}1&0.5\\0&1\end{bmatrix}$.
+Its upper-left entry is $a_{11}=1$; any translation column does not change this linear coefficient.
 
 ### da5006_2024T3_Q1_NA · Q164 · 0.5 marks · ID 640653994501
 
@@ -2530,7 +2570,8 @@ Answers Type : Equal
 
 **Correct answer:** 0.5  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** An $x$-shear obeys $x′=x+0.5y$ and $y′=y$.
+The coefficient multiplying $y$ in the first row is $a_{12}=0.5$.
 
 ### da5006_2024T3_Q1_NA · Q165 · 0.5 marks · ID 640653994502
 
@@ -2543,7 +2584,8 @@ Answers Type : Equal
 
 **Correct answer:** 0  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** An $x$-shear leaves $y$ unchanged: $y′=y$ apart from any specified translation.
+Therefore the coefficient of $x$ in the second row is $a_{21}=0$.
 
 ### da5006_2024T3_Q1_NA · Q166 · 0.5 marks · ID 640653994503
 
@@ -2556,7 +2598,8 @@ Answers Type : Equal
 
 **Correct answer:** 1  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** For an $x$-shear, $y′=y$ apart from any specified translation.
+Thus the coefficient of $y$ in the second row is $a_{22}=1$.
 
 ### da5006_2025T1_Q1_NA · Q165 · 2 marks · ID 6406531130623
 
@@ -2583,7 +2626,8 @@ Identify the correct sequence of steps in Scale Invariant Feature Transform (SIF
 
 **Correct answer:** **B** — 3→ 2→ 4→ 1.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** SIFT detects extrema, localizes and filters candidates, assigns orientations, then forms descriptors.
+A descriptor before localization and orientation lacks the stable reference frame it requires.
 
 ### da5006_2025T1_Q1_NA · Q167 · 2 marks · ID 6406531130636
 
@@ -2605,7 +2649,8 @@ Suppose we have a codebook of 2048 SIFT visual words. We extract 1000 SIFT descr
 
 **Correct answer:** **D** — 2048.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** A bag-of-visual-words histogram has one bin for each of the 2048 codebook entries.
+The 128 descriptor coordinates and 1000 extracted features do not determine the histogram length.
 
 ### da5006_2025T1_Q1_NA · Q184 · 0.5 marks · ID 6406531130632
 
@@ -2625,7 +2670,8 @@ a11= ____________
 
 **Correct answer:** `1`  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** An $x$-shear of 0.5 has linear matrix $\begin{bmatrix}1&0.5\\0&1\end{bmatrix}$.
+Its upper-left entry is $a_{11}=1$; any translation column does not change this linear coefficient.
 
 ### da5006_2025T1_Q1_NA · Q185 · 0.5 marks · ID 6406531130633
 
@@ -2641,7 +2687,8 @@ a12= ____________
 
 **Correct answer:** `0.5`  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** An $x$-shear obeys $x′=x+0.5y$ and $y′=y$.
+The coefficient multiplying $y$ in the first row is $a_{12}=0.5$.
 
 ### da5006_2025T1_Q1_NA · Q186 · 0.5 marks · ID 6406531130634
 
@@ -2657,7 +2704,8 @@ a21= ____________
 
 **Correct answer:** `0`  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** An $x$-shear leaves $y$ unchanged: $y′=y$ apart from any specified translation.
+Therefore the coefficient of $x$ in the second row is $a_{21}=0$.
 
 ### da5006_2025T1_Q1_NA · Q187 · 0.5 marks · ID 6406531130635
 
@@ -2673,7 +2721,8 @@ a22= ____________
 
 **Correct answer:** `1`  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** For an $x$-shear, $y′=y$ apart from any specified translation.
+Thus the coefficient of $y$ in the second row is $a_{22}=1$.
 
 ### da5006_2025T2_Q1_NA · Q163 · 2 marks · ID 6406531279505
 
@@ -2720,7 +2769,8 @@ Identify the correct sequence of steps in Scale Invariant Feature Transform (SIF
 
 **Correct answer:** **B** — 3 -> 2 -> 4 -> 1.  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** SIFT detects extrema, localizes and filters candidates, assigns orientations, then forms descriptors.
+A descriptor before localization and orientation lacks the stable reference frame it requires.
 
 ### da5006_2025T2_Q1_NA · Q189 · 1.5 marks · ID 6406531279528
 
@@ -2734,7 +2784,8 @@ What is the dimensionality of the Bag-of-Words (BoW) feature vector for this ima
 
 **Correct answer:** `1500`  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** A bag-of-words vector has one histogram bin per visual word.
+A codebook of 1500 words therefore yields 1500 dimensions, independent of the number of descriptors.
 
 ### da5006_2025T2_Q1_NA · Q190 · 1.5 marks · ID 6406531279529
 
@@ -2748,7 +2799,8 @@ If instead, you concatenate all the 1200 descriptors into a single vector (witho
 
 **Correct answer:** `153600`  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** Concatenation retains every coordinate of every local descriptor.
+The dimension is $1200\times128=153600$.
 
 ### da5006_2026T1_Q1_NA · Q4 · 1 marks · ID 6406531961523
 
@@ -2770,7 +2822,8 @@ Correct order of SIFT stages is:
 
 **Correct answer:** **B** — Extrema Detection → Localization → Orientation → Descriptor  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** SIFT detects extrema, localizes and filters candidates, assigns orientations, then forms descriptors.
+A descriptor before localization and orientation lacks the stable reference frame it requires.
 
 ### da5006_2026T1_Q1_NA · Q12 · 1 marks · ID 6406531961525
 
@@ -2803,7 +2856,8 @@ Correct order of SIFT stages is:
 
 **Correct answer:** **B** — Extrema Detection → Localization → Orientation → Descriptor  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** SIFT detects extrema, localizes and filters candidates, assigns orientations, then forms descriptors.
+A descriptor before localization and orientation lacks the stable reference frame it requires.
 
 ### da5006_2026T2_Q1_NA · Q11 · 1 marks · ID 6406532166261
 
@@ -2811,7 +2865,8 @@ The degrees of freedom for affine transformations in 3D is __
 
 **Correct answer:** `12`  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** A 3D affine transformation has a $3\times3$ linear matrix and a 3-vector translation.
+Thus it has $9+3=12$ independent coefficients.
 
 ### da5006_2024T1_Q2_NA · Q162 · 2 marks · ID 640653766158
 
@@ -2833,4 +2888,5 @@ What are Haar-like features primarily used for in computer vision?
 
 **Correct answer:** **A** — Object detection  
 
-**Worked explanation:** Pending independent verification.
+**Worked explanation:** Haar-like features compare sums of intensities in adjacent rectangles and are widely used in cascaded object detectors.
+Denoising estimates a cleaner image and is not their primary function in this setting.
