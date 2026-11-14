@@ -18,7 +18,7 @@
     grok: {name:'Grok', base:'https://grok.com/', url:p=>'https://grok.com/?q='+encodeURIComponent(p)+'&autoSubmit=false', note:'Grok shows the prefilled message for you to confirm before sending.'},
     copy: {name:'Copy only', note:'Copies the prompt to your clipboard. Paste it into any AI service you prefer.'}
   };
-  const storageKey='speechtech.study-ai.v1';
+  const storageKey='dlcv.study-ai.v1';
   let preference=null, selection=null, currentPrompt='', settingsMode=false;
   function readPreference(){try{const value=JSON.parse(localStorage.getItem(storageKey));return value?.version===1 && Object.hasOwn(providers,value.provider)?value.provider:null;}catch{return null;}}
   preference=readPreference();
@@ -81,13 +81,13 @@
   function promptFor({heading,text,protected:guard=false,mode='page'}) {
     const topic=heading?titleOf(heading):pageTitle;
     const limited=text.slice(0,6000);
-    return `Act as a patient tutor for an IIT Madras BS Degree course, BSEE4001 Speech Technology (signals and systems, sampling, speech production and perception, MFCCs, Gaussians and GMMs, Markov chains, HMMs, Viterbi, acoustic models). Please explain ${mode==='selection'?'these selected sections':'this topic'} like I am 15 (ELI15). I know basic Python and some school-level maths but I am new to speech processing. Be clear and respectful, not childish.
+    return `Act as a patient tutor for an IIT Madras BS Degree course, DA5006 Deep Learning for Computer Vision (image formation, filtering, neural networks, convolutional networks and visual recognition). Please explain ${mode==='selection'?'these selected sections':'this topic'} like I am 15 (ELI15). I know basic Python and some school-level maths but I am new to computer vision. Be clear and respectful, not childish.
 
 If the excerpt is a past exam question with a worked answer, walk through the worked answer one step at a time, say WHY each step is valid, and point out the most common mistake. Do not just restate the final answer. If anything in the excerpt looks wrong or ambiguous, say so rather than guessing.
 
 Teach in this order:
-1. State the idea in plain language and explain why it matters for speech.
-2. Use one everyday analogy (sound, music, weather, a phone call), then connect it to the technical meaning.
+1. State the idea in plain language and explain why it matters for computer vision.
+2. Use one everyday analogy (images, cameras, or everyday visual perception), then connect it to the technical meaning.
 3. Explain each important term, symbol and formula, including units and array shapes where relevant.
 4. Give a small independent toy example with different numbers, and one common exam trap.
 5. Ask me two short understanding questions and wait for my attempt before giving their answers.

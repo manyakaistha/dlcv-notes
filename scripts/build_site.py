@@ -2,7 +2,7 @@
 # requires-python = ">=3.10"
 # dependencies = ["markdown>=3.6", "pymdown-extensions>=10.8", "beautifulsoup4>=4.12", "pyyaml>=6"]
 # ///
-"""Build the Speech Technology study site (notes + past-year questions) into static HTML.
+"""Build the Deep Learning for Computer Vision study site (notes + past-year questions) into static HTML.
 
 Usage:  uv run scripts/build_site.py --output _site
 
@@ -28,19 +28,20 @@ import yaml
 from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parent.parent
-CONTENT = ROOT / "content"
+CONTENT = ROOT
 ASSETS = ROOT / "site-assets"
-SITE_NAME = "Speech Technology"
-COURSE = "BSEE4001 · IIT Madras BS Degree"
-REPO_URL = "https://github.com/manyakaistha/SpeechTechnology-Notes"
+SITE_NAME = "Deep Learning for Computer Vision"
+COURSE = "DA5006 · IIT Madras BS Degree"
+REPO_URL = "https://github.com/manyakaistha/dlcv-notes"
 
 WEEK_HERO = {
-    1: ("Waves become<br>numbers.", "Sample. Filter. Spectrum."),
-    2: ("How we hear,<br>how we measure.", "Mel. Cepstrum. MFCC."),
-    3: ("Gaussians, clusters<br>and Markov paths.", "Gaussian. GMM. EM."),
-    4: ("Hidden states,<br>best paths.", "HMM. Forward. Viterbi."),
-    5: ("From phones<br>to sentences.", "Lexicon. Acoustic. N-gram."),
+    1: ("Images become<br>numbers.", "Pixels. Filters. Features."),
+    2: ("Find structure<br>in images.", "Edges. Features. Geometry."),
+    3: ("Networks learn<br>representations.", "Layers. Gradients. Learning."),
+    4: ("Convolutions build<br>visual features.", "Kernels. Channels. Pooling."),
+    5: ("Deeper models,<br>richer features.", "Architecture. Training. Recognition."),
 }
+
 THEMES = [
     ("paper", "Paper", "#f3eee4", "#e7462b"),
     ("midnight", "Midnight", "#101b38", "#ff7568"),
@@ -135,11 +136,13 @@ def fix_lists(text: str) -> str:
 def make_wikilinks(pages: dict[str, Page], by_stem: dict[str, Page], src: Page):
     def sub(m: re.Match) -> str:
         target, anchor, alias = m.group(1).strip(), m.group(2) or "", m.group(3)
+        if re.fullmatch(r"[\s,0-9.+-]+", target):
+            return m.group(0)
         stem = posixpath.basename(target.rstrip("/"))
         stem = stem[:-3] if stem.endswith(".md") else stem
         dest = by_stem.get(stem.lower())
         if dest is None:
-            warnings.append(f"{src.rel}: unresolved wikilink [[{m.group(1)}]]")
+            errors.append(f"{src.rel}: unresolved wikilink [[{m.group(1)}]]")
             return alias or stem
         label = (alias or dest.title).replace("[", "(").replace("]", ")")
         href = posixpath.relpath(dest.rel, posixpath.dirname(src.rel) or ".")
@@ -219,12 +222,12 @@ def rewrite_links(soup: BeautifulSoup, page: Page, resolver: Resolver, internal:
         if tgt is None:
             if tag.name == "a":
                 # Course slide decks are intentionally not republished; keep the citation text.
-                warnings.append(f"{page.rel}: dropped link to unpublished file {href}")
+                errors.append(f"{page.rel}: missing link {href}")
                 tag.replace_with(*tag.contents) if tag.contents else tag.decompose()
             else:
                 errors.append(f"{page.rel}: missing resource {href}")
             return
-        new = tgt[:-3] + ".html" if tgt.endswith(".md") else tgt
+        new = resolver.pages[tgt].out if tgt in resolver.pages else tgt
         rel = posixpath.relpath(new, here)
         frag = ("#" + parts.fragment) if parts.fragment else ""
         tag[attr] = quote(rel) + frag
@@ -391,7 +394,7 @@ def shell(*, page_out: str, title: str, description: str, article: str, nav_html
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23f3eee4'/%3E%3Cpath d='M4 16h4l3-8 4 16 4-12 3 8 2-4h4' fill='none' stroke='%23e7462b' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-<script>try {{ const t=localStorage.getItem('speech-lab-theme'); if({theme_ids}.includes(t)) document.documentElement.dataset.theme=t; }} catch {{}}</script>
+<script>try {{ const t=localStorage.getItem('dlcv-lab-theme'); if({theme_ids}.includes(t)) document.documentElement.dataset.theme=t; }} catch {{}}</script>
 <link rel="stylesheet" href="{assets}site.css"><link rel="stylesheet" href="{assets}theme.css"><link rel="stylesheet" href="{assets}navigation.css"><link rel="stylesheet" href="{assets}speech.css">
 <script>window.MathJax={{tex:{{inlineMath:[['\\\\(','\\\\)']],displayMath:[['\\\\[','\\\\]']]}},options:{{ignoreHtmlClass:'tex2jax_ignore',processHtmlClass:'arithmatex'}}}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
@@ -399,12 +402,12 @@ def shell(*, page_out: str, title: str, description: str, article: str, nav_html
 <body data-overview="{str(overview).lower()}" data-root="{root}">
 <div class="reading-progress" aria-hidden="true"></div>
 <a class="skip" href="#main">Skip to content</a><div class="layout">
-<aside class="sidebar"><span class="eyebrow">{COURSE}</span><a class="brand" href="{root}index.html">Speech Technology<br>Notes &amp; Past Papers</a>
+<aside class="sidebar"><span class="eyebrow">{COURSE}</span><a class="brand" href="{root}index.html">Deep Learning for<br>Computer Vision</a>
 <p>Weekly notes, exam-focused guides and every past-year question with a worked answer.</p>
 <details class="palette-panel"><summary>Choose your palette</summary><div class="theme-options">{theme_buttons()}</div><button class="motion-toggle" aria-pressed="true">Pause header motion</button></details>
 <div class="desktop-nav"><input class="search" aria-label="Search notes and questions" placeholder="Search notes &amp; questions…" type="search"><div class="results" aria-live="polite"></div>{nav_html}</div>
 <details class="mobile-menu"><summary>Browse &amp; search</summary><input class="search" aria-label="Search notes and questions" placeholder="Search notes &amp; questions…" type="search"><div class="results" aria-live="polite"></div>{nav_html}</details>
-<footer><span>Speech Technology · {COURSE}</span><br><a href="{REPO_URL}">Source on GitHub ↗</a></footer></aside>
+<footer><span>Deep Learning for Computer Vision · {COURSE}</span><br><a href="{REPO_URL}">Source on GitHub ↗</a></footer></aside>
 <main id="main"><div class="content"><div class="topline">{topline}</div>
 <div class="speech-hero"><canvas aria-hidden="true"></canvas><div class="hero-copy"><span class="hero-kicker">{kicker}</span><p class="hero-title">{hero_title}</p><p class="hero-caption">{hero_caption}</p></div></div>
 {('<span class="section-label">' + section_label + '</span>') if section_label else ''}{toc_html}
@@ -676,10 +679,131 @@ def home_article(pages: dict[str, Page]) -> str:
 """
 
 
+
+# Source-to-URL mapping. Source files remain in their course-vault locations.
+SITE_CONFIG = {"week_dir": "month {month}/week {week}",
+               "notes": "week-{week}-report.md",
+               "guide": "week-{week}-exam-notes.md",
+               "questions": "question-bank/week-{week:02d}-questions.md"}
+def week_paths(n):
+    d = SITE_CONFIG["week_dir"].format(month=(n - 1)//4 + 1, week=n)
+    return [f"{d}/" + SITE_CONFIG[k].format(week=n) for k in ("notes", "guide")] + [SITE_CONFIG["questions"].format(week=n)]
+
+def load_pages():
+    pages = {}
+    for folder in ("month 1", "month 2", "month 3", "question-bank", "notes", "sources", "curriculum"):
+        for path in sorted((ROOT / folder).rglob("*.md")):
+            rel = path.relative_to(ROOT).as_posix()
+            pages[rel] = Page(rel, path.read_text(encoding="utf-8"))
+    for rel in ("Knowledge-Map.md", "exam-study-guide.md", "exam-question-index.md", "PLAN.md"):
+        path = ROOT / rel
+        if path.exists(): pages[rel] = Page(rel, path.read_text(encoding="utf-8"))
+    for n in range(1, 13):
+        for rel, kind in zip(week_paths(n), ("notes", "exam-focused-notes", "exam-questions")):
+            if rel in pages: pages[rel].out = f"week-{n}/week-{n}-{kind}.html"
+    return pages
+
+def week_of(page):
+    m = re.match(r"month \d+/week (\d+)/", page.rel) or re.match(r"question-bank/week-(\d+)-questions", page.rel)
+    return int(m.group(1)) if m else None
+
+def nav_model(pages):
+    start = [("START HERE", "Home", "index.html"), ("QUESTIONS BY TOPIC", "Past-paper topics", "past-paper-topics.html")]
+    for label, name, rel in [("STUDY ROUTE", "Exam study route", "exam-study-guide.md"), ("ALL PAPERS", "Paper &amp; question index", "exam-question-index.md"), ("MAP", "Knowledge map", "Knowledge-Map.md"), ("SCOPE", "Curriculum map", "curriculum/curriculum-map.md")]:
+        if rel in pages: start.append((label, name, pages[rel].out))
+    groups = [("Start", None, start)]
+    for n in range(1, 13):
+        items = [(label, name, pages[rel].out) for rel, label, name in zip(week_paths(n), ("NOTES", "EXAM GUIDE", "PAST PAPERS"), ("Study notes", "Learn &amp; prepare", "Questions &amp; worked answers")) if rel in pages]
+        if items: groups.append((f"Week {n}", n, items))
+    for title, prefix in (("Concepts", "notes/concepts/"), ("Paper archive", "sources/exam-papers/")):
+        groups.append((title, None, [(title.upper(), html.escape(p.title), p.out) for p in sorted(pages.values(), key=lambda p: p.rel) if p.rel.startswith(prefix)]))
+    return groups
+
+def reading_sequence(pages):
+    return ["index.html"] + [target for _, _, items in nav_model(pages) for _, _, target in items if target != "index.html"]
+
+def manifest_data():
+    return (json.loads((ROOT / "classification/final/final-manifest.json").read_text()), {x["id"]: x["name"] for x in json.loads((ROOT / "curriculum/topics.json").read_text())})
+
+def question_lookup(pages):
+    from markdown.extensions.toc import slugify
+    result = {}
+    for n in range(1, 13):
+        rel = week_paths(n)[2]
+        if rel not in pages: continue
+        for heading in re.findall(r"^### (da5006_.*)$", pages[rel].body, re.M):
+            m = re.match(r"(da5006_\S+) · Q(\d+) · .*?ID (\d+)", heading)
+            if m: result[(m[1], int(m[2]), m[3])] = (rel, slugify(heading, "-"))
+    return result
+
+def anchor_topics(pages):
+    manifest, names = manifest_data(); lookup = question_lookup(pages); out = {}
+    for x in manifest:
+        hit = lookup.get((x["source_paper"], int(x["source_number"]), str(x["question_id"])))
+        if hit: out[hit[1]] = [names.get(x["topic_id"], x["topic_id"])]
+    return out
+
+def build_topics_page(pages):
+    manifest, names = manifest_data(); lookup = question_lookup(pages)
+    lines = ["# Past-paper topics", "", "Browse questions by their classified topic. Review flags indicate classifications needing verification.", ""]
+    for n in range(1, 13):
+        lines += [f"## Week {n}", ""]
+        for topic in sorted({x["topic_id"] for x in manifest if x["primary_week"] == n}, key=lambda t: names.get(t, t)):
+            rows = []
+            for x in manifest:
+                if x["primary_week"] != n or x["topic_id"] != topic: continue
+                hit = lookup.get((x["source_paper"], int(x["source_number"]), str(x["question_id"])))
+                if not hit:
+                    errors.append(f"manifest: question missing from week {n}: {x['source_paper']} Q{x['source_number']} ID {x['question_id']}")
+                    continue
+                rel, anchor = hit
+                label = f"{x['source_paper']} Q{x['source_number']} ({x['marks']} marks)" + (" [review]" if x['flag_for_review'] else "")
+                rows.append(f"[{label}]({quote(rel)}#{anchor})")
+            if rows: lines += [f"### {names.get(topic, topic)}", "", " · ".join(rows), ""]
+    return Page("past-paper-topics.md", "\n".join(lines), virtual=True)
+
+def annotate_questions(soup, page, a2t, report):
+    children = list(soup.children); starts = []
+    for i, h in enumerate(children):
+        if getattr(h, "name", None) == "h3" and re.match(r"da5006_\S+ · Q\d+", h.get_text(" ", strip=True)):
+            starts.append((i, h))
+    items = []
+    for j, (i, h) in enumerate(starts):
+        end = starts[j+1][0] if j+1 < len(starts) else len(children)
+        nodes = []
+        for node in children[i:end]:
+            if node is not h and getattr(node, "name", None) in ("h2", "hr"): break
+            nodes.append(node)
+        label = h.get_text(" ", strip=True); year = re.search(r"(20\d{2})T\d", label)
+        stem = " ".join(x.get_text(" ", strip=True) for x in nodes[1:] if getattr(x, "name", None) in ("p", "li") and not x.find("img"))
+        items.append({"nodes": nodes, "anchor": h.get("id", ""), "year": year.group(1) if year else "", "label": label, "topics": a2t.get(h.get("id", ""), ["Other"]), "stem": norm_stem(stem[:800])})
+    if not items: return
+    group_duplicates(items)
+    for it in items:
+        wrap = soup.new_tag("div", attrs={"class":"qitem", "data-year":it["year"], "data-topics":"|".join(it["topics"]), "data-group":str(it["group"]), "data-label":it["label"], "data-qid":it["anchor"]})
+        it["nodes"][0].insert_before(wrap)
+        for node in it["nodes"]: wrap.append(node.extract())
+    topics = sorted({t for it in items for t in it["topics"]}); years = sorted({it["year"] for it in items if it["year"]})
+    opts_t = "".join(f'<option value="{html.escape(t)}">{html.escape(t)}</option>' for t in topics)
+    opts_y = "".join(f'<option value="{y}">{y}</option>' for y in years)
+    bar = BeautifulSoup(f'<div class="qfilter" role="search" aria-label="Filter questions"><div class="qf-row"><label>Topic <select id="qf-topic"><option value="">All topics</option>{opts_t}</select></label><label>Year <select id="qf-year"><option value="">All years</option>{opts_y}</select></label><label class="qf-check"><input type="checkbox" id="qf-dedup"> Remove duplicates</label><button type="button" id="qf-reset">Reset</button></div><p class="qf-count" id="qf-count" role="status" aria-live="polite"></p></div>', "html.parser")
+    soup.find("div", class_="qitem").insert_before(bar)
+    soup.append(BeautifulSoup('<script defer src="__ASSETS__qfilter.js"></script>', "html.parser"))
+
+def home_article(pages):
+    manifest, _ = manifest_data(); cards = []
+    for n in range(1, 13):
+        links = [f'<li><a href="{pages[rel].out}">{label}</a></li>' for rel, label in zip(week_paths(n), ("Study notes", "Exam-focused guide", "Past papers &amp; worked answers")) if rel in pages]
+        if links: cards.append(f'<div class="week-card"><span class="resource-meta">Week {n}</span><h3>Week {n}</h3><ul>{"".join(links)}</ul></div>')
+    refs = [("exam-study-guide.md", "Exam study route"), ("exam-question-index.md", "Paper and question index"), ("Knowledge-Map.md", "Knowledge map"), ("curriculum/curriculum-map.md", "Curriculum map")]
+    links = "".join(f'<li><a href="{pages[r].out}">{label}</a></li>' for r, label in refs if r in pages)
+    return f"""<h1>Deep Learning for Computer Vision: Notes &amp; Past Papers</h1><p>DA5006 at IIT Madras: rigorous weekly notes, exam guides and past-paper questions. Use <strong>Ask AI</strong> on a page, section or selection to explore an idea.</p><div class="hero-stats"><div><b>12</b><span>weeks</span></div><div><b>{len(manifest)}</b><span>classified questions</span></div><div><b>{len([p for p in pages if p.startswith("notes/concepts/")])}</b><span>concept notes</span></div></div><h2>Start with a question</h2><div class="resource-list"><a class="resource-card" href="past-paper-topics.html"><span class="resource-meta">Questions by topic</span><h2>Find questions on a topic</h2><p>Explore the question bank by topic and paper.</p><span class="resource-action">Browse past-paper topics →</span></a></div><h2>Weekly notes, exam guides and past papers</h2><div class="resource-grid">{''.join(cards)}</div><h2>Reference</h2><ul>{links}</ul>"""
+
 # ----------------------------------------------------------------------------- main
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--output", default="_site")
+    ap.add_argument("--warn-only", action="store_true")
     args = ap.parse_args()
     out = Path(args.output).resolve()
     if out.exists():
@@ -706,7 +830,7 @@ def main() -> int:
         soup = BeautifulSoup(body, "html.parser")
         rewrite_links(soup, p, resolver, internal)
         convert_callouts(soup)
-        if re.fullmatch(r"week-\d/week-\d-exam-questions\.md", p.rel):
+        if re.fullmatch(r"question-bank/week-\d+-questions\.md", p.rel):
             annotate_questions(soup, p, a2t, dup_report)
         # Metadata chips from front matter.
         chips = []
@@ -735,16 +859,16 @@ def main() -> int:
         elif p.rel.startswith("eli12/"):
             kicker = f"ELI12 · Week {w}" if w else "ELI12 · Plain language"
             ht, hc = ("Same ideas,<br>plain words.", "Picture it. Count it. Try it.")
-        elif w and p.rel.endswith("exam-questions.md"):
+        elif w and p.rel.endswith("-questions.md"):
             kicker, (ht, hc) = f"Week {w} · Past papers", ("Every question,<br>with the working.", "Scan. Solve. Check.")
-        elif w and p.rel.endswith("exam-focused-notes.md"):
-            kicker, (ht, hc) = f"Week {w} · Exam guide", WEEK_HERO[w]
+        elif w and p.rel.endswith("exam-notes.md"):
+            kicker, (ht, hc) = f"Week {w} · Exam guide", WEEK_HERO.get(w, ("From pixels<br>to understanding.", "Represent. Learn. Predict."))
         elif w:
-            kicker, (ht, hc) = f"Week {w} · Notes", WEEK_HERO[w]
+            kicker, (ht, hc) = f"Week {w} · Notes", WEEK_HERO.get(w, ("From pixels<br>to understanding.", "Represent. Learn. Predict."))
         elif p.rel.startswith("sources/"):
             kicker, (ht, hc) = "Paper archive", ("Source papers,<br>kept intact.", "Extraction. Audit. Trace.")
         else:
-            kicker, (ht, hc) = COURSE, ("From sound waves<br>to words.", "Sample. Transform. Decode.")
+            kicker, (ht, hc) = COURSE, ("From pixels<br>to understanding.", "Represent. Learn. Predict.")
         desc = re.sub(r"\s+", " ", BeautifulSoup(body, "html.parser").find("p").get_text(" ") if soup.find("p") else p.title)[:200]
         nav = render_nav(groups, p.out)
         topline = f'<span>{html.escape(kicker)}</span><a href="{quote(posixpath.relpath("index.html", posixpath.dirname(p.out) or "."))}">All resources ↗</a>'
@@ -774,21 +898,21 @@ def main() -> int:
         href = a["href"]
         if urlsplit(href).scheme:
             continue
-        if href.endswith(".html") and href[:-5] + ".md" not in pages and href != "index.html":
+        if href.endswith(".html") and href not in {p.out for p in pages.values()} and href != "index.html":
             errors.append(f"home: broken link {href}")
     (out / "index.html").write_text(
-        shell(page_out="index.html", title="Speech Technology: Notes & Past Papers",
-              description="BSEE4001 Speech Technology notes, exam-focused guides and every past-year question with a worked answer.",
+        shell(page_out="index.html", title="Deep Learning for Computer Vision: Notes & Past Papers",
+              description="DA5006 Deep Learning for Computer Vision notes, exam guides and past-paper questions.",
               article=str(soup), nav_html=render_nav(groups, "index.html"), kicker=COURSE,
-              hero_title="From sound waves<br>to words.", hero_caption="Sample. Transform. Decode.",
-              topline='<span>Speech Technology · Student resources</span><a href="past-paper-topics.html">Questions by topic ↗</a>',
+              hero_title="From pixels<br>to understanding.", hero_caption="Represent. Learn. Predict.",
+              topline='<span>Deep Learning for Computer Vision · Student resources</span><a href="past-paper-topics.html">Questions by topic ↗</a>',
               toc=toc_home, overview=True, pagination=pagination_html(seq, titles, "index.html"),
               section_label="Course overview"), encoding="utf-8")
-    search.append({"title": "Home", "url": "index.html", "text": "Speech Technology notes and past papers"})
+    search.append({"title": "Home", "url": "index.html", "text": "Deep Learning for Computer Vision notes and past papers"})
 
     # Static files: everything that is not Markdown, plus the site assets.
     for f in CONTENT.rglob("*"):
-        if f.is_file() and f.suffix != ".md":
+        if f.is_file() and f.suffix.lower() not in (".md", ".pdf") and f.relative_to(CONTENT).parts[0] in ("month 1", "month 2", "month 3", "sources", "notes", "curriculum", "question-bank"):
             d = out / f.relative_to(CONTENT)
             d.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(f, d)
@@ -810,7 +934,8 @@ def main() -> int:
         print("ERROR:", e)
     print(f"built {len(pages) + 1} pages, {len(internal)} anchored links checked, "
           f"{len(set(warnings))} warnings, {len(set(errors))} errors -> {out}")
-    return 1 if errors else 0
+    (ROOT / "scripts" / "broken-links.txt").write_text("\n".join(sorted(set(errors))) + ("\n" if errors else ""), encoding="utf-8")
+    return 1 if errors and not args.warn_only else 0
 
 
 if __name__ == "__main__":

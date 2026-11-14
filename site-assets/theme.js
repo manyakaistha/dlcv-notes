@@ -4,7 +4,7 @@
   const themes = ['paper', 'midnight', 'scope', 'spectro', 'butter', 'mono'];
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let motion = !reduced.matches;
-  try { motion = localStorage.getItem('speech-lab-motion') !== 'off' && !reduced.matches; } catch {}
+  try { motion = localStorage.getItem('dlcv-lab-motion') !== 'off' && !reduced.matches; } catch {}
   let repaint = () => {};
   const toggle = document.querySelector('.motion-toggle');
   function updateControls() {
@@ -17,12 +17,12 @@
   document.querySelectorAll('.theme-option').forEach(b => b.addEventListener('click', () => {
     if (!themes.includes(b.dataset.palette)) return;
     root.dataset.theme = b.dataset.palette;
-    try { localStorage.setItem('speech-lab-theme', root.dataset.theme); } catch {}
+    try { localStorage.setItem('dlcv-lab-theme', root.dataset.theme); } catch {}
     updateControls(); repaint();
   }));
   if (toggle) toggle.addEventListener('click', () => {
     motion = !motion;
-    try { localStorage.setItem('speech-lab-motion', motion ? 'on' : 'off'); } catch {}
+    try { localStorage.setItem('dlcv-lab-motion', motion ? 'on' : 'off'); } catch {}
     updateControls(); repaint();
   });
   reduced.addEventListener('change', () => { motion = !reduced.matches; updateControls(); repaint(); });

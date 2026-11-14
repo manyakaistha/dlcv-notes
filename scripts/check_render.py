@@ -29,4 +29,4 @@ for f in sorted(glob.glob('_site/**/*.html', recursive=True)):
         bad += 1
         print(f.replace('_site/', ''), probs, 'math=', math)
 print('pages with render issues:', bad)
-sys.exit(1 if bad else 0)
+sys.exit(1 if bad and "--warn-only" not in sys.argv else 0)
