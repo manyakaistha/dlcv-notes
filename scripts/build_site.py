@@ -53,6 +53,7 @@ THEMES = [
 
 warnings: list[str] = []
 errors: list[str] = []
+QUESTION_ANCHORS: dict[tuple[str, str], str] = {}
 
 
 # ----------------------------------------------------------------------------- pages
@@ -229,10 +230,14 @@ def rewrite_links(soup: BeautifulSoup, page: Page, resolver: Resolver, internal:
             return
         new = resolver.pages[tgt].out if tgt in resolver.pages else tgt
         rel = posixpath.relpath(new, here)
-        frag = ("#" + parts.fragment) if parts.fragment else ""
+        fragment = re.sub(r"-{2,}", "-", parts.fragment) if tgt.startswith("question-bank/") else parts.fragment
+        match = re.search(r"-id-(\d+)$", fragment)
+        if match:
+            fragment = QUESTION_ANCHORS.get((tgt, match.group(1)), fragment)
+        frag = ("#" + fragment) if fragment else ""
         tag[attr] = quote(rel) + frag
         if tgt.endswith(".md") and parts.fragment:
-            internal.append((page.out, new, parts.fragment))
+            internal.append((page.out, new, fragment))
 
     for a in soup.find_all("a", href=True):
         fix(a, "href")
@@ -691,7 +696,7 @@ def week_paths(n):
 
 def load_pages():
     pages = {}
-    for folder in ("month 1", "month 2", "month 3", "question-bank", "notes", "sources", "curriculum"):
+    for folder in ("month 1", "month 2", "month 3", "question-bank", "notes", "sources/exam-papers", "curriculum"):
         for path in sorted((ROOT / folder).rglob("*.md")):
             rel = path.relative_to(ROOT).as_posix()
             pages[rel] = Page(rel, path.read_text(encoding="utf-8"))
@@ -812,6 +817,7 @@ def main() -> int:
 
     pages = load_pages()
     pages["past-paper-topics.md"] = build_topics_page(pages)
+    QUESTION_ANCHORS.update({(rel, qid): anchor for (_, _, qid), (rel, anchor) in question_lookup(pages).items()})
     by_stem = {p.stem.lower(): p for p in pages.values()}
     resolver = Resolver(pages)
     groups = nav_model(pages)
