@@ -1,0 +1,1878 @@
+[
+  {
+    "week": 1,
+    "topic_id": "w1-vision-formation",
+    "name": "Vision and image formation",
+    "status": "official",
+    "all": {
+      "occurrences": 0,
+      "mean_marks": null,
+      "total_marks": 0
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      }
+    }
+  },
+  {
+    "week": 1,
+    "topic_id": "w1-representation",
+    "name": "Image representation and point operations",
+    "status": "official",
+    "all": {
+      "occurrences": 29,
+      "mean_marks": 1.8620689655172413,
+      "total_marks": 54
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 19,
+        "mean_marks": 1.8421052631578947,
+        "total_marks": 35
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 10,
+        "mean_marks": 1.9,
+        "total_marks": 19
+      }
+    }
+  },
+  {
+    "week": 1,
+    "topic_id": "w1-filtering",
+    "name": "Spatial filtering and convolution",
+    "status": "official",
+    "all": {
+      "occurrences": 49,
+      "mean_marks": 1.836734693877551,
+      "total_marks": 90
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 34,
+        "mean_marks": 1.7941176470588236,
+        "total_marks": 61
+      },
+      "Q2": {
+        "occurrences": 4,
+        "mean_marks": 2.0,
+        "total_marks": 8
+      },
+      "ET": {
+        "occurrences": 11,
+        "mean_marks": 1.9090909090909092,
+        "total_marks": 21
+      }
+    }
+  },
+  {
+    "week": 1,
+    "topic_id": "w1-frequency",
+    "name": "Frequency-domain images",
+    "status": "official",
+    "all": {
+      "occurrences": 1,
+      "mean_marks": 2.0,
+      "total_marks": 2
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 1,
+        "mean_marks": 2.0,
+        "total_marks": 2
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      }
+    }
+  },
+  {
+    "week": 1,
+    "topic_id": "w1-sampling",
+    "name": "Sampling and reconstruction",
+    "status": "official",
+    "all": {
+      "occurrences": 0,
+      "mean_marks": null,
+      "total_marks": 0
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      }
+    }
+  },
+  {
+    "week": 2,
+    "topic_id": "w2-edges",
+    "name": "Edges and differential operators",
+    "status": "official",
+    "all": {
+      "occurrences": 54,
+      "mean_marks": 1.6666666666666667,
+      "total_marks": 90
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 40,
+        "mean_marks": 1.55,
+        "total_marks": 62
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 14,
+        "mean_marks": 2.0,
+        "total_marks": 28
+      }
+    }
+  },
+  {
+    "week": 2,
+    "topic_id": "w2-corners-blobs",
+    "name": "Corners and blobs",
+    "status": "official",
+    "all": {
+      "occurrences": 7,
+      "mean_marks": 2.142857142857143,
+      "total_marks": 15
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 5,
+        "mean_marks": 2.0,
+        "total_marks": 10
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 2,
+        "mean_marks": 2.5,
+        "total_marks": 5
+      }
+    }
+  },
+  {
+    "week": 2,
+    "topic_id": "w2-scale-space",
+    "name": "Scale space, pyramids and filter banks",
+    "status": "official",
+    "all": {
+      "occurrences": 8,
+      "mean_marks": 2.375,
+      "total_marks": 19
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 8,
+        "mean_marks": 2.375,
+        "total_marks": 19
+      }
+    }
+  },
+  {
+    "week": 2,
+    "topic_id": "w2-features",
+    "name": "Invariant features and geometric descriptors",
+    "status": "official",
+    "all": {
+      "occurrences": 49,
+      "mean_marks": 1.4081632653061225,
+      "total_marks": 69
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 39,
+        "mean_marks": 1.2564102564102564,
+        "total_marks": 49
+      },
+      "Q2": {
+        "occurrences": 1,
+        "mean_marks": 2.0,
+        "total_marks": 2
+      },
+      "ET": {
+        "occurrences": 9,
+        "mean_marks": 2.0,
+        "total_marks": 18
+      }
+    }
+  },
+  {
+    "week": 2,
+    "topic_id": "w2-classical-segmentation",
+    "name": "Classical image segmentation",
+    "status": "official",
+    "all": {
+      "occurrences": 0,
+      "mean_marks": null,
+      "total_marks": 0
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      }
+    }
+  },
+  {
+    "week": 2,
+    "topic_id": "w2-visual-system",
+    "name": "Human visual system",
+    "status": "official",
+    "all": {
+      "occurrences": 0,
+      "mean_marks": null,
+      "total_marks": 0
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      }
+    }
+  },
+  {
+    "week": 3,
+    "topic_id": "w3-neural-networks",
+    "name": "Perceptrons and feedforward networks",
+    "status": "official",
+    "all": {
+      "occurrences": 28,
+      "mean_marks": 1.6428571428571428,
+      "total_marks": 46
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 6,
+        "mean_marks": 2.1666666666666665,
+        "total_marks": 13
+      },
+      "Q2": {
+        "occurrences": 6,
+        "mean_marks": 1.8333333333333333,
+        "total_marks": 11
+      },
+      "ET": {
+        "occurrences": 16,
+        "mean_marks": 1.375,
+        "total_marks": 22
+      }
+    }
+  },
+  {
+    "week": 3,
+    "topic_id": "w3-backprop",
+    "name": "Backpropagation and losses",
+    "status": "official",
+    "all": {
+      "occurrences": 26,
+      "mean_marks": 1.5384615384615385,
+      "total_marks": 40
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 8,
+        "mean_marks": 1.5,
+        "total_marks": 12
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 18,
+        "mean_marks": 1.5555555555555556,
+        "total_marks": 28
+      }
+    }
+  },
+  {
+    "week": 3,
+    "topic_id": "w3-optimization",
+    "name": "Gradient descent and variants",
+    "status": "official",
+    "all": {
+      "occurrences": 14,
+      "mean_marks": 1.9285714285714286,
+      "total_marks": 27
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 9,
+        "mean_marks": 2.0,
+        "total_marks": 18
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 5,
+        "mean_marks": 1.8,
+        "total_marks": 9
+      }
+    }
+  },
+  {
+    "week": 3,
+    "topic_id": "w3-regularization",
+    "name": "Regularization and generalization",
+    "status": "official",
+    "all": {
+      "occurrences": 11,
+      "mean_marks": 1.9090909090909092,
+      "total_marks": 21
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 11,
+        "mean_marks": 1.9090909090909092,
+        "total_marks": 21
+      }
+    }
+  },
+  {
+    "week": 3,
+    "topic_id": "w3-training",
+    "name": "Initialization and normalization",
+    "status": "official",
+    "all": {
+      "occurrences": 1,
+      "mean_marks": 1.0,
+      "total_marks": 1
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 1,
+        "mean_marks": 1.0,
+        "total_marks": 1
+      }
+    }
+  },
+  {
+    "week": 4,
+    "topic_id": "w4-cnn-fundamentals",
+    "name": "CNN operations and spatial dimensions",
+    "status": "official",
+    "all": {
+      "occurrences": 34,
+      "mean_marks": 2.235294117647059,
+      "total_marks": 76
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 9,
+        "mean_marks": 2.0,
+        "total_marks": 18
+      },
+      "Q2": {
+        "occurrences": 14,
+        "mean_marks": 2.2857142857142856,
+        "total_marks": 32
+      },
+      "ET": {
+        "occurrences": 11,
+        "mean_marks": 2.3636363636363638,
+        "total_marks": 26
+      }
+    }
+  },
+  {
+    "week": 4,
+    "topic_id": "w4-pooling-receptive-fields",
+    "name": "Pooling and receptive fields",
+    "status": "official",
+    "all": {
+      "occurrences": 5,
+      "mean_marks": 2.0,
+      "total_marks": 10
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 4,
+        "mean_marks": 2.0,
+        "total_marks": 8
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 1,
+        "mean_marks": 2.0,
+        "total_marks": 2
+      }
+    }
+  },
+  {
+    "week": 4,
+    "topic_id": "w4-cnn-backprop",
+    "name": "CNN backpropagation",
+    "status": "official",
+    "all": {
+      "occurrences": 7,
+      "mean_marks": 2.2857142857142856,
+      "total_marks": 16
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 5,
+        "mean_marks": 2.4,
+        "total_marks": 12
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 2,
+        "mean_marks": 2.0,
+        "total_marks": 4
+      }
+    }
+  },
+  {
+    "week": 4,
+    "topic_id": "w4-alexnet",
+    "name": "AlexNet and early CNN classifiers",
+    "status": "official",
+    "all": {
+      "occurrences": 3,
+      "mean_marks": 2.0,
+      "total_marks": 6
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 2,
+        "mean_marks": 2.0,
+        "total_marks": 4
+      },
+      "ET": {
+        "occurrences": 1,
+        "mean_marks": 2.0,
+        "total_marks": 2
+      }
+    }
+  },
+  {
+    "week": 4,
+    "topic_id": "w4-vgg",
+    "name": "VGG and stacked convolutions",
+    "status": "official",
+    "all": {
+      "occurrences": 0,
+      "mean_marks": null,
+      "total_marks": 0
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      }
+    }
+  },
+  {
+    "week": 5,
+    "topic_id": "w5-inception",
+    "name": "Inception and bottleneck convolutions",
+    "status": "official",
+    "all": {
+      "occurrences": 2,
+      "mean_marks": 1.5,
+      "total_marks": 3
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 2,
+        "mean_marks": 1.5,
+        "total_marks": 3
+      },
+      "ET": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      }
+    }
+  },
+  {
+    "week": 5,
+    "topic_id": "w5-residual-networks",
+    "name": "Residual and connected CNN architectures",
+    "status": "official",
+    "all": {
+      "occurrences": 10,
+      "mean_marks": 1.9,
+      "total_marks": 19
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 8,
+        "mean_marks": 1.75,
+        "total_marks": 14
+      },
+      "ET": {
+        "occurrences": 2,
+        "mean_marks": 2.5,
+        "total_marks": 5
+      }
+    }
+  },
+  {
+    "week": 5,
+    "topic_id": "w5-efficient-cnns",
+    "name": "Efficient convolutional networks",
+    "status": "official",
+    "all": {
+      "occurrences": 26,
+      "mean_marks": 1.6153846153846154,
+      "total_marks": 42
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 22,
+        "mean_marks": 1.3636363636363635,
+        "total_marks": 30
+      },
+      "ET": {
+        "occurrences": 4,
+        "mean_marks": 3.0,
+        "total_marks": 12
+      }
+    }
+  },
+  {
+    "week": 5,
+    "topic_id": "w5-transfer",
+    "name": "Transfer learning and fine-tuning",
+    "status": "official",
+    "all": {
+      "occurrences": 6,
+      "mean_marks": 1.5,
+      "total_marks": 9
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 5,
+        "mean_marks": 1.4,
+        "total_marks": 7
+      },
+      "ET": {
+        "occurrences": 1,
+        "mean_marks": 2.0,
+        "total_marks": 2
+      }
+    }
+  },
+  {
+    "week": 5,
+    "topic_id": "w5-interpretability",
+    "name": "CNN visualization and interpretability",
+    "status": "official",
+    "all": {
+      "occurrences": 20,
+      "mean_marks": 2.0,
+      "total_marks": 40
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 16,
+        "mean_marks": 2.0,
+        "total_marks": 32
+      },
+      "ET": {
+        "occurrences": 4,
+        "mean_marks": 2.0,
+        "total_marks": 8
+      }
+    }
+  },
+  {
+    "week": 5,
+    "topic_id": "w5-two-stage-detection",
+    "name": "Two-stage detection and R-CNN",
+    "status": "official",
+    "all": {
+      "occurrences": 13,
+      "mean_marks": 1.8461538461538463,
+      "total_marks": 24
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 10,
+        "mean_marks": 1.7,
+        "total_marks": 17
+      },
+      "ET": {
+        "occurrences": 3,
+        "mean_marks": 2.3333333333333335,
+        "total_marks": 7
+      }
+    }
+  },
+  {
+    "week": 5,
+    "topic_id": "w5-yolo",
+    "name": "Single-stage detection and YOLO",
+    "status": "official",
+    "all": {
+      "occurrences": 8,
+      "mean_marks": 2.0,
+      "total_marks": 16
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 6,
+        "mean_marks": 2.0,
+        "total_marks": 12
+      },
+      "ET": {
+        "occurrences": 2,
+        "mean_marks": 2.0,
+        "total_marks": 4
+      }
+    }
+  },
+  {
+    "week": 6,
+    "topic_id": "w6-dense-detection",
+    "name": "Dense detectors and focal loss",
+    "status": "provisional",
+    "all": {
+      "occurrences": 6,
+      "mean_marks": 1.6666666666666667,
+      "total_marks": 10
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 3,
+        "mean_marks": 1.3333333333333333,
+        "total_marks": 4
+      },
+      "ET": {
+        "occurrences": 3,
+        "mean_marks": 2.0,
+        "total_marks": 6
+      }
+    }
+  },
+  {
+    "week": 6,
+    "topic_id": "w6-detector-boxes",
+    "name": "Detection losses, boxes and matching",
+    "status": "provisional",
+    "all": {
+      "occurrences": 21,
+      "mean_marks": 2.142857142857143,
+      "total_marks": 45
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 15,
+        "mean_marks": 2.1333333333333333,
+        "total_marks": 32
+      },
+      "ET": {
+        "occurrences": 6,
+        "mean_marks": 2.1666666666666665,
+        "total_marks": 13
+      }
+    }
+  },
+  {
+    "week": 6,
+    "topic_id": "w6-feature-pyramids",
+    "name": "Multiscale feature pyramids",
+    "status": "provisional",
+    "all": {
+      "occurrences": 3,
+      "mean_marks": 2.0,
+      "total_marks": 6
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 2,
+        "mean_marks": 2.5,
+        "total_marks": 5
+      },
+      "ET": {
+        "occurrences": 1,
+        "mean_marks": 1.0,
+        "total_marks": 1
+      }
+    }
+  },
+  {
+    "week": 6,
+    "topic_id": "w6-segmentation",
+    "name": "Semantic and instance segmentation",
+    "status": "provisional",
+    "all": {
+      "occurrences": 11,
+      "mean_marks": 1.7272727272727273,
+      "total_marks": 19
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 8,
+        "mean_marks": 1.75,
+        "total_marks": 14
+      },
+      "ET": {
+        "occurrences": 3,
+        "mean_marks": 1.6666666666666667,
+        "total_marks": 5
+      }
+    }
+  },
+  {
+    "week": 6,
+    "topic_id": "w6-segnet",
+    "name": "SegNet encoder-decoder segmentation",
+    "status": "provisional",
+    "all": {
+      "occurrences": 1,
+      "mean_marks": 2.0,
+      "total_marks": 2
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 1,
+        "mean_marks": 2.0,
+        "total_marks": 2
+      }
+    }
+  },
+  {
+    "week": 6,
+    "topic_id": "w6-motion",
+    "name": "Optical flow and image registration",
+    "status": "provisional",
+    "all": {
+      "occurrences": 1,
+      "mean_marks": 2.0,
+      "total_marks": 2
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 1,
+        "mean_marks": 2.0,
+        "total_marks": 2
+      }
+    }
+  },
+  {
+    "week": 7,
+    "topic_id": "w7-rnn-basics",
+    "name": "Recurrent networks and sequence architectures",
+    "status": "provisional",
+    "all": {
+      "occurrences": 28,
+      "mean_marks": 1.5,
+      "total_marks": 42
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 25,
+        "mean_marks": 1.36,
+        "total_marks": 34
+      },
+      "ET": {
+        "occurrences": 3,
+        "mean_marks": 2.6666666666666665,
+        "total_marks": 8
+      }
+    }
+  },
+  {
+    "week": 7,
+    "topic_id": "w7-rnn-training",
+    "name": "Recurrent training and gradient dynamics",
+    "status": "provisional",
+    "all": {
+      "occurrences": 12,
+      "mean_marks": 2.0,
+      "total_marks": 24
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 8,
+        "mean_marks": 2.0,
+        "total_marks": 16
+      },
+      "ET": {
+        "occurrences": 4,
+        "mean_marks": 2.0,
+        "total_marks": 8
+      }
+    }
+  },
+  {
+    "week": 7,
+    "topic_id": "w7-gated-rnn",
+    "name": "LSTM and GRU gating",
+    "status": "provisional",
+    "all": {
+      "occurrences": 19,
+      "mean_marks": 0.8421052631578947,
+      "total_marks": 16
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 18,
+        "mean_marks": 0.7777777777777778,
+        "total_marks": 14
+      },
+      "ET": {
+        "occurrences": 1,
+        "mean_marks": 2.0,
+        "total_marks": 2
+      }
+    }
+  },
+  {
+    "week": 7,
+    "topic_id": "w7-sequence-attention",
+    "name": "Encoder-decoder attention",
+    "status": "provisional",
+    "all": {
+      "occurrences": 53,
+      "mean_marks": 1.1037735849056605,
+      "total_marks": 58.5
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 50,
+        "mean_marks": 1.01,
+        "total_marks": 50.5
+      },
+      "ET": {
+        "occurrences": 3,
+        "mean_marks": 2.6666666666666665,
+        "total_marks": 8
+      }
+    }
+  },
+  {
+    "week": 7,
+    "topic_id": "w7-hard-soft-attention",
+    "name": "Soft and hard attention",
+    "status": "provisional",
+    "all": {
+      "occurrences": 11,
+      "mean_marks": 2.1818181818181817,
+      "total_marks": 24
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 10,
+        "mean_marks": 2.2,
+        "total_marks": 22
+      },
+      "ET": {
+        "occurrences": 1,
+        "mean_marks": 2.0,
+        "total_marks": 2
+      }
+    }
+  },
+  {
+    "week": 7,
+    "topic_id": "w7-captioning",
+    "name": "Recurrent image captioning and evaluation",
+    "status": "provisional",
+    "all": {
+      "occurrences": 10,
+      "mean_marks": 2.0,
+      "total_marks": 20
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 6,
+        "mean_marks": 2.0,
+        "total_marks": 12
+      },
+      "ET": {
+        "occurrences": 4,
+        "mean_marks": 2.0,
+        "total_marks": 8
+      }
+    }
+  },
+  {
+    "week": 8,
+    "topic_id": "w8-probabilistic-generative",
+    "name": "Generative models and KL divergence",
+    "status": "provisional",
+    "all": {
+      "occurrences": 15,
+      "mean_marks": 1.4,
+      "total_marks": 21
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 11,
+        "mean_marks": 1.1818181818181819,
+        "total_marks": 13
+      },
+      "ET": {
+        "occurrences": 4,
+        "mean_marks": 2.0,
+        "total_marks": 8
+      }
+    }
+  },
+  {
+    "week": 8,
+    "topic_id": "w8-autoencoders",
+    "name": "Autoencoder representations",
+    "status": "provisional",
+    "all": {
+      "occurrences": 3,
+      "mean_marks": 1.6666666666666667,
+      "total_marks": 5
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 3,
+        "mean_marks": 1.6666666666666667,
+        "total_marks": 5
+      }
+    }
+  },
+  {
+    "week": 8,
+    "topic_id": "w8-vae",
+    "name": "Variational autoencoders",
+    "status": "provisional",
+    "all": {
+      "occurrences": 24,
+      "mean_marks": 1.5,
+      "total_marks": 36
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 6,
+        "mean_marks": 1.3333333333333333,
+        "total_marks": 8
+      },
+      "ET": {
+        "occurrences": 18,
+        "mean_marks": 1.5555555555555556,
+        "total_marks": 28
+      }
+    }
+  },
+  {
+    "week": 8,
+    "topic_id": "w8-gan-basics",
+    "name": "GAN objectives and equilibrium",
+    "status": "provisional",
+    "all": {
+      "occurrences": 6,
+      "mean_marks": 1.6666666666666667,
+      "total_marks": 10
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 3,
+        "mean_marks": 1.3333333333333333,
+        "total_marks": 4
+      },
+      "ET": {
+        "occurrences": 3,
+        "mean_marks": 2.0,
+        "total_marks": 6
+      }
+    }
+  },
+  {
+    "week": 8,
+    "topic_id": "w8-metric-learning",
+    "name": "Metric learning and face verification",
+    "status": "provisional",
+    "all": {
+      "occurrences": 6,
+      "mean_marks": 2.0,
+      "total_marks": 12
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 5,
+        "mean_marks": 2.0,
+        "total_marks": 10
+      },
+      "ET": {
+        "occurrences": 1,
+        "mean_marks": 2.0,
+        "total_marks": 2
+      }
+    }
+  },
+  {
+    "week": 8,
+    "topic_id": "w8-generative-evaluation",
+    "name": "Generative model evaluation",
+    "status": "provisional",
+    "all": {
+      "occurrences": 2,
+      "mean_marks": 1.5,
+      "total_marks": 3
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 1,
+        "mean_marks": 2.0,
+        "total_marks": 2
+      },
+      "ET": {
+        "occurrences": 1,
+        "mean_marks": 1.0,
+        "total_marks": 1
+      }
+    }
+  },
+  {
+    "week": 9,
+    "topic_id": "w9-self-attention",
+    "name": "Self-attention and QKV projections",
+    "status": "provisional",
+    "all": {
+      "occurrences": 7,
+      "mean_marks": 1.3642857142857143,
+      "total_marks": 9.55
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 7,
+        "mean_marks": 1.3642857142857143,
+        "total_marks": 9.55
+      }
+    }
+  },
+  {
+    "week": 9,
+    "topic_id": "w9-transformer-blocks",
+    "name": "Transformer encoders and decoders",
+    "status": "provisional",
+    "all": {
+      "occurrences": 10,
+      "mean_marks": 1.255,
+      "total_marks": 12.55
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 10,
+        "mean_marks": 1.255,
+        "total_marks": 12.55
+      }
+    }
+  },
+  {
+    "week": 9,
+    "topic_id": "w9-positional-encoding",
+    "name": "Token and positional representations",
+    "status": "provisional",
+    "all": {
+      "occurrences": 3,
+      "mean_marks": 1.3333333333333333,
+      "total_marks": 4
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 3,
+        "mean_marks": 1.3333333333333333,
+        "total_marks": 4
+      }
+    }
+  },
+  {
+    "week": 9,
+    "topic_id": "w9-vit",
+    "name": "Vision transformers",
+    "status": "provisional",
+    "all": {
+      "occurrences": 8,
+      "mean_marks": 1.375,
+      "total_marks": 11
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 8,
+        "mean_marks": 1.375,
+        "total_marks": 11
+      }
+    }
+  },
+  {
+    "week": 9,
+    "topic_id": "w9-detr",
+    "name": "Transformer object detection",
+    "status": "provisional",
+    "all": {
+      "occurrences": 2,
+      "mean_marks": 2.0,
+      "total_marks": 4
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 2,
+        "mean_marks": 2.0,
+        "total_marks": 4
+      }
+    }
+  },
+  {
+    "week": 10,
+    "topic_id": "w10-progressive-gan",
+    "name": "Progressive and style-based GANs",
+    "status": "provisional",
+    "all": {
+      "occurrences": 3,
+      "mean_marks": 1.6666666666666667,
+      "total_marks": 5
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 3,
+        "mean_marks": 1.6666666666666667,
+        "total_marks": 5
+      }
+    }
+  },
+  {
+    "week": 10,
+    "topic_id": "w10-gan-pathologies",
+    "name": "GAN diversity and failure modes",
+    "status": "provisional",
+    "all": {
+      "occurrences": 0,
+      "mean_marks": null,
+      "total_marks": 0
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      }
+    }
+  },
+  {
+    "week": 10,
+    "topic_id": "w10-vq-vae",
+    "name": "Vector-quantized autoencoders",
+    "status": "provisional",
+    "all": {
+      "occurrences": 2,
+      "mean_marks": 2.0,
+      "total_marks": 4
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 2,
+        "mean_marks": 2.0,
+        "total_marks": 4
+      }
+    }
+  },
+  {
+    "week": 10,
+    "topic_id": "w10-diffusion-forward",
+    "name": "Forward diffusion and noise schedules",
+    "status": "provisional",
+    "all": {
+      "occurrences": 4,
+      "mean_marks": 2.5,
+      "total_marks": 10
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 4,
+        "mean_marks": 2.5,
+        "total_marks": 10
+      }
+    }
+  },
+  {
+    "week": 10,
+    "topic_id": "w10-diffusion-reverse",
+    "name": "Reverse diffusion and guidance",
+    "status": "provisional",
+    "all": {
+      "occurrences": 7,
+      "mean_marks": 1.8571428571428572,
+      "total_marks": 13
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 7,
+        "mean_marks": 1.8571428571428572,
+        "total_marks": 13
+      }
+    }
+  },
+  {
+    "week": 10,
+    "topic_id": "w10-style-transfer",
+    "name": "Neural style transfer",
+    "status": "provisional",
+    "all": {
+      "occurrences": 1,
+      "mean_marks": 2.0,
+      "total_marks": 2
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 1,
+        "mean_marks": 2.0,
+        "total_marks": 2
+      }
+    }
+  },
+  {
+    "week": 11,
+    "topic_id": "w11-self-supervised",
+    "name": "Self-supervised objectives and pretext tasks",
+    "status": "provisional",
+    "all": {
+      "occurrences": 1,
+      "mean_marks": 1.0,
+      "total_marks": 1
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 1,
+        "mean_marks": 1.0,
+        "total_marks": 1
+      }
+    }
+  },
+  {
+    "week": 11,
+    "topic_id": "w11-contrastive",
+    "name": "Contrastive representation learning",
+    "status": "provisional",
+    "all": {
+      "occurrences": 2,
+      "mean_marks": 3.5,
+      "total_marks": 7
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 2,
+        "mean_marks": 3.5,
+        "total_marks": 7
+      }
+    }
+  },
+  {
+    "week": 11,
+    "topic_id": "w11-few-shot",
+    "name": "Few-shot and low-data adaptation",
+    "status": "provisional",
+    "all": {
+      "occurrences": 1,
+      "mean_marks": 2.0,
+      "total_marks": 2
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 1,
+        "mean_marks": 2.0,
+        "total_marks": 2
+      }
+    }
+  },
+  {
+    "week": 11,
+    "topic_id": "w11-clip",
+    "name": "CLIP and image-text contrastive alignment",
+    "status": "provisional",
+    "all": {
+      "occurrences": 6,
+      "mean_marks": 1.8333333333333333,
+      "total_marks": 11
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 6,
+        "mean_marks": 1.8333333333333333,
+        "total_marks": 11
+      }
+    }
+  },
+  {
+    "week": 11,
+    "topic_id": "w11-vision-language-tasks",
+    "name": "Vision-language tasks and retrieval",
+    "status": "provisional",
+    "all": {
+      "occurrences": 1,
+      "mean_marks": 1.0,
+      "total_marks": 1
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 1,
+        "mean_marks": 1.0,
+        "total_marks": 1
+      }
+    }
+  },
+  {
+    "week": 12,
+    "topic_id": "w12-blip",
+    "name": "BLIP architecture and objectives",
+    "status": "provisional",
+    "all": {
+      "occurrences": 14,
+      "mean_marks": 0.5557142857142857,
+      "total_marks": 7.78
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 14,
+        "mean_marks": 0.5557142857142857,
+        "total_marks": 7.78
+      }
+    }
+  },
+  {
+    "week": 12,
+    "topic_id": "w12-promptable-segmentation",
+    "name": "Promptable segmentation and SAM",
+    "status": "provisional",
+    "all": {
+      "occurrences": 3,
+      "mean_marks": 2.0,
+      "total_marks": 6
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 3,
+        "mean_marks": 2.0,
+        "total_marks": 6
+      }
+    }
+  },
+  {
+    "week": 12,
+    "topic_id": "w12-adversarial-robustness",
+    "name": "Adversarial examples and attacks",
+    "status": "provisional",
+    "all": {
+      "occurrences": 4,
+      "mean_marks": 1.0,
+      "total_marks": 4
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 4,
+        "mean_marks": 1.0,
+        "total_marks": 4
+      }
+    }
+  },
+  {
+    "week": 12,
+    "topic_id": "w12-foundation-models",
+    "name": "Multimodal foundation models and conditioning",
+    "status": "provisional",
+    "all": {
+      "occurrences": 0,
+      "mean_marks": null,
+      "total_marks": 0
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      }
+    }
+  },
+  {
+    "week": 12,
+    "topic_id": "w12-multimodal-decoding",
+    "name": "Multimodal generation and decoding",
+    "status": "provisional",
+    "all": {
+      "occurrences": 6,
+      "mean_marks": 0.52,
+      "total_marks": 3.12
+    },
+    "by_exam": {
+      "Q1": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "Q2": {
+        "occurrences": 0,
+        "mean_marks": null,
+        "total_marks": 0
+      },
+      "ET": {
+        "occurrences": 6,
+        "mean_marks": 0.52,
+        "total_marks": 3.12
+      }
+    }
+  }
+]

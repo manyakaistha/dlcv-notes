@@ -1,101 +1,115 @@
 ---
-title: Deep Learning for Computer Vision Knowledge Map
+title: "Deep Learning for Computer Vision Knowledge Map"
 tags: [dl4cv/moc]
 ---
 
-# Deep Learning for Computer Vision — Master Knowledge Map
+# Deep Learning for Computer Vision — Knowledge Map
 
-## Track Curriculum & Weekly Spine
+[[exam-study-guide|Exam study guide]] · [[exam-question-index|Question index]]
 
-| Week | Comprehensive Report | Fast Exam Revision Notes | Core Theoretical & Computational Focus | Status |
+Weeks 6–12 are **provisional**: topics inferred from past papers; replace when official syllabus is available.
+
+## Curriculum spine
+
+| Week | Report | Exam notes | Core question | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Week 1** | [[month 1/week 1/week-1-report\|Week 1 Academic Report]] | [[month 1/week 1/week-1-exam-notes\|Week 1 Exam Notes]] | Foundations of Visual Signals, Linear Filtering, Frequency Analysis, and Discrete Sampling | **Complete** |
-| **Week 2** | [[month 1/week 2/week-2-report\|Week 2 Academic Report]] | [[month 1/week 2/week-2-exam-notes\|Week 2 Exam Notes]] | Mid-Level Visual Primitives: Differential Edges, Scale-Space Blobs, Invariant Descriptors, and Primate Vision | **Complete** |
-| **Week 3** | [[month 1/week 3/week-3-report\|Week 3 Academic Report]] | [[month 1/week 3/week-3-exam-notes\|Week 3 Exam Notes]] | Foundations of Deep Neural Networks: Perceptrons, Backpropagation, Optimization, Regularization & Normalization | **Complete** |
-| **Week 4** | [[month 1/week 4/week-4-report\|Week 4 Academic Report]] | [[month 1/week 4/week-4-exam-notes\|Week 4 Exam Notes]] | Deep Convolutional Neural Networks: Tensor Calculus, Backprop Equations, Variants & Classic Architectures | **Complete** |
-| **Week 5** | [[month 2/week 5/week-5-report\|Week 5 Academic Report]] | [[month 2/week 5/week-5-exam-notes\|Week 5 Exam Notes]] | Advanced CNNs (Inception, ResNet, MobileNet), Visual Interpretability, Transfer Learning & Object Detection | **Complete** |
+| 1 | [[week-1-report\|Report]] | [[week-1-exam-notes\|Exam notes]] | How are images represented, filtered, transformed and sampled? | Complete |
+| 2 | [[week-2-report\|Report]] | [[week-2-exam-notes\|Exam notes]] | How are edges, features and visual regions detected across scales? | Complete |
+| 3 | [[week-3-report\|Report]] | [[week-3-exam-notes\|Exam notes]] | How are neural networks trained and regularized? | Complete |
+| 4 | [[week-4-report\|Report]] | [[week-4-exam-notes\|Exam notes]] | How do convolutional networks compute and learn visual features? | Complete |
+| 5 | [[week-5-report\|Report]] | [[week-5-exam-notes\|Exam notes]] | How do modern CNN architectures and detectors improve visual recognition? | Complete |
+| 6 | [[week-6-report\|Report]] | [[week-6-exam-notes\|Exam notes]] | How are objects localized and evaluated? | Provisional |
+| 7 | [[week-7-report\|Report]] | [[week-7-exam-notes\|Exam notes]] | How are image regions segmented and structured? | Provisional |
+| 8 | [[week-8-report\|Report]] | [[week-8-exam-notes\|Exam notes]] | How do generative models represent and synthesize images? | Provisional |
+| 9 | [[week-9-report\|Report]] | [[week-9-exam-notes\|Exam notes]] | How does attention support visual representation? | Provisional |
+| 10 | [[week-10-report\|Report]] | [[week-10-exam-notes\|Exam notes]] | How do sequence models and attention process visual information? | Provisional |
+| 11 | [[week-11-report\|Report]] | [[week-11-exam-notes\|Exam notes]] | How are visual and language representations aligned? | Provisional |
+| 12 | [[week-12-report\|Report]] | [[week-12-exam-notes\|Exam notes]] | How do modern generative and multimodal systems synthesize and interpret content? | Provisional |
 
----
-
-## Curricular Architecture: Foundations to Deep Visual Learning
+## Governing paradigm
 
 ```mermaid
-flowchart TD
-    subgraph Week 1: Low-Level Signal Foundations
-        M1["Course Intro & Perceptual Paradox"] --> M4["Image Representation & Point Ops"]
-        M4 --> M5["Spatial Linear Filtering & Convolution"]
-        M5 --> M6["Frequency Domain & Non-Linear Filters"]
-        M6 --> M7["Sampling, Aliasing & Interpolation"]
-    end
-
-    subgraph Week 2: Mid-Level Invariant Primitives
-        M7 --> W2_1["Differential Edge Detection & Canny Optimization"]
-        W2_1 --> W2_2["Edgelets PCA & Second-Moment Eigendecomposition"]
-        W2_2 --> W2_3["2D Interest Points & Harris Structure Tensor"]
-        W2_3 --> W2_4["Scale-Space Theory, LoG, DoG & Image Pyramids"]
-        W2_4 --> W2_5["Scale-Invariant Feature Transform (SIFT, SURF, GLOH)"]
-        W2_5 --> W2_6["Visual Grouping & Segmentation (Watershed, Mean Shift, Graph Cuts)"]
-        W2_6 --> W2_7["Geometric Shape Matching (Shape Context, MSER)"]
-        W2_7 --> W2_8["Primate Visual Hierarchy (Retina, LGN, V1, Dual Streams)"]
-    end
-
-    subgraph Week 3: Deep Neural Foundations
-        W2_8 --> W3_1["Early Neurons (MP, Perceptron & XOR Conundrum)"]
-        W3_1 --> W3_2["Feedforward MLPs & Universal Approximation"]
-        W3_2 --> W3_3["Activation Dynamics & Vanishing Gradients"]
-        W3_3 --> W3_4["Multivariate Backpropagation Calculus"]
-        W3_4 --> W3_5["Non-Convex Optimization (Momentum, NAG, Adam)"]
-        W3_5 --> W3_6["Regularization (L1 vs L2 Unit Balls, Dropout Ensemble)"]
-        W3_6 --> W3_7["Training Stabilization (He/Xavier Init & Batch Normalization)"]
-    end
-
-    subgraph Week 4: Convolutional Neural Networks
-        W3_7 --> W4_1["Batch Normalization Backprop Calculus"]
-        W4_1 --> W4_2["Spatial Inductive Biases (Receptive Fields, Weight Sharing)"]
-        W4_2 --> W4_3["3D Tensor Convolution & Dimension Calculus"]
-        W4_3 --> W4_4["CNN Backprop Calculus (dL/dW as Cross-Correlation, dL/dX as Flipped Conv)"]
-        W4_4 --> W4_5["Pooling Routing Mechanics (Max Argmax Router vs Avg Uniform Distributor)"]
-        W4_5 --> W4_6["Convolution Variants (Dilated Atrous & Transposed Upsampling)"]
-        W4_6 --> W4_7["Classic Landmark Architectures (LeNet-5, AlexNet, ZFNet)"]
-        W4_7 --> W4_8["VGGNet Uniformity & Receptive Field Stacking Equivalency"]
-    end
-
-    subgraph Week 5: Advanced Architectures, Interpretability & Detection
-        W4_8 --> W5_1["Inception & 1x1 Bottleneck Dimensionality Reduction"]
-        W5_1 --> W5_2["ResNet & Identity Shortcut Clean Gradient Superhighways"]
-        W5_2 --> W5_3["Modern Paradigms (ResNeXt, DenseNet, MobileNet, SENet, ConvNeXt)"]
-        W5_3 --> W5_4["Transfer Learning & 2x2 Decision Matrix"]
-        W5_4 --> W5_5["Interpretability: Weights, Activations, t-SNE & Occlusion"]
-        W5_5 --> W5_6["Object Detection: Viola-Jones to Two-Stage (R-CNN, Fast, Faster)"]
-        W5_6 --> W5_7["Single-Stage Real-Time Detection: YOLO Grid Regression"]
-    end
+flowchart LR
+    A[Images and sampling] --> B[Features and scale] --> C[Neural training] --> D[Convolutional representations]
+    D --> E[Detection and segmentation]
+    D --> F[Generative models]
+    D --> G[Attention and multimodal learning]
 ```
 
----
+## Concept taxonomy
 
-## Core Concept Spine
+### Week 1
 
-- **Week 1 Foundations:**
-  - [[image-representation]] · [[point-operations]] · [[histogram-equalization]] · [[linear-filtering]] · [[cross-correlation]] · [[convolution]] · [[kernel-separability]] · [[normalized-cross-correlation]] · [[median-filter]] · [[bilateral-filter]] · [[fourier-transform]] · [[convolution-theorem]] · [[nyquist-shannon-sampling]] · [[image-aliasing]] · [[image-interpolation]]
-- **Week 2 Mid-Level Primitives:**
-  - [[canny-edge-detector]] · [[non-maximum-suppression]] · [[hysteresis-thresholding]] · [[edgelet-representation]] · [[harris-corner-detector]] · [[structure-tensor]] · [[scale-space-theory]] · [[difference-of-gaussians]] · [[sift-descriptor]] · [[surf-descriptor]] · [[gloh-descriptor]] · [[shape-context]] · [[mser-regions]] · [[gestalt-grouping]] · [[biological-visual-pathway]]
-- **Week 3 Deep Neural Foundations:**
-  - [[mcculloch-pitts-neuron]] · [[rosenblatt-perceptron]] · [[universal-approximation-theorem]] · [[activation-functions]] · [[backpropagation-algorithm]] · [[gradient-descent-variants]] · [[momentum-and-nesterov]] · [[adam-optimizer]] · [[l1-l2-regularization]] · [[dropout-regularization]] · [[symmetry-breaking]] · [[xavier-he-initialization]] · [[internal-covariate-shift]] · [[batch-normalization]]
-- **Week 4 Convolutional Neural Networks:**
-  - [[batchnorm-backprop]] · [[local-receptive-fields]] · [[weight-sharing]] · [[translation-equivariance]] · [[translation-invariance]] · [[3d-convolution-volume]] · [[dimension-calculus]] · [[dilated-convolution]] · [[transposed-convolution]] · [[cnn-backprop-weights]] · [[cnn-backprop-inputs]] · [[max-pooling-router]] · [[average-pooling-distributor]] · [[lenet-5]] · [[alexnet-architecture]] · [[local-response-normalization]] · [[zfnet-visualization]] · [[vggnet-architecture]] · [[receptive-field-stacking]]
-- **Week 5 Advanced CNNs, Interpretability & Detection:**
-  - [[inception-googlenet]] · [[bottleneck-1x1-convolutions]] · [[resnet-residual-learning]] · [[degradation-problem]] · [[identity-shortcut-gradient-flow]] · [[resnext-cardinality]] · [[densenet-feature-reuse]] · [[depthwise-separable-convolutions]] · [[efficientnet-compound-scaling]] · [[senet-squeeze-and-excitation]] · [[convnext-modern-cnn]] · [[transfer-learning-decision-matrix]] · [[cnn-visualization-techniques]] · [[occlusion-experiments]] · [[tsne-representation-space]] · [[object-detection-taxonomy]] · [[viola-jones-algorithm]] · [[rcnn-framework]] · [[fast-rcnn-roi-pooling]] · [[faster-rcnn-rpn-anchors]] · [[yolo-single-stage-detector]]
+**Topics:** Vision and image formation; Image representation and point operations; Spatial filtering and convolution; Frequency-domain images; Sampling and reconstruction.
 
----
+No atomic concept notes currently assigned. · [[image-representation]] · [[point-operations]] · [[histogram-equalization]] · [[linear-filtering]] · [[cross-correlation]] · [[convolution]] · [[kernel-separability]] · [[normalized-cross-correlation]] · [[median-filter]] · [[bilateral-filter]] · [[fourier-transform]] · [[convolution-theorem]] · [[nyquist-shannon-sampling]] · [[image-aliasing]] · [[image-interpolation]]
 
-## Central Governing Paradigm
+### Week 2
 
-$$\mathbf{y} = \mathcal{F}(\mathbf{x}, \{W_i\}) + \mathbf{x} \implies \frac{\partial \mathcal{L}}{\partial \mathbf{x}_l} = \frac{\partial \mathcal{L}}{\partial \mathbf{x}_L} \left( \mathbf{I} + \frac{\partial}{\partial \mathbf{x}_l} \sum_{i=l}^{L-1} \mathcal{F}(\mathbf{x}_i, W_i) \right)$$
+**Topics:** Edges and differential operators; Corners and blobs; Scale space, pyramids and filter banks; Invariant features and geometric descriptors; Classical image segmentation; Human visual system.
 
-$$\text{Depthwise Separable Factorization}: \quad \frac{\text{Cost}_{\text{separable}}}{\text{Cost}_{\text{standard}}} = \frac{1}{N} + \frac{1}{D_K^2} \approx \frac{1}{9}$$
+No atomic concept notes currently assigned. · [[canny-edge-detector]] · [[non-maximum-suppression]] · [[hysteresis-thresholding]] · [[edgelet-representation]] · [[harris-corner-detector]] · [[scale-space-theory]] · [[difference-of-gaussians]] · [[sift-descriptor]] · [[surf-descriptor]] · [[gloh-descriptor]] · [[shape-context]] · [[mser-regions]] · [[gestalt-grouping]] · [[biological-visual-pathway]]
 
-$$\text{Two-Stage Detection}: \quad \text{Image} \xrightarrow{\text{Backbone}} \text{Conv Features} \xrightarrow{\text{RPN}} \text{RoIs} \xrightarrow{\text{RoI Pooling}} \text{FCs} \to (\text{Softmax}, \operatorname{Smooth}_{L_1})$$
+### Week 3
 
-$$\text{Single-Stage Detection (YOLO)}: \quad \text{Image} \xrightarrow{\text{Single CNN}} S \times S \times (B \times 5 + C) \text{ Tensor}$$
+**Topics:** Perceptrons and feedforward networks; Backpropagation and losses; Gradient descent and variants; Regularization and generalization; Initialization and normalization.
 
-Week 5 expands deep vision from rigid sequential classifiers to scalable, interpretable, and spatially grounded detection architectures. Residual learning resolves optimization degradation by establishing clean identity superhighways. Depthwise separable convolutions democratize deep vision for mobile hardware. Finally, region-based (R-CNN family) and single-shot (YOLO) detectors bridge high-level semantic representation with precise spatial localization.
+No atomic concept notes currently assigned.
+
+### Week 4
+
+**Topics:** CNN operations and spatial dimensions; Pooling and receptive fields; CNN backpropagation; AlexNet and early CNN classifiers; VGG and stacked convolutions.
+
+No atomic concept notes currently assigned.
+
+### Week 5
+
+**Topics:** Inception and bottleneck convolutions; Residual and connected CNN architectures; Efficient convolutional networks; Transfer learning and fine-tuning; CNN visualization and interpretability; Two-stage detection and R-CNN; Single-stage detection and YOLO.
+
+No atomic concept notes currently assigned.
+
+### Week 6 — provisional
+
+**Topics:** Dense detectors and focal loss; Detection losses, boxes and matching; Multiscale feature pyramids; Semantic and instance segmentation; SegNet encoder-decoder segmentation; Optical flow and image registration.
+
+[[feature-pyramid-network]] · [[focal-loss]] · [[intersection-over-union]] · [[semantic-segmentation]]
+
+### Week 7 — provisional
+
+**Topics:** Recurrent networks and sequence architectures; Recurrent training and gradient dynamics; LSTM and GRU gating; Encoder-decoder attention; Soft and hard attention; Recurrent image captioning and evaluation.
+
+[[backpropagation-through-time]] · [[encoder-decoder-attention]] · [[gated-recurrent-unit]] · [[recurrent-neural-network]]
+
+### Week 8 — provisional
+
+**Topics:** Generative models and KL divergence; Autoencoder representations; Variational autoencoders; GAN objectives and equilibrium; Metric learning and face verification; Generative model evaluation.
+
+[[generative-adversarial-network]] · [[kullback-leibler-divergence]] · [[triplet-loss]] · [[variational-autoencoder]]
+
+### Week 9 — provisional
+
+**Topics:** Self-attention and QKV projections; Transformer encoders and decoders; Token and positional representations; Vision transformers; Transformer object detection.
+
+[[detr-set-prediction]] · [[multi-head-attention]] · [[position-encoding]] · [[scaled-dot-product-attention]] · [[vision-transformer-patches]]
+
+### Week 10 — provisional
+
+**Topics:** Progressive and style-based GANs; GAN diversity and failure modes; Vector-quantized autoencoders; Forward diffusion and noise schedules; Reverse diffusion and guidance; Neural style transfer.
+
+[[classifier-free-guidance]] · [[diffusion-process]] · [[gan-mode-collapse]] · [[gram-matrix-style]] · [[progressive-growing]] · [[vector-quantization]]
+
+### Week 11 — provisional
+
+**Topics:** Self-supervised objectives and pretext tasks; Contrastive representation learning; Few-shot and low-data adaptation; CLIP and image-text contrastive alignment; Vision-language tasks and retrieval.
+
+[[clip-alignment]] · [[contrastive-learning]] · [[few-shot-learning]] · [[infonce-loss]] · [[vision-language-retrieval]]
+
+### Week 12 — provisional
+
+**Topics:** BLIP architecture and objectives; Promptable segmentation and SAM; Adversarial examples and attacks; Multimodal foundation models and conditioning; Multimodal generation and decoding.
+
+[[adversarial-examples]] · [[blip-pretraining]] · [[multimodal-decoding]] · [[promptable-segmentation]]
+
+## Daily working notes
+
+No daily working notes are currently present.
