@@ -5,11 +5,13 @@ Notes and past-year questions for **DA5006 Deep Learning for Computer Vision** (
 - **[Open the website](https://manyakaistha.github.io/dlcv-notes/)**
 - [Past-paper topics](https://manyakaistha.github.io/dlcv-notes/past-paper-topics.html): find questions by curriculum topic and jump to the relevant question.
 - [Curriculum map](https://manyakaistha.github.io/dlcv-notes/curriculum/curriculum-map.html): explore the course scope and topic taxonomy.
+- [ELI12 notes](https://manyakaistha.github.io/dlcv-notes/eli12/eli12-start.html): a plain-language entry point for Weeks 1–4.
 
 ## What is inside
 
 | Part | Where | Contents |
 | :-- | :-- | :-- |
+| ELI12 notes | `eli12/` | Plain-language first pass for Weeks 1–4, linked to the authoritative full reports and exam notes |
 | Weekly notes | `month N/week M/week-M-report.md` | Theory, derivations, figures and runnable code for Weeks 1–12 |
 | Exam-focused guides | `month N/week M/week-M-exam-notes.md` | Week-by-week exam preparation |
 | Past papers | `question-bank/week-NN-questions.md` | Questions and worked answers grouped by week |

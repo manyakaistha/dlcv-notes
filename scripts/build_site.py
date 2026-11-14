@@ -221,6 +221,11 @@ def rewrite_links(soup: BeautifulSoup, page: Page, resolver: Resolver, internal:
             return
         tgt = resolver.target(parts.path, page.rel)
         if tgt is None:
+            # Future ELI12 week pages are linked from the index before their
+            # authors finish them; keep the intended URL without failing builds.
+            if page.rel == "eli12/eli12-start.md" and re.fullmatch(r"week-[1-4]-eli12\.md", posixpath.basename(parts.path)):
+                tag[attr] = quote(posixpath.relpath(parts.path[:-3] + ".html", here))
+                return
             if tag.name == "a":
                 # Course slide decks are intentionally not republished; keep the citation text.
                 errors.append(f"{page.rel}: missing link {href}")
@@ -687,6 +692,7 @@ def home_article(pages: dict[str, Page]) -> str:
 
 # Source-to-URL mapping. Source files remain in their course-vault locations.
 SITE_CONFIG = {"week_dir": "month {month}/week {week}",
+               "eli12_dir": "eli12",
                "notes": "week-{week}-report.md",
                "guide": "week-{week}-exam-notes.md",
                "questions": "question-bank/week-{week:02d}-questions.md"}
@@ -698,6 +704,13 @@ def load_pages():
     pages = {}
     for folder in ("month 1", "month 2", "month 3", "question-bank", "notes", "sources/exam-papers", "curriculum"):
         for path in sorted((ROOT / folder).rglob("*.md")):
+            rel = path.relative_to(ROOT).as_posix()
+            pages[rel] = Page(rel, path.read_text(encoding="utf-8"))
+    # ELI12 is a separate navigation section. Week files are optional while they
+    # are being written; the landing page remains buildable in the meantime.
+    eli_dir = ROOT / SITE_CONFIG["eli12_dir"]
+    if eli_dir.exists():
+        for path in sorted(eli_dir.rglob("*.md")):
             rel = path.relative_to(ROOT).as_posix()
             pages[rel] = Page(rel, path.read_text(encoding="utf-8"))
     for rel in ("Knowledge-Map.md", "exam-study-guide.md", "exam-question-index.md", "PLAN.md"):
@@ -717,6 +730,12 @@ def nav_model(pages):
     for label, name, rel in [("STUDY ROUTE", "Exam study route", "exam-study-guide.md"), ("ALL PAPERS", "Paper &amp; question index", "exam-question-index.md"), ("MAP", "Knowledge map", "Knowledge-Map.md"), ("SCOPE", "Curriculum map", "curriculum/curriculum-map.md")]:
         if rel in pages: start.append((label, name, pages[rel].out))
     groups = [("Start", None, start)]
+    eli = [("ELI12", "Start here: plain language", "eli12/eli12-start.html")]
+    for n in range(1, 5):
+        rel = f"eli12/week-{n}-eli12.md"
+        if rel in pages:
+            eli.append((f"WEEK {n}", f"Week {n}: plain-language notes", pages[rel].out))
+    groups.append(("ELI12 · plain language", None, eli))
     for n in range(1, 13):
         items = [(label, name, pages[rel].out) for rel, label, name in zip(week_paths(n), ("NOTES", "EXAM GUIDE", "PAST PAPERS"), ("Study notes", "Learn &amp; prepare", "Questions &amp; worked answers")) if rel in pages]
         if items: groups.append((f"Week {n}", n, items))
@@ -802,7 +821,7 @@ def home_article(pages):
         if links: cards.append(f'<div class="week-card"><span class="resource-meta">Week {n}</span><h3>Week {n}</h3><ul>{"".join(links)}</ul></div>')
     refs = [("exam-study-guide.md", "Exam study route"), ("exam-question-index.md", "Paper and question index"), ("Knowledge-Map.md", "Knowledge map"), ("curriculum/curriculum-map.md", "Curriculum map")]
     links = "".join(f'<li><a href="{pages[r].out}">{label}</a></li>' for r, label in refs if r in pages)
-    return f"""<h1>Deep Learning for Computer Vision: Notes &amp; Past Papers</h1><p>DA5006 at IIT Madras: rigorous weekly notes, exam guides and past-paper questions. Use <strong>Ask AI</strong> on a page, section or selection to explore an idea.</p><div class="hero-stats"><div><b>12</b><span>weeks</span></div><div><b>{len(manifest)}</b><span>classified questions</span></div><div><b>{len([p for p in pages if p.startswith("notes/concepts/")])}</b><span>concept notes</span></div></div><h2>Start with a question</h2><div class="resource-list"><a class="resource-card" href="past-paper-topics.html"><span class="resource-meta">Questions by topic</span><h2>Find questions on a topic</h2><p>Explore the question bank by topic and paper.</p><span class="resource-action">Browse past-paper topics →</span></a></div><h2>Weekly notes, exam guides and past papers</h2><div class="resource-grid">{''.join(cards)}</div><h2>Reference</h2><ul>{links}</ul>"""
+    return f"""<h1>Deep Learning for Computer Vision: Notes &amp; Past Papers</h1><p>DA5006 at IIT Madras: rigorous weekly reports, exam notes and past-paper questions. Start with the <a href="eli12/eli12-start.html">ELI12 notes</a> for a plain-language first pass, then use the full reports and exam notes for precise explanations and exam preparation. Use <strong>Ask AI</strong> on a page, section or selection to explore an idea.</p><div class="hero-stats"><div><b>12</b><span>weeks</span></div><div><b>{len(manifest)}</b><span>classified questions</span></div><div><b>{len([p for p in pages if p.startswith("notes/concepts/")])}</b><span>concept notes</span></div></div><h2>Start with a question</h2><div class="resource-list"><a class="resource-card" href="past-paper-topics.html"><span class="resource-meta">Questions by topic</span><h2>Find questions on a topic</h2><p>Explore the question bank by topic and paper.</p><span class="resource-action">Browse past-paper topics →</span></a><a class="resource-card" href="eli12/eli12-start.html"><span class="resource-meta">ELI12 · Weeks 1–4</span><h2>Computer vision in plain language</h2><p>Build an intuitive first picture, then follow the links into the full report and exam notes.</p><span class="resource-action">Open the ELI12 notes →</span></a></div><h2>Weekly notes, exam guides and past papers</h2><div class="resource-grid">{''.join(cards)}</div><h2>Reference</h2><ul>{links}</ul>"""
 
 # ----------------------------------------------------------------------------- main
 def main() -> int:
@@ -918,7 +937,7 @@ def main() -> int:
 
     # Static files: everything that is not Markdown, plus the site assets.
     for f in CONTENT.rglob("*"):
-        if f.is_file() and f.suffix.lower() not in (".md", ".pdf") and f.relative_to(CONTENT).parts[0] in ("month 1", "month 2", "month 3", "sources", "notes", "curriculum", "question-bank"):
+        if f.is_file() and f.suffix.lower() not in (".md", ".pdf") and f.relative_to(CONTENT).parts[0] in ("month 1", "month 2", "month 3", "sources", "notes", "curriculum", "question-bank", "eli12"):
             d = out / f.relative_to(CONTENT)
             d.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(f, d)
